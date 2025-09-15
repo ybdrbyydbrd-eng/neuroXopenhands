@@ -265,82 +265,54 @@
         <main class="main-content">
             <!-- Agent Mode Panels -->
             <div class="agent-mode-panels" id="agentModePanels">
-                <div class="agent-left-panel">
-                    <div class="agent-welcome-message" id="agentWelcomeMessage">
-                        <h2>Welcome to NeuroChat 👋</h2>
-                    </div>
-                    <div class="agent-chat-area">
-                        <div class="agent-chat-messages" id="agentChatMessages">
-                            <!-- Messages will appear here -->
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="agent-right-panel">
-                    <div class="agent-sample-questions" id="agentSampleQuestions">
-                        <h3>Try these tasks:</h3>
-                        <div class="agent-questions-container">
-                            <button class="agent-question-card" data-question="Create a simple HTML page with a contact form">
-                                Create a simple HTML page with a contact form
-                            </button>
-                            <button class="agent-question-card" data-question="Write a Python script to analyze CSV data">
-                                Write a Python script to analyze CSV data
-                            </button>
-                            <button class="agent-question-card" data-question="Build a React component for user authentication">
-                                Build a React component for user authentication
-                            </button>
-                        </div>
-                    </div>
-                    <div class="agent-sandbox-area" id="agentSandboxArea">
-                        <h3>AI Agent Workspace</h3>
-                        <div class="sandbox-tabs">
-                            <button class="sandbox-tab active" data-tab="files">Files</button>
-                            <button class="sandbox-tab" data-tab="terminal">Terminal</button>
-                            <button class="sandbox-tab" data-tab="preview">Preview</button>
-                        </div>
-                        <div class="sandbox-content">
-                            <div class="sandbox-pane active" id="filesPane">
-                                <div class="file-explorer">
-                                    <div class="file-toolbar">
-                                        <button class="file-action-btn" id="newFileBtn">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                                <polyline points="14,2 14,8 20,8"></polyline>
-                                            </svg>
-                                            New File
-                                        </button>
-                                        <button class="file-action-btn" id="uploadFileBtn">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                                <polyline points="17 8 12 3 7 8"></polyline>
-                                                <line x1="12" y1="3" x2="12" y2="15"></line>
-                                            </svg>
-                                            Upload
-                                        </button>
-                                    </div>
-                                    <div class="file-tree" id="fileTree">
-                                        <p class="empty-state">No files yet. Start by creating or uploading files.</p>
-                                    </div>
-                                </div>
+                <div class="openhands-container" id="openhandsContainer">
+                    <!-- Loading/Status Message -->
+                    <div class="openhands-status" id="openhandsStatus">
+                        <div class="status-content">
+                            <div class="status-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12,6 12,12 16,14"></polyline>
+                                </svg>
                             </div>
-                            <div class="sandbox-pane" id="terminalPane">
-                                <div class="terminal-container">
-                                    <div class="terminal-output" id="terminalOutput">
-                                        <p>$ Welcome to AI Agent Terminal</p>
-                                        <p>$ Agent is ready to execute commands...</p>
-                                    </div>
+                            <h3>Connecting to OpenHands...</h3>
+                            <p>Starting OpenHands on <code>localhost:3000</code></p>
+                            <div class="loading-spinner"></div>
+                            <div class="status-instructions">
+                                <p>Make sure OpenHands Docker container is running:</p>
+                                <div class="docker-command">
+                                    <code>docker run -it --rm --pull=always -e SANDBOX_RUNTIME_CONTAINER_IMAGE=docker.all-hands.dev/all-hands-ai/runtime:0.54-nikolaik -e LOG_ALL_EVENTS=true -v /var/run/docker.sock:/var/run/docker.sock -v %USERPROFILE%\.openhands:/.openhands -p 3000:3000 --add-host host.docker.internal:host-gateway --name openhands-app docker.all-hands.dev/all-hands-ai/openhands:0.54</code>
                                 </div>
-                            </div>
-                            <div class="sandbox-pane" id="previewPane">
-                                <div class="preview-container">
-                                    <iframe id="previewFrame" src="about:blank" frameborder="0"></iframe>
-                                    <div class="preview-placeholder" id="previewPlaceholder">
-                                        <p>Preview will appear here when HTML files are created</p>
-                                    </div>
+                                <div class="status-actions">
+                                    <button class="retry-btn" id="retryOpenHands">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="23 4 23 10 17 10"></polyline>
+                                            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                                        </svg>
+                                        Retry Connection
+                                    </button>
+                                    <button class="check-docker-btn" id="checkDockerBtn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M9 12l2 2 4-4"></path>
+                                            <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
+                                            <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
+                                        </svg>
+                                        Check Docker Status
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- OpenHands iframe (hidden initially) -->
+                    <iframe 
+                        id="openhandsIframe" 
+                        src="" 
+                        frameborder="0" 
+                        style="display: none; width: 100%; height: 100%; border: none;"
+                        allow="camera; microphone; geolocation; encrypted-media; autoplay; display-capture; clipboard-read; clipboard-write"
+                        sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals allow-downloads allow-pointer-lock allow-presentation allow-top-navigation-by-user-activation"
+                    ></iframe>
                 </div>
             </div>
             

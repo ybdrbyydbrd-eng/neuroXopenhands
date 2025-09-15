@@ -63,29 +63,24 @@ const elements = {
     attachmentBtn: document.getElementById('attachmentBtn'),
     agentModeBtn: document.getElementById('agentModeBtn'),
     agentModePanels: document.getElementById('agentModePanels'),
-    agentChatMessages: document.getElementById('agentChatMessages'),
-    agentWelcomeMessage: document.getElementById('agentWelcomeMessage'),
-    agentSampleQuestions: document.getElementById('agentSampleQuestions'),
-    agentResponseArea: document.getElementById('agentResponseArea'),
     apiKeyBtn: document.getElementById('apiKeyBtn'),
     apiKeyModal: document.getElementById('apiKeyModal'),
     closeApiKeyModal: document.getElementById('closeApiKeyModal'),
     apiKeyInput: document.getElementById('apiKeyInput'),
     apiKeySave: document.getElementById('apiKeySave'),
     apiKeyCancel: document.getElementById('apiKeyCancel'),
-    // New elements for Console Mode and Sandbox
+    // New elements for Console Mode
     chatModeBtn: document.getElementById('chatModeBtn'),
     consoleModeBtn: document.getElementById('consoleModeBtn'),
     consoleModal: document.getElementById('consoleModal'),
     closeConsole: document.getElementById('closeConsole'),
     consoleModalContent: document.getElementById('consoleModalContent'),
-    agentSandboxArea: document.getElementById('agentSandboxArea'),
-    fileTree: document.getElementById('fileTree'),
-    terminalOutput: document.getElementById('terminalOutput'),
-    previewFrame: document.getElementById('previewFrame'),
-    previewPlaceholder: document.getElementById('previewPlaceholder'),
-    newFileBtn: document.getElementById('newFileBtn'),
-    uploadFileBtn: document.getElementById('uploadFileBtn')
+    // OpenHands integration elements
+    openhandsContainer: document.getElementById('openhandsContainer'),
+    openhandsStatus: document.getElementById('openhandsStatus'),
+    openhandsIframe: document.getElementById('openhandsIframe'),
+    retryOpenHands: document.getElementById('retryOpenHands'),
+    checkDockerBtn: document.getElementById('checkDockerBtn')
 };
 
 // Initialize the application
@@ -129,11 +124,7 @@ function setupEventListeners() {
     elements.messageInput.addEventListener('input', handleInputChange);
     elements.messageInput.addEventListener('keydown', handleKeyDown);
     elements.sendButton.addEventListener('click', () => {
-        if (isAgentMode) {
-            sendAgentMessage();
-        } else {
-            sendMessage();
-        }
+        sendMessage();
     });
     
     // Model selector
@@ -163,16 +154,13 @@ function setupEventListeners() {
         elements.closeConsole.addEventListener('click', closeConsoleModal);
     }
     
-    // Sandbox controls
-    if (elements.newFileBtn) {
-        elements.newFileBtn.addEventListener('click', createNewFile);
+    // OpenHands integration controls
+    if (elements.retryOpenHands) {
+        elements.retryOpenHands.addEventListener('click', initializeOpenHands);
     }
-    if (elements.uploadFileBtn) {
-        elements.uploadFileBtn.addEventListener('click', handleAttachment);
+    if (elements.checkDockerBtn) {
+        elements.checkDockerBtn.addEventListener('click', checkDockerStatus);
     }
-    
-    // Sandbox tabs
-    setupSandboxTabs();
     
     // API Key Manager
     elements.apiKeyBtn.addEventListener('click', openApiKeyModal);
@@ -197,8 +185,7 @@ function setupEventListeners() {
     // Settings options
     setupSettingsOptions();
     
-    // Agent Mode question cards
-    setupAgentQuestionCards();
+    // Agent Mode is now handled by OpenHands iframe
 }
 
 function setupWelcomeSuggestions() {
@@ -371,9 +358,8 @@ function adjustTextareaHeight() {
 function handleKeyDown(event) {
     if (event.key === 'Enter' && !event.shiftKey) {
         event.preventDefault();
-        if (isAgentMode) {
-            sendAgentMessage();
-        } else {
+        // In Agent Mode, don't handle messages since OpenHands handles input
+        if (!isAgentMode) {
             sendMessage();
         }
     }
@@ -716,7 +702,6 @@ function activateChatMode() {
 
 function activateAgentMode() {
     isAgentMode = true;
-    agentModeFirstMessage = true;
     
     // Update button states  
     elements.agentModeBtn.classList.add('active');
@@ -731,20 +716,129 @@ function activateAgentMode() {
     document.body.classList.add('agent-mode-active');
     elements.agentModePanels.classList.add('active');
     
-    setTimeout(() => {
-        document.body.classList.add('input-positioned');
-    }, 100);
+    // Hide welcome state and chat window
+    elements.welcomeState.classList.add('hidden');
+    elements.chatWindow.classList.remove('active');
     
-    // Initialize sandbox if needed
-    if (!currentSandboxSession) {
-        initializeSandbox();
+    // Initialize OpenHands iframe
+    initializeOpenHands();
+}
+
+// OpenHands Integration Functions
+async function initializeOpenHands() {
+    if (!elements.openhandsContainer || !elements.openhandsStatus || !elements.openhandsIframe) {
+        console.error('OpenHands elements not found');
+        return;
     }
     
-    // Show initial agent UI
-    elements.agentWelcomeMessage.classList.remove('hidden');
-    elements.agentSampleQuestions.classList.remove('hidden');
-    if (elements.agentSandboxArea) {
-        elements.agentSandboxArea.classList.add('visible');
+    // Reset container state
+    elements.openhandsContainer.classList.remove('loaded', 'error');
+    elements.openhandsStatus.style.display = 'flex';
+    elements.openhandsIframe.style.display = 'none';
+    
+    // Update status message
+    updateOpenHandsStatus('Connecting to OpenHands...', 'Starting OpenHands on localhost:3000');
+    
+    try {
+        // Check if OpenHands is already running
+        const isRunning = await checkOpenHandsStatus();
+        
+        if (isRunning) {
+            await loadOpenHandsIframe();
+        } else {
+            showOpenHandsError('OpenHands is not running on localhost:3000');
+        }
+    } catch (error) {
+        console.error('Error initializing OpenHands:', error);
+        showOpenHandsError('Failed to connect to OpenHands');
+    }
+}
+
+async function checkOpenHandsStatus() {
+    try {
+        const response = await fetch('http://localhost:3000', {
+            method: 'GET',
+            mode: 'no-cors', // This will prevent CORS errors but we won't get the response content
+            cache: 'no-cache'
+        });
+        
+        // Since we're using no-cors mode, we can't check response.ok
+        // If no error is thrown, we assume the service is running
+        return true;
+    } catch (error) {
+        console.log('OpenHands not accessible:', error.message);
+        return false;
+    }
+}
+
+async function loadOpenHandsIframe() {
+    updateOpenHandsStatus('Loading OpenHands...', 'Please wait while OpenHands loads');
+    
+    return new Promise((resolve, reject) => {
+        // Set iframe source
+        elements.openhandsIframe.src = 'http://localhost:3000';
+        
+        // Handle iframe load
+        elements.openhandsIframe.onload = () => {
+            console.log('OpenHands iframe loaded successfully');
+            elements.openhandsContainer.classList.add('loaded');
+            elements.openhandsStatus.style.display = 'none';
+            elements.openhandsIframe.style.display = 'block';
+            showToast('OpenHands loaded successfully', 'success');
+            resolve();
+        };
+        
+        // Handle iframe error
+        elements.openhandsIframe.onerror = (error) => {
+            console.error('Failed to load OpenHands iframe:', error);
+            showOpenHandsError('Failed to load OpenHands interface');
+            reject(error);
+        };
+        
+        // Timeout after 30 seconds
+        setTimeout(() => {
+            if (!elements.openhandsContainer.classList.contains('loaded')) {
+                console.warn('OpenHands iframe load timeout');
+                showOpenHandsError('OpenHands loading timed out');
+                reject(new Error('Timeout'));
+            }
+        }, 30000);
+    });
+}
+
+function updateOpenHandsStatus(title, description) {
+    const statusElement = elements.openhandsStatus.querySelector('.status-content h3');
+    const descElement = elements.openhandsStatus.querySelector('.status-content p');
+    
+    if (statusElement) statusElement.textContent = title;
+    if (descElement) descElement.textContent = description;
+}
+
+function showOpenHandsError(message) {
+    elements.openhandsContainer.classList.add('error');
+    updateOpenHandsStatus('Connection Failed', message);
+}
+
+async function checkDockerStatus() {
+    updateOpenHandsStatus('Checking Docker Status...', 'Verifying OpenHands Docker container');
+    
+    try {
+        // Try to check if Docker is running and OpenHands container exists
+        // Note: This is a basic check - in a real implementation, you might want to
+        // call a backend endpoint that can actually check Docker status
+        const isRunning = await checkOpenHandsStatus();
+        
+        if (isRunning) {
+            showToast('OpenHands is running on localhost:3000', 'success');
+            await loadOpenHandsIframe();
+        } else {
+            showOpenHandsError('OpenHands Docker container is not running. Please start it using the command above.');
+            showToast('OpenHands is not running. Please start the Docker container.', 'warning');
+        }
+    } catch (error) {
+        console.error('Error checking Docker status:', error);
+        showOpenHandsError('Failed to check Docker status');
+        showToast('Failed to check Docker status', 'error');
     }
 }
 
@@ -1112,151 +1206,7 @@ function toggleAgentMode() {
     }
 }
 
-function setupAgentQuestionCards() {
-    const questionCards = document.querySelectorAll('.agent-question-card');
-    questionCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const question = card.getAttribute('data-question');
-            elements.messageInput.value = question;
-            sendAgentMessage();
-        });
-    });
-}
-
-async function sendAgentMessage() {
-    const message = elements.messageInput.value.trim();
-    if (!message || isLoading) return;
-    
-    // Check if models are available
-    if (availableModels.length === 0) {
-        showToast('Please add an API key to enable chat functionality', 'warning');
-        openApiKeyModal();
-        return;
-    }
-    
-    if (!currentModel) {
-        showToast('Please select a model first', 'warning');
-        return;
-    }
-    
-    // If this is the first message in Agent Mode, hide welcome and questions
-    if (agentModeFirstMessage) {
-        agentModeFirstMessage = false;
-        
-        // Hide welcome message and sample questions with animation
-        elements.agentWelcomeMessage.classList.add('hidden');
-        elements.agentSampleQuestions.classList.add('hidden');
-        
-        // Expand Agent Sandbox to take full half of screen
-        elements.agentSandboxArea.classList.add('expanded');
-        
-        // Show agent response area after a short delay
-        setTimeout(() => {
-            elements.agentResponseArea.classList.add('visible');
-        }, 300);
-    }
-
-    // Add user message to the agent chat area
-    const messageElement = document.createElement('div');
-    messageElement.className = 'message user-message';
-    messageElement.textContent = message;
-    elements.agentChatMessages.appendChild(messageElement);
-    
-    // Clear input
-    elements.messageInput.value = '';
-    updateCharCounter();
-    adjustTextareaHeight();
-    
-    // Don't clear uploaded files - keep them for context
-    // uploadedFiles.clear(); // Keep files for context
-    
-    // Set loading state
-    setLoadingState(true);
-    
-    // Add thinking message to the agent chat area
-    const thinkingMessageId = generateMessageId();
-    const thinkingElement = document.createElement('div');
-    thinkingElement.className = 'message thinking-message';
-    thinkingElement.setAttribute('data-message-id', thinkingMessageId);
-    thinkingElement.innerHTML = `
-        <span>AI is thinking</span>
-        <div class="thinking-dots">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-    `;
-    elements.agentChatMessages.appendChild(thinkingElement);
-    
-    // Update terminal with agent activity
-    addToTerminal(`$ Processing: ${message}`);
-    addToTerminal('$ Analyzing context...');
-    addToTerminal('$ Generating response...');
-    
-    // Scroll to the bottom of the chat messages
-    elements.agentChatMessages.scrollTop = elements.agentChatMessages.scrollHeight;
-    
-    try {
-        // Create new conversation if needed
-        if (!currentConversationId) {
-            currentConversationId = generateConversationId();
-            addConversationToSidebar(currentConversationId, message);
-        }
-        
-        // Send message to Agent backend (supports collaboration)
-        const response = await apiFetch('/agent/chat', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                message: message,
-                model: currentModel,
-                options: {
-                    collaboration: Array.isArray(selectedModels) && selectedModels.length > 1,
-                    selectedModels: selectedModels
-                }
-            })
-        });
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        
-        // Remove thinking message
-        const thinkingMessage = document.querySelector(`[data-message-id="${thinkingMessageId}"]`);
-        if (thinkingMessage) {
-            thinkingMessage.remove();
-        }
-        
-        if (data.task_id) {
-            // Poll for results
-            pollForAgentResults(data.task_id);
-        } else {
-            throw new Error('No task ID received');
-        }
-        
-    } catch (error) {
-        console.error('Error sending message:', error);
-        const thinkingMessage = document.querySelector(`[data-message-id="${thinkingMessageId}"]`);
-        if (thinkingMessage) {
-            thinkingMessage.remove();
-        }
-        
-        const errorElement = document.createElement('div');
-        errorElement.className = 'message error-message';
-        errorElement.innerHTML = `<strong>Error:</strong> Sorry, there was an error processing your request. Please try again.`;
-        elements.agentChatMessages.appendChild(errorElement);
-        
-        // Scroll to the bottom of the chat messages
-        elements.agentChatMessages.scrollTop = elements.agentChatMessages.scrollHeight;
-        
-        setLoadingState(false);
-        showToast('Failed to send message', 'error');
-    }
-}
+// OpenHands Agent Mode functions removed - handled by iframe
 
 async function pollForAgentResults(taskId) {
     const maxAttempts = 60; // 5 minutes with 5-second intervals

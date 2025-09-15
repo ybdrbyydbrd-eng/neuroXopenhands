@@ -1300,24 +1300,201 @@ body {
     margin-top: 2px;
 }
 
-/* Agent Mode Panels */
+/* Agent Mode Panels - OpenHands Integration */
 .agent-mode-panels {
     position: fixed;
     top: 64px;
     left: 0;
     right: 0;
-    bottom: 140px;
+    bottom: 0; /* Take full height since input is hidden */
     display: none;
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 10;
+    padding: var(--space-4);
 }
 
 .agent-mode-panels.active {
-    display: flex;
+    display: block;
     opacity: 1;
     transform: translateY(0);
+}
+
+/* OpenHands Container */
+.openhands-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: var(--light-bg-secondary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--light-border);
+}
+
+/* OpenHands Status Screen */
+.openhands-status {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--light-bg-primary) 0%, var(--light-bg-secondary) 100%);
+    color: var(--text-primary);
+}
+
+.status-content {
+    text-align: center;
+    max-width: 600px;
+    padding: var(--space-8);
+}
+
+.status-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--space-4);
+    color: var(--primary-500);
+    animation: pulse 2s infinite;
+}
+
+.status-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.status-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+}
+
+.status-content p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+}
+
+.loading-spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--primary-200);
+    border-top: 3px solid var(--primary-500);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto var(--space-6);
+}
+
+.status-instructions {
+    background: var(--light-bg-tertiary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-top: var(--space-6);
+    text-align: left;
+}
+
+.status-instructions p {
+    margin-bottom: var(--space-4);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.docker-command {
+    background: var(--light-bg-primary);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    margin: var(--space-4) 0;
+    border: 1px solid var(--light-border);
+}
+
+.docker-command code {
+    display: block;
+    color: var(--primary-300);
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    word-break: break-all;
+    white-space: pre-wrap;
+}
+
+.status-actions {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    margin-top: var(--space-6);
+    flex-wrap: wrap;
+}
+
+.retry-btn, .check-docker-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    background: var(--primary-600);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.retry-btn:hover, .check-docker-btn:hover {
+    background: var(--primary-700);
+    transform: translateY(-1px);
+}
+
+.retry-btn svg, .check-docker-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.check-docker-btn {
+    background: var(--success);
+}
+
+.check-docker-btn:hover {
+    background: #059669;
+}
+
+/* OpenHands iframe styles */
+#openhandsIframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: white;
+}
+
+/* Hide status when iframe is loaded */
+.openhands-container.loaded .openhands-status {
+    display: none;
+}
+
+.openhands-container.loaded #openhandsIframe {
+    display: block !important;
+}
+
+/* Hide input section in Agent Mode */
+.agent-mode-active .input-section {
+    display: none;
+}
+
+/* Error state */
+.openhands-container.error .status-icon {
+    color: var(--error);
+    animation: none;
+}
+
+.openhands-container.error .loading-spinner {
+    display: none;
+}
+
+/* Animation keyframes */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .agent-left-panel {
