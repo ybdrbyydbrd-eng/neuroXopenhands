@@ -1,0 +1,235 @@
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection error (suppressing further errors)',
+  timestamp: '2025-09-05 13:25:36'
+}
+{
+  message: 'Redis connection failed after 3 attempts, disabling Redis',
+  level: 'warn',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-05 13:25:37'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection failed',
+  timestamp: '2025-09-05 13:25:37'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection failed, continuing without Redis cache',
+  timestamp: '2025-09-05 13:25:37'
+}
+{
+  message: 'MongoDB disconnected',
+  level: 'warn',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-05 13:25:42'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at _handleConnectionErrors (/home/user/webapp/new-main/neurochat/backend/enhanced-ai-pipeline/node_modules/mongoose/lib/connection.js:816:11)\n' +
+    '    at NativeConnection.openUri (/home/user/webapp/new-main/neurochat/backend/enhanced-ai-pipeline/node_modules/mongoose/lib/connection.js:791:11)\n' +
+    '    at async DatabaseManager.connectMongoDB (/home/user/webapp/new-main/neurochat/backend/enhanced-ai-pipeline/src/utils/database.js:91:30)\n' +
+    '    at async DatabaseManager.initialize (/home/user/webapp/new-main/neurochat/backend/enhanced-ai-pipeline/src/utils/database.js:120:9)\n' +
+    '    at async Server.initialize (/home/user/webapp/new-main/neurochat/backend/enhanced-ai-pipeline/src/api/server.js:33:7)\n' +
+    '    at async Server.start (/home/user/webapp/new-main/neurochat/backend/enhanced-ai-pipeline/src/api/server.js:658:7)',
+  component: 'mongodb',
+  operation: 'connect',
+  timestamp: '2025-09-05 13:25:42',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: 'connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  level: 'warn',
+  message: 'MongoDB connection failed, continuing without MongoDB',
+  timestamp: '2025-09-05 13:25:42'
+}
+{
+  message: 'Database connections initialized (Redis and MongoDB are optional)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-05 13:25:42'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at Timeout._onTimeout (/home/user/webapp/new-main/neurochat/backend/enhanced-ai-pipeline/node_modules/mongodb/lib/sdam/topology.js:278:38)\n' +
+    '    at listOnTimeout (node:internal/timers:581:17)\n' +
+    '    at process.processTimers (node:internal/timers:519:7)',
+  component: 'mongodb',
+  timestamp: '2025-09-05 13:25:42',
+  level: 'error'
+}
+{
+  message: 'MetaModel loaded from disk',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-05 13:25:42'
+}
+{
+  message: 'Loaded 0 training examples',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-05 13:25:42'
+}
+{
+  message: 'Queue manager initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-05 13:25:42'
+}
+{
+  message: 'Server initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-05 13:25:42'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  port: 12000,
+  host: '0.0.0.0',
+  env: 'development',
+  pid: 2665,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-09-05 13:25:42'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/',
+  statusCode: 200,
+  responseTime: 6,
+  userId: null,
+  timestamp: '2025-09-05 13:26:36',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  baseDir: '/home/user/webapp/7-main/new-main/neurochat/workspaces',
+  level: 'info',
+  message: 'Workspace base directory initialized',
+  timestamp: '2025-09-05 19:30:19'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection error (suppressing further errors)',
+  timestamp: '2025-09-05 19:30:19'
+}
+{
+  message: 'Redis connection failed after 3 attempts, disabling Redis',
+  level: 'warn',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-05 19:30:20'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection failed',
+  timestamp: '2025-09-05 19:30:20'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection failed, continuing without Redis cache',
+  timestamp: '2025-09-05 19:30:20'
+}
+{
+  message: 'MongoDB disconnected',
+  level: 'warn',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-05 19:30:25'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at _handleConnectionErrors (/home/user/webapp/7-main/new-main/neurochat/backend/enhanced-ai-pipeline/node_modules/mongoose/lib/connection.js:816:11)\n' +
+    '    at NativeConnection.openUri (/home/user/webapp/7-main/new-main/neurochat/backend/enhanced-ai-pipeline/node_modules/mongoose/lib/connection.js:791:11)\n' +
+    '    at async DatabaseManager.connectMongoDB (/home/user/webapp/7-main/new-main/neurochat/backend/enhanced-ai-pipeline/src/utils/database.js:91:30)\n' +
+    '    at async DatabaseManager.initialize (/home/user/webapp/7-main/new-main/neurochat/backend/enhanced-ai-pipeline/src/utils/database.js:120:9)\n' +
+    '    at async Server.initialize (/home/user/webapp/7-main/new-main/neurochat/backend/enhanced-ai-pipeline/src/api/server.js:34:7)\n' +
+    '    at async Server.start (/home/user/webapp/7-main/new-main/neurochat/backend/enhanced-ai-pipeline/src/api/server.js:677:7)',
+  component: 'mongodb',
+  operation: 'connect',
+  timestamp: '2025-09-05 19:30:25',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: 'connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  level: 'warn',
+  message: 'MongoDB connection failed, continuing without MongoDB',
+  timestamp: '2025-09-05 19:30:25'
+}
+{
+  message: 'Database connections initialized (Redis and MongoDB are optional)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-05 19:30:25'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at Timeout._onTimeout (/home/user/webapp/7-main/new-main/neurochat/backend/enhanced-ai-pipeline/node_modules/mongodb/lib/sdam/topology.js:278:38)\n' +
+    '    at listOnTimeout (node:internal/timers:581:17)\n' +
+    '    at process.processTimers (node:internal/timers:519:7)',
+  component: 'mongodb',
+  timestamp: '2025-09-05 19:30:25',
+  level: 'error'
+}
+{
+  message: 'MetaModel loaded from disk',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-05 19:30:25'
+}
+{
+  message: 'Loaded 0 training examples',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-05 19:30:25'
+}
+{
+  message: 'Queue manager initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-05 19:30:25'
+}
+{
+  message: 'Server initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-05 19:30:25'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  port: 12000,
+  host: '0.0.0.0',
+  env: 'development',
+  pid: 4120,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-09-05 19:30:25'
+}

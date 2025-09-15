@@ -1,0 +1,47 @@
+
+> enhanced-multi-model-ai-pipeline@1.0.0 start
+> node src/api/server.js
+
+[32minfo[39m: Redis connected successfully {"service":"enhanced-ai-pipeline","timestamp":"2025-08-05 09:00:02"}
+[32minfo[39m: Redis ready for operations {"service":"enhanced-ai-pipeline","timestamp":"2025-08-05 09:00:02"}
+[33mwarn[39m: MongoDB disconnected {"service":"enhanced-ai-pipeline","timestamp":"2025-08-05 09:00:07"}
+[31merror[39m: Application Error connect ECONNREFUSED 127.0.0.1:27017 {"component":"mongodb","operation":"connect","service":"enhanced-ai-pipeline","stack":"MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017\n    at _handleConnectionErrors (/workspace/project/neurochat_agent_mode_final_updated/neurochat_enhanced/backend/enhanced-ai-pipeline/node_modules/mongoose/lib/connection.js:816:11)\n    at NativeConnection.openUri (/workspace/project/neurochat_agent_mode_final_updated/neurochat_enhanced/backend/enhanced-ai-pipeline/node_modules/mongoose/lib/connection.js:791:11)\n    at async DatabaseManager.connectMongoDB (/workspace/project/neurochat_agent_mode_final_updated/neurochat_enhanced/backend/enhanced-ai-pipeline/src/utils/database.js:73:30)\n    at async DatabaseManager.initialize (/workspace/project/neurochat_agent_mode_final_updated/neurochat_enhanced/backend/enhanced-ai-pipeline/src/utils/database.js:93:9)\n    at async Server.initialize (/workspace/project/neurochat_agent_mode_final_updated/neurochat_enhanced/backend/enhanced-ai-pipeline/src/api/server.js:31:7)\n    at async Server.start (/workspace/project/neurochat_agent_mode_final_updated/neurochat_enhanced/backend/enhanced-ai-pipeline/src/api/server.js:477:7)","timestamp":"2025-08-05 09:00:07","type":"error"}
+[33mwarn[39m: MongoDB connection failed, continuing without MongoDB {"error":"connect ECONNREFUSED 127.0.0.1:27017","service":"enhanced-ai-pipeline","timestamp":"2025-08-05 09:00:07"}
+[32minfo[39m: Database connections initialized {"service":"enhanced-ai-pipeline","timestamp":"2025-08-05 09:00:07"}
+[31merror[39m: Application Error connect ECONNREFUSED 127.0.0.1:27017 {"component":"mongodb","service":"enhanced-ai-pipeline","stack":"MongoServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017\n    at Timeout._onTimeout (/workspace/project/neurochat_agent_mode_final_updated/neurochat_enhanced/backend/enhanced-ai-pipeline/node_modules/mongodb/lib/sdam/topology.js:278:38)\n    at listOnTimeout (node:internal/timers:588:17)\n    at process.processTimers (node:internal/timers:523:7)","timestamp":"2025-08-05 09:00:07","type":"error"}
+[32minfo[39m: MetaModel loaded from disk {"service":"enhanced-ai-pipeline","timestamp":"2025-08-05 09:00:07"}
+[32minfo[39m: Loaded 0 training examples {"service":"enhanced-ai-pipeline","timestamp":"2025-08-05 09:00:07"}
+[32minfo[39m: Model performance data loaded from cache {"service":"enhanced-ai-pipeline","timestamp":"2025-08-05 09:00:07"}
+[32minfo[39m: Queue manager initialized successfully {"service":"enhanced-ai-pipeline","timestamp":"2025-08-05 09:00:07"}
+[32minfo[39m: Server initialized successfully {"service":"enhanced-ai-pipeline","timestamp":"2025-08-05 09:00:07"}
+[32minfo[39m: Server started successfully {"env":"development","host":"0.0.0.0","pid":6215,"port":12000,"service":"enhanced-ai-pipeline","timestamp":"2025-08-05 09:00:07"}
+🚀 Enhanced AI Pipeline Server running at:
+   Local:   http://localhost:12000
+   Network: http://0.0.0.0:12000
+   Environment: development
+   Process ID: 6215
+[32minfo[39m: Model performance data loaded from cache {"service":"enhanced-ai-pipeline","timestamp":"2025-08-05 09:00:19"}
+[32minfo[39m: API Call {"method":"GET","responseTime":7,"service":"enhanced-ai-pipeline","statusCode":200,"timestamp":"2025-08-05 09:00:19","type":"api_call","url":"/api/v1/models/config","userId":null}
+=== API KEY RECEIVED ===
+Received API key: sk-part3-test-api-key-for-model-discovery-12345
+API key length: 47
+API key starts with: sk-part3...
+Provider: openrouter
+Timestamp: 2025-08-05T09:00:45.042Z
+Client IP: 127.0.0.1
+========================
+[32minfo[39m: Model performance data loaded from cache {"service":"enhanced-ai-pipeline","timestamp":"2025-08-05 09:00:45"}
+=== DISCOVERING MODELS ===
+Attempting to discover models with provided API key...
+[32minfo[39m: Discovered 313 models for provider openrouter {"service":"enhanced-ai-pipeline","timestamp":"2025-08-05 09:00:45"}
+Models discovered: 313
+Model list preview: [
+  'Horizon Beta',
+  'Mistral: Codestral 2508',
+  'Qwen: Qwen3 30B A3B Instruct 2507',
+  'Z.AI: GLM 4.5',
+  'Z.AI: GLM 4.5 Air (free)'
+]
+===========================
+[32minfo[39m: API key received and models discovered {"ip":"127.0.0.1","keyLength":47,"keyPrefix":"sk-part3...","modelsDiscovered":313,"provider":"openrouter","requestId":"4ba6e4c8-afa3-4860-9adc-6748dd71d2be","service":"enhanced-ai-pipeline","timestamp":"2025-08-05 09:00:45","userAgent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/136.0.7103.25 Safari/537.36"}
+[32minfo[39m: API Call {"method":"POST","responseTime":300,"service":"enhanced-ai-pipeline","statusCode":200,"timestamp":"2025-08-05 09:00:45","type":"api_call","url":"/api/save-key","userId":null}

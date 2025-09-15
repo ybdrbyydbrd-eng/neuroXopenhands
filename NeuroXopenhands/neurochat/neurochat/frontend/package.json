@@ -1,0 +1,20 @@
+{
+  "name": "neurochat-frontend",
+  "version": "1.0.0",
+  "description": "NeuroChat Frontend - Advanced AI Platform UI",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "ai",
+    "chat",
+    "frontend"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "pm2": "^6.0.10"
+  }
+}
