@@ -18,23 +18,53 @@ let __API_BASE = (window.NEUROCHAT_API_BASE || (document.querySelector('meta[nam
 async function apiFetch(path, options = {}) {
     const candidates = [
         __API_BASE,
-        'http://localhost:12000' // Fallback for local development
+        'http://localhost:12000', // Fallback for local development
+        window.location.origin // Try current origin as last resort
     ];
     let lastErr = null;
+    let lastResponse = null;
+    
     for (const base of candidates) {
         try {
             const url = base ? base + path : path;
-            const res = await fetch(url, options);
+            console.log(`Trying API at: ${url}`);
+            
+            const res = await fetch(url, {
+                ...options,
+                headers: {
+                    'Content-Type': 'application/json',
+                    ...(options.headers || {})
+                }
+            });
+            
             if (res.ok || res.status === 202) {
                 if (!__API_BASE && base) __API_BASE = base; // cache working base
                 return res;
             }
+            
+            // Store the response for error details
+            lastResponse = res;
             lastErr = new Error(`HTTP ${res.status} for ${url}`);
+            
+            // If it's a 401/403, likely API key issue
+            if (res.status === 401 || res.status === 403) {
+                const data = await res.json().catch(() => ({}));
+                lastErr = new Error(data.error || data.message || 'Authentication failed - please check your API key');
+            } else if (res.status >= 500) {
+                const data = await res.json().catch(() => ({}));
+                lastErr = new Error(data.error || data.message || `Server error (${res.status})`);
+            } else if (res.status >= 400) {
+                const data = await res.json().catch(() => ({}));
+                lastErr = new Error(data.error || data.message || `Client error (${res.status})`);
+            }
         } catch (e) {
+            console.error(`Failed to connect to ${base}:`, e.message);
             lastErr = e;
         }
     }
-    throw lastErr || new Error('All API bases failed');
+    
+    // Throw the most informative error
+    throw lastErr || new Error('Unable to connect to the backend API');
 }
 
 // DOM elements
@@ -75,12 +105,14 @@ const elements = {
     consoleModal: document.getElementById('consoleModal'),
     closeConsole: document.getElementById('closeConsole'),
     consoleModalContent: document.getElementById('consoleModalContent'),
-    // OpenHands integration elements
+    // NeuroChat Agent integration elements
     openhandsContainer: document.getElementById('openhandsContainer'),
     openhandsStatus: document.getElementById('openhandsStatus'),
     openhandsIframe: document.getElementById('openhandsIframe'),
     retryOpenHands: document.getElementById('retryOpenHands'),
-    checkDockerBtn: document.getElementById('checkDockerBtn')
+    checkDockerBtn: document.getElementById('checkDockerBtn'),
+    // Back to Home button
+    backToHomeBtn: document.getElementById('backToHomeBtn')
 };
 
 // Initialize the application
@@ -154,7 +186,7 @@ function setupEventListeners() {
         elements.closeConsole.addEventListener('click', closeConsoleModal);
     }
     
-    // OpenHands integration controls
+    // NeuroChat Agent integration controls
     if (elements.retryOpenHands) {
         elements.retryOpenHands.addEventListener('click', initializeOpenHands);
     }
@@ -168,6 +200,9 @@ function setupEventListeners() {
     elements.apiKeyCancel.addEventListener('click', closeApiKeyModal);
     elements.apiKeySave.addEventListener('click', saveApiKey);
     elements.apiKeyModal.addEventListener('click', handleApiKeyModalClick);
+    
+    // Back to Home button
+    elements.backToHomeBtn.addEventListener('click', handleBackToHome);
     
     // Theme switcher
     setupThemeSwitcher();
@@ -185,7 +220,7 @@ function setupEventListeners() {
     // Settings options
     setupSettingsOptions();
     
-    // Agent Mode is now handled by OpenHands iframe
+    // Agent Mode is now handled by NeuroChat Agent iframe
 }
 
 function setupWelcomeSuggestions() {
@@ -358,7 +393,7 @@ function adjustTextareaHeight() {
 function handleKeyDown(event) {
     if (event.key === 'Enter' && !event.shiftKey) {
         event.preventDefault();
-        // In Agent Mode, don't handle messages since OpenHands handles input
+        // In Agent Mode, don't handle messages since NeuroChat Agent handles input
         if (!isAgentMode) {
             sendMessage();
         }
@@ -449,9 +484,31 @@ async function sendMessage() {
     } catch (error) {
         console.error('Error sending message:', error);
         removeMessage(thinkingMessageId);
-        addMessage('Sorry, there was an error processing your request. Please try again.', 'error');
+        
+        // Provide more specific error messages
+        let errorMessage = 'Sorry, there was an error processing your request. ';
+        if (error.message.includes('Authentication failed') || error.message.includes('Invalid API key')) {
+            errorMessage = 'Authentication failed. Please check your API key in settings.';
+            // Optionally open the API key modal
+            setTimeout(() => openApiKeyModal(), 1000);
+        } else if (error.message.includes('Unable to connect') || error.message.includes('Failed to connect')) {
+            errorMessage = 'Unable to connect to the backend. Please ensure the server is running on port 12000.';
+        } else if (error.message.includes('HTTP 401') || error.message.includes('Client error (401)')) {
+            errorMessage = 'Invalid API key. Please update your API key in settings.';
+            setTimeout(() => openApiKeyModal(), 1000);
+        } else if (error.message.includes('Network connection error')) {
+            errorMessage = 'Network connection error. Please check your internet connection.';
+        } else if (error.message.includes('timeout') || error.message.includes('ETIMEDOUT')) {
+            errorMessage = 'Request timed out. Please try again.';
+        } else if (error.message.includes('Server error')) {
+            errorMessage = 'Server error occurred. Please try again later.';
+        } else {
+            errorMessage += error.message;
+        }
+        
+        addMessage(errorMessage, 'error');
         setLoadingState(false);
-        showToast('Failed to send message', 'error');
+        showToast('Failed to send message: ' + error.message, 'error');
     }
 }
 
@@ -720,14 +777,14 @@ function activateAgentMode() {
     elements.welcomeState.classList.add('hidden');
     elements.chatWindow.classList.remove('active');
     
-    // Initialize OpenHands iframe
+    // Initialize NeuroChat Agent iframe
     initializeOpenHands();
 }
 
-// OpenHands Integration Functions
+// NeuroChat Agent Integration Functions
 async function initializeOpenHands() {
     if (!elements.openhandsContainer || !elements.openhandsStatus || !elements.openhandsIframe) {
-        console.error('OpenHands elements not found');
+        console.error('NeuroChat Agent elements not found');
         return;
     }
     
@@ -737,20 +794,20 @@ async function initializeOpenHands() {
     elements.openhandsIframe.style.display = 'none';
     
     // Update status message
-    updateOpenHandsStatus('Connecting to OpenHands...', 'Starting OpenHands on localhost:3000');
+    updateOpenHandsStatus('Connecting to NeuroChat Agent...', 'Starting NeuroChat Agent on localhost:3000');
     
     try {
-        // Check if OpenHands is already running
+        // Check if NeuroChat Agent is already running
         const isRunning = await checkOpenHandsStatus();
         
         if (isRunning) {
             await loadOpenHandsIframe();
         } else {
-            showOpenHandsError('OpenHands is not running on localhost:3000');
+            showOpenHandsError('NeuroChat Agent is not running on localhost:3000');
         }
     } catch (error) {
-        console.error('Error initializing OpenHands:', error);
-        showOpenHandsError('Failed to connect to OpenHands');
+        console.error('Error initializing NeuroChat Agent:', error);
+        showOpenHandsError('Failed to connect to NeuroChat Agent');
     }
 }
 
@@ -766,13 +823,13 @@ async function checkOpenHandsStatus() {
         // If no error is thrown, we assume the service is running
         return true;
     } catch (error) {
-        console.log('OpenHands not accessible:', error.message);
+        console.log('NeuroChat Agent not accessible:', error.message);
         return false;
     }
 }
 
 async function loadOpenHandsIframe() {
-    updateOpenHandsStatus('Loading OpenHands...', 'Please wait while OpenHands loads');
+    updateOpenHandsStatus('Loading NeuroChat Agent...', 'Please wait while NeuroChat Agent loads');
     
     return new Promise((resolve, reject) => {
         // Set iframe source
@@ -780,26 +837,26 @@ async function loadOpenHandsIframe() {
         
         // Handle iframe load
         elements.openhandsIframe.onload = () => {
-            console.log('OpenHands iframe loaded successfully');
+            console.log('NeuroChat Agent iframe loaded successfully');
             elements.openhandsContainer.classList.add('loaded');
             elements.openhandsStatus.style.display = 'none';
             elements.openhandsIframe.style.display = 'block';
-            showToast('OpenHands loaded successfully', 'success');
+            showToast('NeuroChat Agent loaded successfully', 'success');
             resolve();
         };
         
         // Handle iframe error
         elements.openhandsIframe.onerror = (error) => {
-            console.error('Failed to load OpenHands iframe:', error);
-            showOpenHandsError('Failed to load OpenHands interface');
+            console.error('Failed to load NeuroChat Agent iframe:', error);
+            showOpenHandsError('Failed to load NeuroChat Agent interface');
             reject(error);
         };
         
         // Timeout after 30 seconds
         setTimeout(() => {
             if (!elements.openhandsContainer.classList.contains('loaded')) {
-                console.warn('OpenHands iframe load timeout');
-                showOpenHandsError('OpenHands loading timed out');
+                console.warn('NeuroChat Agent iframe load timeout');
+                showOpenHandsError('NeuroChat Agent loading timed out');
                 reject(new Error('Timeout'));
             }
         }, 30000);
@@ -820,20 +877,20 @@ function showOpenHandsError(message) {
 }
 
 async function checkDockerStatus() {
-    updateOpenHandsStatus('Checking Docker Status...', 'Verifying OpenHands Docker container');
+    updateOpenHandsStatus('Checking Docker Status...', 'Verifying NeuroChat Agent Docker container');
     
     try {
-        // Try to check if Docker is running and OpenHands container exists
+        // Try to check if Docker is running and NeuroChat Agent container exists
         // Note: This is a basic check - in a real implementation, you might want to
         // call a backend endpoint that can actually check Docker status
         const isRunning = await checkOpenHandsStatus();
         
         if (isRunning) {
-            showToast('OpenHands is running on localhost:3000', 'success');
+            showToast('NeuroChat Agent is running on localhost:3000', 'success');
             await loadOpenHandsIframe();
         } else {
-            showOpenHandsError('OpenHands Docker container is not running. Please start it using the command above.');
-            showToast('OpenHands is not running. Please start the Docker container.', 'warning');
+            showOpenHandsError('NeuroChat Agent Docker container is not running. Please start it using the command above.');
+            showToast('NeuroChat Agent is not running. Please start the Docker container.', 'warning');
         }
     } catch (error) {
         console.error('Error checking Docker status:', error);
@@ -1204,6 +1261,12 @@ function toggleAgentMode() {
             elements.welcomeState.classList.remove('hidden');
         }
     }
+}
+
+// Back to Home functionality
+function handleBackToHome() {
+    // Navigate back to neuroXhaggingface main page
+    window.location.href = 'http://localhost:5173/';
 }
 
 // OpenHands Agent Mode functions removed - handled by iframe

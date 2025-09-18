@@ -203,14 +203,15 @@ class APIProviders {
       return null;
     }
     
-    // OpenAI keys typically start with 'sk-'
-    if (apiKey.startsWith('sk-')) {
-      return 'openai';
+    // Google keys are typically alphanumeric with specific length (39 chars)
+    // Match AIzaSy... pattern for Google AI keys
+    if (apiKey.match(/^AIza[A-Za-z0-9\-_]{35}$/)) {
+      return 'google';
     }
     
-    // Google keys are typically alphanumeric with specific length
-    if (apiKey.match(/^[A-Za-z0-9]{39}$/)) {
-      return 'google';
+    // OpenAI keys typically start with 'sk-'
+    if (apiKey.startsWith('sk-') && !apiKey.startsWith('sk-ant-') && !apiKey.startsWith('sk-or-')) {
+      return 'openai';
     }
     
     // Anthropic keys typically start with 'sk-ant-'
@@ -232,25 +233,47 @@ class APIProviders {
       // Detect provider if not provided
       let provider = providerHint || await this.detectProvider(apiKey);
       
-      if (!provider) {
-        // Try each provider until one works
-        for (const providerName of ['openai', 'google', 'anthropic', 'openrouter']) {
-          const result = await this.tryProvider(apiKey, providerName);
-          if (result.success) {
-            return result;
-          }
+      // Store all failed attempts for better error reporting
+      const failedAttempts = [];
+      
+      // Try the detected/specified provider first
+      if (provider) {
+        const result = await this.tryProvider(apiKey, provider);
+        if (result.success) {
+          logger.info(`API key validated successfully with detected provider: ${provider}`);
+          return result;
         }
+        failedAttempts.push({ provider: provider, error: result.error });
+        logger.warn('Detected provider authentication failed, trying fallbacks', { provider, error: result.error });
+      }
+      
+      // Try all providers as fallback (prioritize Google and OpenAI for common keys)
+      const providerOrder = provider ? 
+        ['google', 'openai', 'anthropic', 'openrouter'].filter(p => p !== provider) :
+        ['google', 'openai', 'anthropic', 'openrouter'];
         
-        throw new Error('Invalid API key - could not authenticate with any supported provider');
+      for (const providerName of providerOrder) {
+        const result = await this.tryProvider(apiKey, providerName);
+        if (result.success) {
+          if (provider && provider !== providerName) {
+            logger.info(`API key worked with fallback provider: ${providerName} (detected: ${provider})`);
+          } else {
+            logger.info(`API key validated successfully with provider: ${providerName}`);
+          }
+          return result;
+        }
+        failedAttempts.push({ provider: providerName, error: result.error });
       }
       
-      // Try the detected/specified provider
-      const result = await this.tryProvider(apiKey, provider);
-      if (result.success) {
-        return result;
-      }
+      // Log all failed attempts for debugging
+      logger.warn('All provider authentication attempts failed', { 
+        failedAttempts,
+        keyPrefix: apiKey ? apiKey.substring(0, 6) + '...' : 'null'
+      });
       
-      throw new Error(`Invalid API key for provider ${provider}`);
+      // Provide more specific error message
+      const commonErrors = failedAttempts.map(a => a.error).join(', ');
+      throw new Error(`Invalid API key - authentication failed with all supported providers (${commonErrors})`);
       
     } catch (error) {
       logger.logError(error, { component: 'apiProviders', operation: 'validateAndDiscoverModels' });
@@ -284,12 +307,29 @@ class APIProviders {
       // For other providers, try to fetch models
       const url = provider.baseUrl + provider.modelsEndpoint + (provider.urlParams ? provider.urlParams(apiKey) : '');
       
+      logger.debug(`Attempting to validate API key with ${providerName}`, { url: url.replace(apiKey, 'REDACTED') });
+      
       const response = await axios({
         method: 'GET',
         url: url,
         headers: provider.headers(apiKey),
-        timeout: 10000
+        timeout: 10000,
+        validateStatus: function (status) {
+          // Don't throw on any status, we'll handle it
+          return true;
+        }
       });
+      
+      // Check response status
+      if (response.status === 401 || response.status === 403) {
+        logger.debug(`Authentication failed for ${providerName}`, { status: response.status });
+        return { success: false, error: `Authentication failed (${response.status})` };
+      }
+      
+      if (response.status !== 200) {
+        logger.debug(`Unexpected status from ${providerName}`, { status: response.status });
+        return { success: false, error: `HTTP ${response.status}` };
+      }
       
       const models = provider.parseModels(response);
       
@@ -307,16 +347,8 @@ class APIProviders {
       return { success: false, error: 'No models found' };
       
     } catch (error) {
-      // Check if it's an authentication error
-      if (error.response) {
-        const status = error.response.status;
-        if (status === 401 || status === 403) {
-          logger.warn(`Authentication failed for ${providerName}`, { status });
-          return { success: false, error: 'Authentication failed' };
-        }
-      }
-      
-      logger.debug(`Provider ${providerName} failed:`, error.message);
+      // Network or parsing error
+      logger.debug(`Provider ${providerName} failed with error:`, error.message);
       return { success: false, error: error.message };
     }
   }

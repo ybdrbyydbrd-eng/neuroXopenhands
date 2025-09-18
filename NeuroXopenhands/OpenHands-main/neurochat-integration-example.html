@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your App with NeuroChat Integration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+        }
+        
+        /* Top Navigation Bar - Always Visible */
+        .top-nav {
+            background: #fff;
+            border-bottom: 1px solid #e1e5e9;
+            padding: 12px 24px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .nav-brand {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2563eb;
+        }
+        
+        .nav-actions {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .nav-button {
+            padding: 8px 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        
+        .nav-button:hover {
+            background: #f9fafb;
+            border-color: #2563eb;
+        }
+        
+        .nav-button.active {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+        
+        /* Main Content Area */
+        .main-content {
+            margin-top: 60px; /* Account for fixed nav */
+            height: calc(100vh - 60px);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Default content when not in agent mode */
+        .default-content {
+            padding: 40px;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* NeuroChat iframe container */
+        .neurochat-container {
+            width: 100%;
+            height: 100%;
+            display: none;
+            border: none;
+            background: white;
+        }
+        
+        .neurochat-container.active {
+            display: block;
+        }
+        
+        .neurochat-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+        }
+        
+        /* Loading state */
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #e5e7eb;
+            border-top: 2px solid #2563eb;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .top-nav {
+                padding: 8px 16px;
+            }
+            
+            .nav-actions {
+                gap: 8px;
+            }
+            
+            .nav-button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation Bar (Always Visible) -->
+    <nav class="top-nav">
+        <div class="nav-brand">Your Application</div>
+        <div class="nav-actions">
+            <button class="nav-button" id="dashboardBtn">Dashboard</button>
+            <button class="nav-button" id="agentBtn">AI Agent</button>
+            <button class="nav-button" id="settingsBtn">Settings</button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Default Content (when not in agent mode) -->
+        <div class="default-content" id="defaultContent">
+            <h1>Welcome to Your Application</h1>
+            <p>Click "AI Agent" in the top navigation to launch NeuroChat</p>
+            <br>
+            <div style="background: #f0f9ff; padding: 20px; border-radius: 8px; border-left: 4px solid #2563eb;">
+                <h3 style="color: #1e40af; margin-bottom: 8px;">NeuroChat Integration</h3>
+                <p style="color: #374151; font-size: 14px;">
+                    NeuroChat (formerly OpenHands) is now integrated into your application. 
+                    Switch to Agent mode to access the full AI development environment.
+                </p>
+            </div>
+        </div>
+
+        <!-- NeuroChat iframe container -->
+        <div class="neurochat-container" id="neuroChatContainer">
+            <iframe 
+                id="neuroChatIframe"
+                class="neurochat-iframe"
+                src=""
+                title="NeuroChat AI Agent Interface"
+                allow="clipboard-read; clipboard-write"
+                sandbox="allow-same-origin allow-scripts allow-forms allow-downloads allow-popups">
+            </iframe>
+            <div class="loading-overlay" id="loadingOverlay">
+                <div class="spinner"></div>
+                Loading NeuroChat...
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Configuration - Update these URLs to match your NeuroChat deployment
+        const NEUROCHAT_CONFIG = {
+            // If running locally with the Docker setup we just fixed
+            baseUrl: 'http://localhost:3000',
+            
+            // If running on a different domain/port, update accordingly
+            // baseUrl: 'https://your-neurochat-domain.com',
+            
+            // Optional: Add authentication or session parameters
+            getIframeUrl: function() {
+                return this.baseUrl;
+            }
+        };
+
+        // DOM elements
+        const dashboardBtn = document.getElementById('dashboardBtn');
+        const agentBtn = document.getElementById('agentBtn');
+        const settingsBtn = document.getElementById('settingsBtn');
+        const defaultContent = document.getElementById('defaultContent');
+        const neuroChatContainer = document.getElementById('neuroChatContainer');
+        const neuroChatIframe = document.getElementById('neuroChatIframe');
+        const loadingOverlay = document.getElementById('loadingOverlay');
+
+        // Current mode state
+        let currentMode = 'dashboard';
+
+        // Mode switching functionality
+        function switchMode(mode) {
+            // Update button states
+            document.querySelectorAll('.nav-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Hide all content
+            defaultContent.style.display = 'none';
+            neuroChatContainer.classList.remove('active');
+
+            currentMode = mode;
+
+            switch (mode) {
+                case 'agent':
+                    agentBtn.classList.add('active');
+                    showNeuroChat();
+                    break;
+                case 'settings':
+                    settingsBtn.classList.add('active');
+                    showDefaultContent('Settings', 'Settings panel would go here');
+                    break;
+                case 'dashboard':
+                default:
+                    dashboardBtn.classList.add('active');
+                    showDefaultContent('Dashboard', 'Your main dashboard content would go here');
+                    break;
+            }
+        }
+
+        function showDefaultContent(title = 'Welcome', message = 'Select a mode from the navigation') {
+            const content = defaultContent;
+            content.innerHTML = `
+                <h1>${title}</h1>
+                <p>${message}</p>
+            `;
+            content.style.display = 'flex';
+        }
+
+        function showNeuroChat() {
+            neuroChatContainer.classList.add('active');
+            loadingOverlay.style.display = 'flex';
+
+            // Set the iframe URL
+            const iframeUrl = NEUROCHAT_CONFIG.getIframeUrl();
+            neuroChatIframe.src = iframeUrl;
+
+            // Hide loading overlay once iframe loads
+            neuroChatIframe.onload = function() {
+                loadingOverlay.style.display = 'none';
+            };
+
+            // Handle iframe load errors
+            neuroChatIframe.onerror = function() {
+                loadingOverlay.innerHTML = `
+                    <div style="text-align: center;">
+                        <div style="color: #ef4444; font-weight: 500;">Failed to load NeuroChat</div>
+                        <div style="font-size: 12px; margin-top: 4px;">
+                            Check that NeuroChat is running at: ${iframeUrl}
+                        </div>
+                        <button onclick="location.reload()" style="margin-top: 12px; padding: 6px 12px; background: #2563eb; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                            Retry
+                        </button>
+                    </div>
+                `;
+            };
+        }
+
+        // Event listeners
+        dashboardBtn.addEventListener('click', () => switchMode('dashboard'));
+        agentBtn.addEventListener('click', () => switchMode('agent'));
+        settingsBtn.addEventListener('click', () => switchMode('settings'));
+
+        // Handle browser back/forward navigation
+        window.addEventListener('popstate', function(event) {
+            const mode = event.state?.mode || 'dashboard';
+            switchMode(mode);
+        });
+
+        // Update browser history when switching modes
+        function updateHistory(mode) {
+            history.pushState({ mode: mode }, '', `#${mode}`);
+        }
+
+        // Enhanced event listeners with history
+        dashboardBtn.addEventListener('click', () => { switchMode('dashboard'); updateHistory('dashboard'); });
+        agentBtn.addEventListener('click', () => { switchMode('agent'); updateHistory('agent'); });
+        settingsBtn.addEventListener('click', () => { switchMode('settings'); updateHistory('settings'); });
+
+        // Initialize based on URL hash
+        window.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash.substring(1);
+            const initialMode = ['dashboard', 'agent', 'settings'].includes(hash) ? hash : 'dashboard';
+            switchMode(initialMode);
+        });
+
+        // Optional: Handle iframe messaging for better integration
+        window.addEventListener('message', function(event) {
+            // Verify origin for security
+            if (event.origin !== NEUROCHAT_CONFIG.baseUrl) {
+                return;
+            }
+
+            // Handle messages from NeuroChat iframe
+            const message = event.data;
+            console.log('Message from NeuroChat:', message);
+            
+            // You can add custom handling here, for example:
+            // - Update navigation based on NeuroChat state
+            // - Show notifications
+            // - Handle authentication
+        });
+
+        // Optional: Send messages to NeuroChat iframe
+        function sendMessageToNeuroChat(message) {
+            if (neuroChatIframe.contentWindow) {
+                neuroChatIframe.contentWindow.postMessage(message, NEUROCHAT_CONFIG.baseUrl);
+            }
+        }
+
+        // Utility function to check if NeuroChat is available
+        async function checkNeuroChatAvailability() {
+            try {
+                const response = await fetch(`${NEUROCHAT_CONFIG.baseUrl}/health`);
+                return response.ok;
+            } catch (error) {
+                console.warn('NeuroChat health check failed:', error);
+                return false;
+            }
+        }
+
+        // Optional: Periodically check NeuroChat availability
+        setInterval(async () => {
+            if (currentMode === 'agent') {
+                const isAvailable = await checkNeuroChatAvailability();
+                if (!isAvailable) {
+                    console.warn('NeuroChat appears to be unavailable');
+                    // You could show a warning message or switch modes
+                }
+            }
+        }, 30000); // Check every 30 seconds
+    </script>
+</body>
+</html>

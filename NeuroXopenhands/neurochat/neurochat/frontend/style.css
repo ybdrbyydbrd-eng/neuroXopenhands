@@ -609,6 +609,51 @@ body {
     gap: var(--space-3);
 }
 
+/* Back to Home Button */
+.back-to-home-btn {
+    background: var(--light-surface);
+    border: 1px solid var(--light-border);
+    color: var(--text-primary);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 0.875rem;
+    min-width: 140px;
+    font-family: inherit;
+    text-decoration: none;
+}
+
+.back-to-home-btn:hover {
+    background: var(--success);
+    border-color: var(--success);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.back-to-home-btn svg {
+    width: 16px;
+    height: 16px;
+    color: currentColor;
+}
+
+/* Back to Home Button - Dark Theme */
+body.dark-theme .back-to-home-btn {
+    background: var(--dark-surface);
+    border-color: var(--dark-border);
+    color: var(--dark-text-primary);
+}
+
+body.dark-theme .back-to-home-btn:hover {
+    background: var(--success);
+    border-color: var(--success);
+    color: white;
+}
+
 /* Agent Mode Toggle */
 .agent-mode-toggle {
     position: relative;
@@ -1300,7 +1345,7 @@ body {
     margin-top: 2px;
 }
 
-/* Agent Mode Panels - OpenHands Integration */
+/* Agent Mode Panels - NeuroChat Agent Integration */
 .agent-mode-panels {
     position: fixed;
     top: 64px;
@@ -1321,7 +1366,7 @@ body {
     transform: translateY(0);
 }
 
-/* OpenHands Container */
+/* NeuroChat Agent Container */
 .openhands-container {
     width: 100%;
     height: 100%;
@@ -1333,7 +1378,7 @@ body {
     border: 1px solid var(--light-border);
 }
 
-/* OpenHands Status Screen */
+/* NeuroChat Agent Status Screen */
 .openhands-status {
     width: 100%;
     height: 100%;
@@ -1459,7 +1504,7 @@ body {
     background: #059669;
 }
 
-/* OpenHands iframe styles */
+/* NeuroChat Agent iframe styles */
 #openhandsIframe {
     width: 100%;
     height: 100%;

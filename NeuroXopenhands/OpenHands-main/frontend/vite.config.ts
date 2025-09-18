@@ -9,7 +9,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig(({ mode }) => {
   const {
-    VITE_BACKEND_HOST = "127.0.0.1:3000",
+    VITE_BACKEND_HOST = "0.0.0.0:3000",
     VITE_USE_TLS = "false",
     VITE_FRONTEND_PORT = "3001",
     VITE_INSECURE_SKIP_VERIFY = "false",
@@ -99,6 +99,15 @@ export default defineConfig(({ mode }) => {
           changeOrigin: true,
           secure: !INSECURE_SKIP_VERIFY,
           // rewriteWsOrigin: true,
+        },
+        "/vscode": {
+          target: "http://localhost:8080",
+          changeOrigin: true,
+          secure: false,
+          headers: {
+            "X-Frame-Options": "ALLOWALL",
+            "Content-Security-Policy": "frame-ancestors *"
+          }
         },
       },
       watch: {

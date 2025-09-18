@@ -207,31 +207,68 @@ class DatabaseManager {
     }
   }
 
+  // Check if database services are available
+  isRedisAvailable() {
+    return this.redisClient && this.redisClient.isOpen;
+  }
+  
+  isMongoDBAvailable() {
+    return mongoose.connection.readyState === 1;
+  }
+  
+  // Get database status for UI display
+  getDatabaseStatus() {
+    return {
+      redis: {
+        available: this.isRedisAvailable(),
+        status: this.redisClient ? 'connected' : 'disabled'
+      },
+      mongodb: {
+        available: this.isMongoDBAvailable(),
+        status: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected'
+      },
+      gracefulDegradation: true // App works without databases
+    };
+  }
+
   // Health check
   async healthCheck() {
     const health = {
       redis: false,
       mongodb: false,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+      degraded: false,
+      message: 'All systems operational'
     };
 
     try {
       // Check Redis
-      if (this.redisClient) {
+      if (this.redisClient && this.redisClient.isOpen) {
         await this.redisClient.ping();
         health.redis = true;
       }
     } catch (error) {
-      logger.logError(error, { component: 'health-check', service: 'redis' });
+      logger.debug('Redis health check failed', { error: error.message });
+      health.degraded = true;
     }
 
     try {
       // Check MongoDB
       if (mongoose.connection.readyState === 1) {
+        // Perform a simple operation to verify connection
+        await mongoose.connection.db.admin().ping();
         health.mongodb = true;
       }
     } catch (error) {
-      logger.logError(error, { component: 'health-check', service: 'mongodb' });
+      logger.debug('MongoDB health check failed', { error: error.message });
+      health.degraded = true;
+    }
+    
+    // Update message based on status
+    if (!health.redis && !health.mongodb) {
+      health.message = 'Running in minimal mode (no databases)';
+    } else if (health.degraded) {
+      health.message = 'Running with partial database connectivity';
     }
 
     return health;
