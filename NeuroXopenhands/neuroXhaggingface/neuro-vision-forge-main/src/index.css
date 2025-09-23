@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NeuroChat Fusion Design System - Dark Mode with Neon Accents */
+
+@layer base {
+  :root {
+    /* NeuroChat Fusion Color Palette */
+    --bg: 219 24% 9%;           /* #0B0F17 - Main Background */
+    --surface: 218 30% 11%;     /* #0F1721 - Cards/Surface */
+    --accent-1: 188 100% 62%;   /* #3FD3FF - Neon Blue */
+    --accent-2: 258 78% 73%;    /* #9B7CFF - Neon Purple */
+    --success: 160 100% 44%;    /* #00E0A3 - Token/Success */
+    --muted: 217 17% 63%;       /* #98A0B3 - Muted Text */
+    --text-primary: 0 0% 100%;  /* Pure white text */
+    --text-secondary: 0 0% 85%; /* Light gray text */
+    
+    /* Semantic tokens mapped to NeuroChat design */
+    --background: var(--bg);
+    --foreground: var(--text-primary);
+    --card: var(--surface);
+    --card-foreground: var(--text-primary);
+    --popover: var(--surface);
+    --popover-foreground: var(--text-primary);
+    --primary: var(--accent-1);
+    --primary-foreground: var(--bg);
+    --secondary: var(--surface);
+    --secondary-foreground: var(--text-primary);
+    --muted: var(--surface);
+    --muted-foreground: var(--text-secondary);
+    --accent: var(--accent-2);
+    --accent-foreground: var(--text-primary);
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: var(--text-primary);
+    --border: 217 30% 18%;
+    --input: var(--surface);
+    --ring: var(--accent-1);
+    
+    /* Sidebar specific */
+    --sidebar-background: 218 30% 8%;
+    --sidebar-foreground: var(--text-primary);
+    --sidebar-primary: var(--accent-1);
+    --sidebar-primary-foreground: var(--bg);
+    --sidebar-accent: var(--surface);
+    --sidebar-accent-foreground: var(--text-primary);
+    --sidebar-border: 217 30% 18%;
+    --sidebar-ring: var(--accent-1);
+
+    /* Design System Tokens */
+    --radius: 12px;
+    --card-radius: 12px;
+    --shadow-1: 0 6px 20px rgba(59, 62, 76, 0.4);
+    --shadow-glow: 0 0 20px rgba(63, 211, 255, 0.3);
+    --shadow-glow-purple: 0 0 20px rgba(155, 124, 255, 0.3);
+    --grid-max: 1200px;
+    
+    /* Typography Scale */
+    --fs-xxl: 28px;
+    --fs-xl: 20px;
+    --fs-lg: 18px;
+    --fs-md: 16px;
+    --fs-sm: 14px;
+    --fs-xs: 12px;
+    
+    /* Spacing Scale */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-xxl: 48px;
+    
+    /* Layout */
+    --sidebar-width: 220px;
+    --chat-width: 380px;
+    
+    /* Animations */
+    --transition-fast: 200ms ease-out;
+    --transition-normal: 300ms ease-out;
+    --transition-slow: 500ms ease-out;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  /* Custom component styles */
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glow-effect-purple {
+    box-shadow: var(--shadow-glow-purple);
+  }
+  
+  .typewriter-cursor::after {
+    content: '|';
+    animation: blink 1s infinite;
+    color: hsl(var(--accent-1));
+  }
+  
+  .scan-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--accent-1)), transparent);
+    animation: scan 2s ease-in-out;
+  }
+  
+  .robot-enter {
+    animation: robotEnter 900ms ease-out forwards;
+  }
+  
+  .robot-walk {
+    animation: robotWalk 700ms ease-in-out forwards;
+  }
+}
+
+@layer utilities {
+  .grid-container {
+    max-width: var(--grid-max);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+  }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes scan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes robotEnter {
+  0% {
+    transform: translateX(-100px) translateY(100px) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(50px) translateY(-20px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes robotWalk {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(calc(100vw - 400px)) translateY(-50px);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px hsl(var(--accent-1)); }
+  50% { box-shadow: 0 0 20px hsl(var(--accent-1)), 0 0 30px hsl(var(--accent-1)); }
+}

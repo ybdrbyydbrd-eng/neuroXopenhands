@@ -15,7 +15,7 @@ from starlette.types import ASGIApp
 
 class LocalhostCORSMiddleware(CORSMiddleware):
     """Custom CORS middleware that allows any request from localhost/127.0.0.1 domains,
-    while using standard CORS rules for other origins.
+    while using standard CORS rules for other origins. Also enables iframe embedding.
     """
 
     def __init__(self, app: ASGIApp) -> None:
@@ -32,6 +32,7 @@ class LocalhostCORSMiddleware(CORSMiddleware):
             allow_credentials=True,
             allow_methods=['*'],
             allow_headers=['*'],
+            expose_headers=['X-Frame-Options', 'Content-Security-Policy'],
         )
 
     def is_allowed_origin(self, origin: str) -> bool:
@@ -46,6 +47,25 @@ class LocalhostCORSMiddleware(CORSMiddleware):
         # For missing origin or other origins, use the parent class's logic
         result: bool = super().is_allowed_origin(origin)
         return result
+
+
+class IframeMiddleware(BaseHTTPMiddleware):
+    """Middleware to enable iframe embedding by setting appropriate headers"""
+
+    async def dispatch(
+        self, request: Request, call_next: RequestResponseEndpoint
+    ) -> Response:
+        response = await call_next(request)
+        
+        # Allow iframe embedding from any origin (for development)
+        response.headers['X-Frame-Options'] = 'ALLOWALL'
+        response.headers['Content-Security-Policy'] = 'frame-ancestors *'
+        
+        # Also add additional headers for VS Code integration
+        response.headers['Cross-Origin-Embedder-Policy'] = 'unsafe-none'
+        response.headers['Cross-Origin-Opener-Policy'] = 'same-origin-allow-popups'
+        
+        return response
 
 
 class CacheControlMiddleware(BaseHTTPMiddleware):

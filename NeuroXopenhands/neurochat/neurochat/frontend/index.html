@@ -112,6 +112,14 @@
             </div>
             
             <div class="header-right">
+                <button class="back-to-home-btn" id="backToHomeBtn" title="Back to Model Explorer">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                    </svg>
+                    <span>Back to Home</span>
+                </button>
+                
                 <div class="mode-toggle-group" id="modeToggleGroup">
                     <button class="mode-btn active" id="chatModeBtn">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -275,13 +283,13 @@
                                     <polyline points="12,6 12,12 16,14"></polyline>
                                 </svg>
                             </div>
-                            <h3>Connecting to OpenHands...</h3>
-                            <p>Starting OpenHands on <code>localhost:3000</code></p>
+                            <h3>Connecting to NeuroChat Agent...</h3>
+                            <p>Starting NeuroChat Agent on <code>localhost:3000</code></p>
                             <div class="loading-spinner"></div>
                             <div class="status-instructions">
-                                <p>Make sure OpenHands Docker container is running:</p>
+                                <p>Make sure NeuroChat Agent Docker container is running:</p>
                                 <div class="docker-command">
-                                    <code>docker run -it --rm --pull=always -e SANDBOX_RUNTIME_CONTAINER_IMAGE=docker.all-hands.dev/all-hands-ai/runtime:0.54-nikolaik -e LOG_ALL_EVENTS=true -v /var/run/docker.sock:/var/run/docker.sock -v %USERPROFILE%\.openhands:/.openhands -p 3000:3000 --add-host host.docker.internal:host-gateway --name openhands-app docker.all-hands.dev/all-hands-ai/openhands:0.54</code>
+                                    <code>docker run -it --rm --pull=always -e SANDBOX_RUNTIME_CONTAINER_IMAGE=docker.all-hands.dev/all-hands-ai/runtime:0.54-nikolaik -e LOG_ALL_EVENTS=true -v /var/run/docker.sock:/var/run/docker.sock -v %USERPROFILE%\.openhands:/.openhands -p 3000:3000 --add-host host.docker.internal:host-gateway --name neurochat-agent docker.all-hands.dev/all-hands-ai/openhands:0.54</code>
                                 </div>
                                 <div class="status-actions">
                                     <button class="retry-btn" id="retryOpenHands">
@@ -304,7 +312,7 @@
                         </div>
                     </div>
                     
-                    <!-- OpenHands iframe (hidden initially) -->
+                    <!-- NeuroChat Agent iframe (hidden initially) -->
                     <iframe 
                         id="openhandsIframe" 
                         src="" 

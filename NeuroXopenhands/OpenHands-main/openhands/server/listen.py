@@ -6,6 +6,7 @@ from openhands.server.app import app as base_app
 from openhands.server.listen_socket import sio
 from openhands.server.middleware import (
     CacheControlMiddleware,
+    IframeMiddleware,
     InMemoryRateLimiter,
     LocalhostCORSMiddleware,
     RateLimitMiddleware,
@@ -18,6 +19,7 @@ if os.getenv('SERVE_FRONTEND', 'true').lower() == 'true':
     )
 
 base_app.add_middleware(LocalhostCORSMiddleware)
+base_app.add_middleware(IframeMiddleware)
 base_app.add_middleware(CacheControlMiddleware)
 base_app.add_middleware(
     RateLimitMiddleware,

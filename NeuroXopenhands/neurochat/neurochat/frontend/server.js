@@ -18,6 +18,16 @@ const mimeTypes = {
 };
 
 const server = http.createServer((req, res) => {
+  // CORS headers for Chrome/Firefox compatibility when embedded or cross-origin calls
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  if (req.method === 'OPTIONS') {
+    res.writeHead(204);
+    res.end();
+    return;
+  }
+
   let filePath = path.join(DIRECTORY, req.url === '/' ? 'index.html' : req.url);
   
   const extname = String(path.extname(filePath)).toLowerCase();

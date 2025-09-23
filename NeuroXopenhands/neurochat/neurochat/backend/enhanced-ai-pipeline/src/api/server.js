@@ -76,8 +76,55 @@ class Server {
       crossOriginEmbedderPolicy: false
     }));
 
-    // CORS configuration
-    this.app.use(cors(config.server.cors));
+    // CORS configuration - Allow all origins during development
+    this.app.use(cors({
+      origin: function(origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+        
+        // Allow localhost and local development URLs
+        const allowedOrigins = [
+          'http://localhost:3000',
+          'http://localhost:5173',
+          'http://localhost:3001',
+          'http://localhost:8080',
+          'http://127.0.0.1:3000',
+          'http://127.0.0.1:5173',
+          'http://127.0.0.1:3001',
+          'http://127.0.0.1:8080'
+        ];
+        
+        // Allow all localhost and 127.0.0.1 origins
+        if (origin.includes('localhost') || origin.includes('127.0.0.1')) {
+          return callback(null, true);
+        }
+        
+        // Allow specific origins
+        if (allowedOrigins.includes(origin)) {
+          return callback(null, true);
+        }
+        
+        // Allow all origins in development
+        return callback(null, true);
+      },
+      credentials: true,
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'HEAD', 'PATCH'],
+      allowedHeaders: [
+        'Content-Type', 
+        'Authorization', 
+        'X-Requested-With', 
+        'X-Session-Id', 
+        'X-Request-ID',
+        'Origin',
+        'Accept',
+        'X-Frame-Options',
+        'Access-Control-Allow-Headers'
+      ],
+      exposedHeaders: ['X-Request-ID', 'X-Frame-Options'],
+      maxAge: 86400, // 24 hours
+      preflightContinue: false,
+      optionsSuccessStatus: 200
+    }));
 
     // Rate limiting
     const limiter = rateLimit({
@@ -544,6 +591,7 @@ class Server {
       } catch (error) {
         console.log('=== API KEY VALIDATION ERROR ===');
         console.log('Error:', error.message);
+        console.log('Stack:', error.stack);
         console.log('=================================');
         
         logger.logError(error, { 
@@ -553,11 +601,12 @@ class Server {
         });
         
         // Determine the type of error and respond accordingly
-        if (error.message && (error.message.includes('Invalid API key') || error.message.includes('could not authenticate'))) {
+        if (error.message && (error.message.includes('Invalid API key') || error.message.includes('authentication failed'))) {
           res.status(401).json({
             success: false,
             message: 'Invalid API key - authentication failed with all supported providers',
-            error: 'Please check your API key and try again'
+            error: 'Please check your API key and try again. Supported providers: Google AI, OpenAI, Anthropic, OpenRouter',
+            details: error.message
           });
         } else if (error.message && error.message.includes('Failed to discover models')) {
           res.status(400).json({
@@ -565,11 +614,24 @@ class Server {
             message: 'Unable to discover models with this API key',
             error: error.message
           });
+        } else if (error.code === 'ECONNREFUSED' || error.code === 'ENOTFOUND') {
+          res.status(503).json({
+            success: false,
+            message: 'Network connection error',
+            error: 'Unable to connect to AI service providers. Please check your internet connection.'
+          });
+        } else if (error.code === 'ETIMEDOUT' || error.message.includes('timeout')) {
+          res.status(408).json({
+            success: false,
+            message: 'Request timeout',
+            error: 'The validation request timed out. Please try again.'
+          });
         } else {
           res.status(500).json({
             success: false,
             message: 'Internal server error while processing API key',
-            error: 'Please try again later'
+            error: 'An unexpected error occurred. Please try again later.',
+            debug: process.env.NODE_ENV === 'development' ? error.message : undefined
           });
         }
       }
@@ -773,12 +835,20 @@ class Server {
       const queueHealth = await queueManager.healthCheck();
       health.queues = queueHealth;
       
-      // Determine overall health
-      const isDbHealthy = dbHealth.redis && dbHealth.mongodb;
+      // Get detailed database status
+      health.databaseStatus = databaseManager.getDatabaseStatus();
+      
+      // Determine overall health - app can run without Redis/MongoDB
       const isQueueHealthy = queueHealth.initialized;
       
-      if (!isDbHealthy || !isQueueHealthy) {
+      if (dbHealth.degraded && !isQueueHealthy) {
         health.status = 'degraded';
+        health.message = 'Service partially available - some features may be limited';
+      } else if (dbHealth.degraded || !isQueueHealthy) {
+        health.status = 'degraded';
+        health.message = 'Service running with reduced functionality';
+      } else {
+        health.message = 'All systems operational';
       }
       
     } catch (error) {
