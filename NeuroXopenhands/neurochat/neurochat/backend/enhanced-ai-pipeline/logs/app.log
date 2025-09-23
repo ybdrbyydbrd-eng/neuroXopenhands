@@ -3823,3 +3823,4719 @@
   level: 'info',
   message: 'API Call'
 }
+{
+  service: 'enhanced-ai-pipeline',
+  baseDir: 'C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\workspaces',
+  level: 'info',
+  message: 'Workspace base directory initialized',
+  timestamp: '2025-09-18 23:20:52'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-18 23:20:52'
+}
+{
+  message: 'Redis ready for operations',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-18 23:20:52'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-18 23:20:52'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-18 23:20:52'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-18 23:20:52'
+}
+{
+  message: 'Database connections initialized (Redis and MongoDB are optional)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-18 23:20:52'
+}
+{
+  message: 'MetaModel loaded from disk',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-18 23:20:52'
+}
+{
+  message: 'Loaded 0 training examples',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-18 23:20:52'
+}
+{
+  message: 'Model performance data loaded from cache',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-18 23:20:52'
+}
+{
+  message: 'Queue manager initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-18 23:20:52'
+}
+{
+  message: 'Server initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-18 23:20:52'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  port: 12000,
+  host: '0.0.0.0',
+  env: 'development',
+  pid: 21004,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-09-18 23:20:52'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 7,
+  userId: null,
+  timestamp: '2025-09-18 23:20:56',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 5,
+  userId: null,
+  timestamp: '2025-09-18 23:21:43',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 2,
+  userId: null,
+  timestamp: '2025-09-18 23:22:09',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  baseDir: 'C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\workspaces',
+  level: 'info',
+  message: 'Workspace base directory initialized',
+  timestamp: '2025-09-19 07:42:08'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection error (suppressing further errors)',
+  timestamp: '2025-09-19 07:42:08'
+}
+{
+  message: 'Redis connection failed after 3 attempts, disabling Redis',
+  level: 'warn',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:42:09'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection failed',
+  timestamp: '2025-09-19 07:42:09'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection failed, continuing without Redis cache',
+  timestamp: '2025-09-19 07:42:09'
+}
+{
+  message: 'MongoDB disconnected',
+  level: 'warn',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:42:14'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at _handleConnectionErrors (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:816:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:791:11)\n' +
+    '    at async DatabaseManager.connectMongoDB (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:91:30)\n' +
+    '    at async DatabaseManager.initialize (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:120:9)\n' +
+    '    at async Server.initialize (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:34:7)\n' +
+    '    at async Server.start (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:739:7)',
+  component: 'mongodb',
+  operation: 'connect',
+  timestamp: '2025-09-19 07:42:14',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: 'connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  level: 'warn',
+  message: 'MongoDB connection failed, continuing without MongoDB',
+  timestamp: '2025-09-19 07:42:14'
+}
+{
+  message: 'Database connections initialized (Redis and MongoDB are optional)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:42:14'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongodb\\lib\\sdam\\topology.js:278:38)\n' +
+    '    at listOnTimeout (node:internal/timers:594:17)\n' +
+    '    at process.processTimers (node:internal/timers:529:7)',
+  component: 'mongodb',
+  timestamp: '2025-09-19 07:42:14',
+  level: 'error'
+}
+{
+  message: 'MetaModel loaded from disk',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:42:14'
+}
+{
+  message: 'Loaded 0 training examples',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:42:14'
+}
+{
+  message: 'Queue manager initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:42:14'
+}
+{
+  message: 'Server initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:42:14'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  port: 12000,
+  host: '0.0.0.0',
+  env: 'development',
+  pid: 19016,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-09-19 07:42:14'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 16,
+  userId: null,
+  timestamp: '2025-09-19 07:42:18',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 2,
+  userId: null,
+  timestamp: '2025-09-19 07:42:35',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  message: 'Successfully discovered 13 models from google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:42:49'
+}
+{
+  message: 'API key validated successfully with detected provider: google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:42:49'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  keyPrefix: 'AIzaSy...',
+  provider: 'google',
+  providerName: 'Google AI',
+  modelsDiscovered: 13,
+  ip: '127.0.0.1',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  requestId: '90138efc-e86d-4231-90c4-ca798b1fef6b',
+  level: 'info',
+  message: 'API key validated and models discovered',
+  timestamp: '2025-09-19 07:42:49'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/api/save-key',
+  statusCode: 200,
+  responseTime: 465,
+  userId: null,
+  timestamp: '2025-09-19 07:42:49',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-1.5-flash',
+  models: [ 'gemini-1.5-flash' ],
+  messageLength: 36,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-19 07:42:54'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '3afab2fe-e2d3-4476-8996-16693180b6ce',
+  query: 'Please answer clearly and concisely.',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-19 07:42:54'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [ 'gemini-1.5-flash' ],
+  taskId: '3afab2fe-e2d3-4476-8996-16693180b6ce',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-19 07:42:54'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '07db1d93-f07c-4506-b046-5fe7e6abe80b',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 36,
+  level: 'info',
+  message: 'Calling model gemini-1.5-flash',
+  timestamp: '2025-09-19 07:42:54'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 36,
+  responseLength: 26,
+  responseTime: 492,
+  error: null,
+  timestamp: '2025-09-19 07:42:55',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '3afab2fe-e2d3-4476-8996-16693180b6ce',
+  processingTime: 495,
+  level: 'info',
+  message: 'Query processed successfully',
+  timestamp: '2025-09-19 07:42:55'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 499,
+  userId: null,
+  timestamp: '2025-09-19 07:42:55',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/3afab2fe-e2d3-4476-8996-16693180b6ce',
+  statusCode: 200,
+  responseTime: 1,
+  userId: null,
+  timestamp: '2025-09-19 07:42:55',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-1.5-flash',
+  models: [ 'gemini-1.5-flash' ],
+  messageLength: 2,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-19 07:43:01'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: 'd7e7ae47-6720-4ff6-b540-64ea1fa4eda9',
+  query: 'hi',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-19 07:43:01'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [ 'gemini-1.5-flash' ],
+  taskId: 'd7e7ae47-6720-4ff6-b540-64ea1fa4eda9',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-19 07:43:01'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '8eef9ff0-74e2-4811-b1d5-964e6b09688b',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 2,
+  level: 'info',
+  message: 'Calling model gemini-1.5-flash',
+  timestamp: '2025-09-19 07:43:01'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 2,
+  responseLength: 36,
+  responseTime: 728,
+  error: null,
+  timestamp: '2025-09-19 07:43:01',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: 'd7e7ae47-6720-4ff6-b540-64ea1fa4eda9',
+  processingTime: 731,
+  level: 'info',
+  message: 'Query processed successfully',
+  timestamp: '2025-09-19 07:43:01'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 734,
+  userId: null,
+  timestamp: '2025-09-19 07:43:01',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/d7e7ae47-6720-4ff6-b540-64ea1fa4eda9',
+  statusCode: 200,
+  responseTime: 1,
+  userId: null,
+  timestamp: '2025-09-19 07:43:02',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 2,
+  userId: null,
+  timestamp: '2025-09-19 07:44:56',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  message: 'Successfully discovered 50 models from openrouter',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:45:04'
+}
+{
+  message: 'API key validated successfully with provider: openrouter',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:45:04'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  keyPrefix: 'http:/...',
+  provider: 'openrouter',
+  providerName: 'OpenRouter',
+  modelsDiscovered: 50,
+  ip: '127.0.0.1',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  requestId: '1e609386-b171-4d2d-8f40-f85c949ffb0f',
+  level: 'info',
+  message: 'API key validated and models discovered',
+  timestamp: '2025-09-19 07:45:04'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/api/save-key',
+  statusCode: 200,
+  responseTime: 1286,
+  userId: null,
+  timestamp: '2025-09-19 07:45:04',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  message: 'Successfully discovered 50 models from openrouter',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:45:25'
+}
+{
+  message: 'API key validated successfully with provider: openrouter',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:45:25'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  keyPrefix: 'http:/...',
+  provider: 'openrouter',
+  providerName: 'OpenRouter',
+  modelsDiscovered: 50,
+  ip: '127.0.0.1',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  requestId: '3132b922-7dc7-487f-b0eb-1aadbc0d935f',
+  level: 'info',
+  message: 'API key validated and models discovered',
+  timestamp: '2025-09-19 07:45:25'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/api/save-key',
+  statusCode: 200,
+  responseTime: 1319,
+  userId: null,
+  timestamp: '2025-09-19 07:45:25',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  message: 'Successfully discovered 13 models from google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:45:54'
+}
+{
+  message: 'API key validated successfully with detected provider: google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:45:54'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  keyPrefix: 'AIzaSy...',
+  provider: 'google',
+  providerName: 'Google AI',
+  modelsDiscovered: 13,
+  ip: '127.0.0.1',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  requestId: 'f5c5d1f6-a4eb-4c25-ad10-7c188724f312',
+  level: 'info',
+  message: 'API key validated and models discovered',
+  timestamp: '2025-09-19 07:45:54'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/api/save-key',
+  statusCode: 200,
+  responseTime: 238,
+  userId: null,
+  timestamp: '2025-09-19 07:45:54',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-1.5-flash',
+  models: [ 'gemini-1.5-flash' ],
+  messageLength: 36,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-19 07:46:02'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '4b03ba4e-4d64-40ec-9088-3797cfb4c50c',
+  query: 'Please answer clearly and concisely.',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-19 07:46:02'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [ 'gemini-1.5-flash' ],
+  taskId: '4b03ba4e-4d64-40ec-9088-3797cfb4c50c',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-19 07:46:02'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'a0d136bc-44fc-415f-ac33-e305e993aea4',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 36,
+  level: 'info',
+  message: 'Calling model gemini-1.5-flash',
+  timestamp: '2025-09-19 07:46:02'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 36,
+  responseLength: 26,
+  responseTime: 720,
+  error: null,
+  timestamp: '2025-09-19 07:46:02',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '4b03ba4e-4d64-40ec-9088-3797cfb4c50c',
+  processingTime: 720,
+  level: 'info',
+  message: 'Query processed successfully',
+  timestamp: '2025-09-19 07:46:02'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 723,
+  userId: null,
+  timestamp: '2025-09-19 07:46:02',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/4b03ba4e-4d64-40ec-9088-3797cfb4c50c',
+  statusCode: 200,
+  responseTime: 2,
+  userId: null,
+  timestamp: '2025-09-19 07:46:02',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  baseDir: 'C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\workspaces',
+  level: 'info',
+  message: 'Workspace base directory initialized',
+  timestamp: '2025-09-19 07:48:14'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection error (suppressing further errors)',
+  timestamp: '2025-09-19 07:48:14'
+}
+{
+  message: 'Redis connection failed after 3 attempts, disabling Redis',
+  level: 'warn',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:48:14'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection failed',
+  timestamp: '2025-09-19 07:48:14'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection failed, continuing without Redis cache',
+  timestamp: '2025-09-19 07:48:14'
+}
+{
+  message: 'MongoDB disconnected',
+  level: 'warn',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:48:19'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at _handleConnectionErrors (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:816:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:791:11)\n' +
+    '    at async DatabaseManager.connectMongoDB (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:91:30)\n' +
+    '    at async DatabaseManager.initialize (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:120:9)\n' +
+    '    at async Server.initialize (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:34:7)\n' +
+    '    at async Server.start (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:739:7)',
+  component: 'mongodb',
+  operation: 'connect',
+  timestamp: '2025-09-19 07:48:19',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: 'connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  level: 'warn',
+  message: 'MongoDB connection failed, continuing without MongoDB',
+  timestamp: '2025-09-19 07:48:19'
+}
+{
+  message: 'Database connections initialized (Redis and MongoDB are optional)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:48:19'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongodb\\lib\\sdam\\topology.js:278:38)\n' +
+    '    at listOnTimeout (node:internal/timers:594:17)\n' +
+    '    at process.processTimers (node:internal/timers:529:7)',
+  component: 'mongodb',
+  timestamp: '2025-09-19 07:48:19',
+  level: 'error'
+}
+{
+  message: 'MetaModel loaded from disk',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:48:19'
+}
+{
+  message: 'Loaded 0 training examples',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:48:19'
+}
+{
+  message: 'Queue manager initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:48:19'
+}
+{
+  message: 'Server initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:48:20'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  port: 12000,
+  host: '0.0.0.0',
+  env: 'development',
+  pid: 15960,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-09-19 07:48:20'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 4,
+  userId: null,
+  timestamp: '2025-09-19 07:48:53',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  message: 'Successfully discovered 50 models from openrouter',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:48:59'
+}
+{
+  message: 'API key validated successfully with provider: openrouter',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:48:59'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  keyPrefix: 'http:/...',
+  provider: 'openrouter',
+  providerName: 'OpenRouter',
+  modelsDiscovered: 50,
+  ip: '127.0.0.1',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  requestId: '5c1175ab-e73d-4a81-a093-04f3ebb8a08c',
+  level: 'info',
+  message: 'API key validated and models discovered',
+  timestamp: '2025-09-19 07:48:59'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/api/save-key',
+  statusCode: 200,
+  responseTime: 1495,
+  userId: null,
+  timestamp: '2025-09-19 07:48:59',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  message: 'Successfully discovered 13 models from google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:49:10'
+}
+{
+  message: 'API key validated successfully with detected provider: google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 07:49:10'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  keyPrefix: 'AIzaSy...',
+  provider: 'google',
+  providerName: 'Google AI',
+  modelsDiscovered: 13,
+  ip: '127.0.0.1',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  requestId: '2419ffc5-a43a-4e9c-97db-3749c4977b0b',
+  level: 'info',
+  message: 'API key validated and models discovered',
+  timestamp: '2025-09-19 07:49:10'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/api/save-key',
+  statusCode: 200,
+  responseTime: 242,
+  userId: null,
+  timestamp: '2025-09-19 07:49:10',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-1.5-flash',
+  models: [ 'gemini-1.5-flash' ],
+  messageLength: 36,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-19 07:49:14'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '4dff4587-569f-4dfa-97b2-d4b9d0f63a79',
+  query: 'Please answer clearly and concisely.',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-19 07:49:14'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [ 'gemini-1.5-flash' ],
+  taskId: '4dff4587-569f-4dfa-97b2-d4b9d0f63a79',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-19 07:49:14'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'ce915285-db46-452d-b406-97658fa84934',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 36,
+  level: 'info',
+  message: 'Calling model gemini-1.5-flash',
+  timestamp: '2025-09-19 07:49:14'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 36,
+  responseLength: 26,
+  responseTime: 387,
+  error: null,
+  timestamp: '2025-09-19 07:49:15',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '4dff4587-569f-4dfa-97b2-d4b9d0f63a79',
+  processingTime: 388,
+  level: 'info',
+  message: 'Query processed successfully',
+  timestamp: '2025-09-19 07:49:15'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 392,
+  userId: null,
+  timestamp: '2025-09-19 07:49:15',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/4dff4587-569f-4dfa-97b2-d4b9d0f63a79',
+  statusCode: 200,
+  responseTime: 1,
+  userId: null,
+  timestamp: '2025-09-19 07:49:15',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 2,
+  userId: null,
+  timestamp: '2025-09-19 07:50:07',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 2,
+  userId: null,
+  timestamp: '2025-09-19 07:50:55',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  baseDir: 'C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\workspaces',
+  level: 'info',
+  message: 'Workspace base directory initialized',
+  timestamp: '2025-09-19 08:14:35'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection error (suppressing further errors)',
+  timestamp: '2025-09-19 08:14:35'
+}
+{
+  message: 'Redis connection failed after 3 attempts, disabling Redis',
+  level: 'warn',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:14:36'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection failed',
+  timestamp: '2025-09-19 08:14:36'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection failed, continuing without Redis cache',
+  timestamp: '2025-09-19 08:14:36'
+}
+{
+  message: 'MongoDB disconnected',
+  level: 'warn',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:14:41'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at _handleConnectionErrors (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:816:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:791:11)\n' +
+    '    at async DatabaseManager.connectMongoDB (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:91:30)\n' +
+    '    at async DatabaseManager.initialize (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:120:9)\n' +
+    '    at async Server.initialize (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:34:7)\n' +
+    '    at async Server.start (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:739:7)',
+  component: 'mongodb',
+  operation: 'connect',
+  timestamp: '2025-09-19 08:14:41',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: 'connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  level: 'warn',
+  message: 'MongoDB connection failed, continuing without MongoDB',
+  timestamp: '2025-09-19 08:14:41'
+}
+{
+  message: 'Database connections initialized (Redis and MongoDB are optional)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:14:41'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongodb\\lib\\sdam\\topology.js:278:38)\n' +
+    '    at listOnTimeout (node:internal/timers:594:17)\n' +
+    '    at process.processTimers (node:internal/timers:529:7)',
+  component: 'mongodb',
+  timestamp: '2025-09-19 08:14:41',
+  level: 'error'
+}
+{
+  message: 'MetaModel loaded from disk',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:14:41'
+}
+{
+  message: 'Loaded 0 training examples',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:14:41'
+}
+{
+  message: 'Queue manager initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:14:41'
+}
+{
+  message: 'Server initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:14:41'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  port: 12000,
+  host: '0.0.0.0',
+  env: 'development',
+  pid: 17248,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-09-19 08:14:41'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 4,
+  userId: null,
+  timestamp: '2025-09-19 08:15:51',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  baseDir: 'C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\workspaces',
+  level: 'info',
+  message: 'Workspace base directory initialized',
+  timestamp: '2025-09-19 08:44:03'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection error (suppressing further errors)',
+  timestamp: '2025-09-19 08:44:03'
+}
+{
+  message: 'Redis connection failed after 3 attempts, disabling Redis',
+  level: 'warn',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:44:03'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection failed',
+  timestamp: '2025-09-19 08:44:03'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection failed, continuing without Redis cache',
+  timestamp: '2025-09-19 08:44:03'
+}
+{
+  message: 'MongoDB disconnected',
+  level: 'warn',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:44:08'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at _handleConnectionErrors (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:816:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:791:11)\n' +
+    '    at async DatabaseManager.connectMongoDB (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:91:30)\n' +
+    '    at async DatabaseManager.initialize (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:120:9)\n' +
+    '    at async Server.initialize (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:34:7)\n' +
+    '    at async Server.start (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:739:7)',
+  component: 'mongodb',
+  operation: 'connect',
+  timestamp: '2025-09-19 08:44:08',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: 'connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  level: 'warn',
+  message: 'MongoDB connection failed, continuing without MongoDB',
+  timestamp: '2025-09-19 08:44:08'
+}
+{
+  message: 'Database connections initialized (Redis and MongoDB are optional)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:44:08'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongodb\\lib\\sdam\\topology.js:278:38)\n' +
+    '    at listOnTimeout (node:internal/timers:594:17)\n' +
+    '    at process.processTimers (node:internal/timers:529:7)',
+  component: 'mongodb',
+  timestamp: '2025-09-19 08:44:08',
+  level: 'error'
+}
+{
+  message: 'MetaModel loaded from disk',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:44:08'
+}
+{
+  message: 'Loaded 0 training examples',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:44:08'
+}
+{
+  message: 'Queue manager initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:44:08'
+}
+{
+  message: 'Server initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:44:08'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  port: 12000,
+  host: '0.0.0.0',
+  env: 'development',
+  pid: 8216,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-09-19 08:44:08'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 4,
+  userId: null,
+  timestamp: '2025-09-19 08:46:08',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 1,
+  userId: null,
+  timestamp: '2025-09-19 08:47:23',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  baseDir: 'C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\workspaces',
+  level: 'info',
+  message: 'Workspace base directory initialized',
+  timestamp: '2025-09-19 08:58:38'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:58:38'
+}
+{
+  message: 'Redis ready for operations',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:58:38'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:58:38'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:58:38'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:58:38'
+}
+{
+  message: 'Database connections initialized (Redis and MongoDB are optional)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:58:38'
+}
+{
+  message: 'MetaModel loaded from disk',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:58:38'
+}
+{
+  message: 'Loaded 0 training examples',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:58:38'
+}
+{
+  message: 'Model performance data loaded from cache',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:58:38'
+}
+{
+  message: 'Queue manager initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:58:38'
+}
+{
+  message: 'Server initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 08:58:38'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  port: 12000,
+  host: '0.0.0.0',
+  env: 'development',
+  pid: 10864,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-09-19 08:58:38'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 8,
+  userId: null,
+  timestamp: '2025-09-19 08:59:44',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 2,
+  userId: null,
+  timestamp: '2025-09-19 08:59:47',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  baseDir: 'C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\workspaces',
+  level: 'info',
+  message: 'Workspace base directory initialized',
+  timestamp: '2025-09-19 09:03:56'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:03:56'
+}
+{
+  message: 'Redis ready for operations',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:03:56'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:03:56'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:03:56'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:03:56'
+}
+{
+  message: 'Database connections initialized (Redis and MongoDB are optional)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:03:56'
+}
+{
+  message: 'MetaModel loaded from disk',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:03:56'
+}
+{
+  message: 'Loaded 0 training examples',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:03:56'
+}
+{
+  message: 'Model performance data loaded from cache',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:03:56'
+}
+{
+  message: 'Queue manager initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:03:56'
+}
+{
+  message: 'Server initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:03:56'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  port: 12000,
+  host: '0.0.0.0',
+  env: 'development',
+  pid: 2648,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-09-19 09:03:56'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 7,
+  userId: null,
+  timestamp: '2025-09-19 09:04:44',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  baseDir: 'C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\workspaces',
+  level: 'info',
+  message: 'Workspace base directory initialized',
+  timestamp: '2025-09-19 09:07:53'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:07:53'
+}
+{
+  message: 'Redis ready for operations',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:07:53'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:07:53'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:07:53'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:07:53'
+}
+{
+  message: 'Database connections initialized (Redis and MongoDB are optional)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:07:53'
+}
+{
+  message: 'MetaModel loaded from disk',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:07:53'
+}
+{
+  message: 'Loaded 0 training examples',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:07:53'
+}
+{
+  message: 'Model performance data loaded from cache',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:07:53'
+}
+{
+  message: 'Queue manager initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:07:53'
+}
+{
+  message: 'Server initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:07:53'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  port: 12000,
+  host: '0.0.0.0',
+  env: 'development',
+  pid: 17024,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-09-19 09:07:53'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 5,
+  userId: null,
+  timestamp: '2025-09-19 09:09:09',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  baseDir: 'C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\workspaces',
+  level: 'info',
+  message: 'Workspace base directory initialized',
+  timestamp: '2025-09-19 09:11:55'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:11:55'
+}
+{
+  message: 'Redis ready for operations',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:11:55'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:11:55'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:11:55'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:11:55'
+}
+{
+  message: 'Database connections initialized (Redis and MongoDB are optional)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:11:55'
+}
+{
+  message: 'MetaModel loaded from disk',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:11:55'
+}
+{
+  message: 'Loaded 0 training examples',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:11:55'
+}
+{
+  message: 'Model performance data loaded from cache',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:11:55'
+}
+{
+  message: 'Queue manager initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:11:55'
+}
+{
+  message: 'Server initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-19 09:11:55'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  port: 12000,
+  host: '0.0.0.0',
+  env: 'development',
+  pid: 16240,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-09-19 09:11:55'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 6,
+  userId: null,
+  timestamp: '2025-09-19 09:12:50',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  baseDir: 'C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\workspaces',
+  level: 'info',
+  message: 'Workspace base directory initialized',
+  timestamp: '2025-09-20 18:18:40'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-20 18:18:40'
+}
+{
+  message: 'Redis ready for operations',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-20 18:18:40'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-20 18:18:40'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-20 18:18:40'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-20 18:18:40'
+}
+{
+  message: 'Database connections initialized (Redis and MongoDB are optional)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-20 18:18:40'
+}
+{
+  message: 'MetaModel loaded from disk',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-20 18:18:40'
+}
+{
+  message: 'Loaded 0 training examples',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-20 18:18:40'
+}
+{
+  message: 'Queue manager initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-20 18:18:40'
+}
+{
+  message: 'Server initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-20 18:18:40'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  port: 12000,
+  host: '0.0.0.0',
+  env: 'development',
+  pid: 2992,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-09-20 18:18:40'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 5,
+  userId: null,
+  timestamp: '2025-09-20 18:22:40',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  message: 'Successfully discovered 13 models from google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-20 18:23:07'
+}
+{
+  message: 'API key validated successfully with detected provider: google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-20 18:23:07'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  keyPrefix: 'AIzaSy...',
+  provider: 'google',
+  providerName: 'Google AI',
+  modelsDiscovered: 13,
+  ip: '127.0.0.1',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  requestId: '870193b6-342e-41d3-a32e-6fea6ee33750',
+  level: 'info',
+  message: 'API key validated and models discovered',
+  timestamp: '2025-09-20 18:23:07'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/api/save-key',
+  statusCode: 200,
+  responseTime: 265,
+  userId: null,
+  timestamp: '2025-09-20 18:23:07',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-1.5-flash',
+  models: [ 'gemini-1.5-flash' ],
+  messageLength: 36,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-20 18:23:11'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: 'ca0c573a-fdf6-44de-8677-c635f93a315d',
+  query: 'Please answer clearly and concisely.',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-20 18:23:11'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [ 'gemini-1.5-flash' ],
+  taskId: 'ca0c573a-fdf6-44de-8677-c635f93a315d',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-20 18:23:11'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '2b6771dc-aa67-4336-bbcf-79fe7aa53ba2',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 36,
+  level: 'info',
+  message: 'Calling model gemini-1.5-flash',
+  timestamp: '2025-09-20 18:23:11'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 36,
+  responseLength: 26,
+  responseTime: 430,
+  error: null,
+  timestamp: '2025-09-20 18:23:12',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: 'ca0c573a-fdf6-44de-8677-c635f93a315d',
+  processingTime: 435,
+  level: 'info',
+  message: 'Query processed successfully',
+  timestamp: '2025-09-20 18:23:12'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 439,
+  userId: null,
+  timestamp: '2025-09-20 18:23:12',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/ca0c573a-fdf6-44de-8677-c635f93a315d',
+  statusCode: 200,
+  responseTime: 2,
+  userId: null,
+  timestamp: '2025-09-20 18:23:12',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-1.5-flash',
+  models: [ 'gemini-1.5-flash' ],
+  messageLength: 50,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-20 18:23:28'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '63cfca0b-d298-4554-8397-b57d35d05b12',
+  query: 'I want to learn programming, where should I start?',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-20 18:23:28'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [ 'gemini-1.5-flash' ],
+  taskId: '63cfca0b-d298-4554-8397-b57d35d05b12',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-20 18:23:28'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'facef519-7e95-434f-96fa-d085a7a7e87d',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 50,
+  level: 'info',
+  message: 'Calling model gemini-1.5-flash',
+  timestamp: '2025-09-20 18:23:28'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 50,
+  responseLength: 3935,
+  responseTime: 6324,
+  error: null,
+  timestamp: '2025-09-20 18:23:35',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '63cfca0b-d298-4554-8397-b57d35d05b12',
+  processingTime: 6326,
+  level: 'info',
+  message: 'Query processed successfully',
+  timestamp: '2025-09-20 18:23:35'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 6328,
+  userId: null,
+  timestamp: '2025-09-20 18:23:35',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/63cfca0b-d298-4554-8397-b57d35d05b12',
+  statusCode: 200,
+  responseTime: 1,
+  userId: null,
+  timestamp: '2025-09-20 18:23:35',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-1.5-flash',
+  models: [ 'gemini-1.5-flash' ],
+  messageLength: 6,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-20 18:37:16'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '765a70b5-2ce1-4d66-aec7-1170e8b31c1e',
+  query: 'ok thx',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-20 18:37:16'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [ 'gemini-1.5-flash' ],
+  taskId: '765a70b5-2ce1-4d66-aec7-1170e8b31c1e',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-20 18:37:16'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '0cb79efa-eccc-4edd-b68a-cdd40238c2c1',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 6,
+  level: 'info',
+  message: 'Calling model gemini-1.5-flash',
+  timestamp: '2025-09-20 18:37:16'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 6,
+  responseLength: 61,
+  responseTime: 677,
+  error: null,
+  timestamp: '2025-09-20 18:37:17',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '765a70b5-2ce1-4d66-aec7-1170e8b31c1e',
+  processingTime: 680,
+  level: 'info',
+  message: 'Query processed successfully',
+  timestamp: '2025-09-20 18:37:17'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 685,
+  userId: null,
+  timestamp: '2025-09-20 18:37:17',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/765a70b5-2ce1-4d66-aec7-1170e8b31c1e',
+  statusCode: 200,
+  responseTime: 1,
+  userId: null,
+  timestamp: '2025-09-20 18:37:17',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 6,
+  userId: null,
+  timestamp: '2025-09-20 19:04:23',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  message: 'Successfully discovered 13 models from google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-20 19:04:38'
+}
+{
+  message: 'API key validated successfully with detected provider: google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-20 19:04:38'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  keyPrefix: 'AIzaSy...',
+  provider: 'google',
+  providerName: 'Google AI',
+  modelsDiscovered: 13,
+  ip: '127.0.0.1',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  requestId: '40d98f7a-1510-4411-8ffa-7df276a183df',
+  level: 'info',
+  message: 'API key validated and models discovered',
+  timestamp: '2025-09-20 19:04:38'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/api/save-key',
+  statusCode: 200,
+  responseTime: 311,
+  userId: null,
+  timestamp: '2025-09-20 19:04:38',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-1.5-pro-002',
+  models: [ 'gemini-1.5-pro-002' ],
+  messageLength: 50,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-20 19:04:43'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '22bf70cd-7ccb-487a-8508-6e55c092d9a8',
+  query: 'I want to learn programming, where should I start?',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-20 19:04:43'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [ 'gemini-1.5-pro-002' ],
+  taskId: '22bf70cd-7ccb-487a-8508-6e55c092d9a8',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-20 19:04:43'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '82b8db72-9da9-47ca-bb1f-742e9640375f',
+  modelId: 'gemini-1.5-pro-002',
+  promptLength: 50,
+  level: 'info',
+  message: 'Calling model gemini-1.5-pro-002',
+  timestamp: '2025-09-20 19:04:43'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-pro-002',
+  promptLength: 50,
+  responseLength: 0,
+  responseTime: 267,
+  error: 'Request failed with status code 429',
+  timestamp: '2025-09-20 19:04:44',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '82b8db72-9da9-47ca-bb1f-742e9640375f',
+  level: 'warn',
+  message: 'Rate limit hit for gemini-1.5-pro-002, retry after 60s',
+  timestamp: '2025-09-20 19:04:44'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '22bf70cd-7ccb-487a-8508-6e55c092d9a8',
+  error: 'RATE_LIMIT',
+  level: 'error',
+  message: 'Direct processing failed',
+  timestamp: '2025-09-20 19:04:44'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: 'RATE_LIMIT',
+  level: 'warn',
+  message: 'Direct processing failed, falling back to queue',
+  timestamp: '2025-09-20 19:04:44'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '29538dc4-1c93-4225-b5dd-71689d0e9be1',
+  queryLength: 50,
+  hasFiles: false,
+  options: {
+    selectedModel: 'gemini-1.5-pro-002',
+    selectedModels: [ 'gemini-1.5-pro-002' ],
+    conversationId: 'conv_1758391483566_8kuhxy42n',
+    fileIds: [],
+    workspaceId: 'default',
+    priority: 0,
+    skipCache: false,
+    enhanceWithKnowledge: true,
+    enableLearning: true
+  },
+  level: 'info',
+  message: 'New query submitted',
+  timestamp: '2025-09-20 19:04:44'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  jobId: '23',
+  requestId: '0ae33ac1-b3da-492b-9331-68d1fa774ad0',
+  priority: 0,
+  query: 'I want to learn programming, where should I start?',
+  level: 'info',
+  message: 'Query job added to queue',
+  timestamp: '2025-09-20 19:04:44'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  jobId: '23',
+  requestId: '0ae33ac1-b3da-492b-9331-68d1fa774ad0',
+  query: 'I want to learn programming, where should I start?',
+  level: 'info',
+  message: 'Processing query job',
+  timestamp: '2025-09-20 19:04:44'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  queryId: '060507d6-1484-4d18-badd-be7e04151386',
+  modelsCount: 1,
+  selectedModels: [ 'gemini-1.5-pro-002' ],
+  level: 'info',
+  message: 'Starting parallel model calls',
+  timestamp: '2025-09-20 19:04:44'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/api/v1/queries',
+  statusCode: 202,
+  responseTime: 41,
+  userId: null,
+  timestamp: '2025-09-20 19:04:44',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '3cb25849-15d8-480e-834b-fb2a15cd8d3e',
+  modelId: 'gemini-1.5-pro-002',
+  promptLength: 50,
+  level: 'info',
+  message: 'Calling model gemini-1.5-pro-002',
+  timestamp: '2025-09-20 19:04:44'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 332,
+  userId: null,
+  timestamp: '2025-09-20 19:04:44',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-pro-002',
+  promptLength: 50,
+  responseLength: 0,
+  responseTime: 93,
+  error: 'Request failed with status code 429',
+  timestamp: '2025-09-20 19:04:44',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '3cb25849-15d8-480e-834b-fb2a15cd8d3e',
+  level: 'warn',
+  message: 'Rate limit hit for gemini-1.5-pro-002, retry after 60s',
+  timestamp: '2025-09-20 19:04:44'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  queryId: '060507d6-1484-4d18-badd-be7e04151386',
+  totalTime: 102,
+  successful: 0,
+  failed: 1,
+  level: 'info',
+  message: 'Parallel model calls completed',
+  timestamp: '2025-09-20 19:04:44'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error All model calls failed',
+  stack: 'Error: All model calls failed\n' +
+    '    at MultiModelMerge.callModelsInParallel (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\core\\multiModelMerge.js:501:15)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async QueueManager.processQueryJob (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:148:28)\n' +
+    '    at async Queue.<anonymous> (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:87:14)',
+  component: 'multiModelMerge',
+  operation: 'callModelsInParallel',
+  queryId: '060507d6-1484-4d18-badd-be7e04151386',
+  timestamp: '2025-09-20 19:04:44',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error All model calls failed',
+  stack: 'Error: All model calls failed\n' +
+    '    at MultiModelMerge.callModelsInParallel (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\core\\multiModelMerge.js:501:15)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async QueueManager.processQueryJob (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:148:28)\n' +
+    '    at async Queue.<anonymous> (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:87:14)',
+  component: 'queueManager',
+  operation: 'processQueryJob',
+  jobId: '23',
+  timestamp: '2025-09-20 19:04:44',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error All model calls failed',
+  stack: 'Error: All model calls failed\n' +
+    '    at MultiModelMerge.callModelsInParallel (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\core\\multiModelMerge.js:501:15)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async QueueManager.processQueryJob (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:148:28)\n' +
+    '    at async Queue.<anonymous> (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:87:14)',
+  component: 'queueManager',
+  queue: 'queryProcessing',
+  jobId: '23',
+  jobType: 'processQuery',
+  attempts: 1,
+  data: {
+    query: 'I want to learn programming, where should I start?',
+    options: {
+      selectedModel: 'gemini-1.5-pro-002',
+      selectedModels: [ 'gemini-1.5-pro-002' ],
+      conversationId: 'conv_1758391483566_8kuhxy42n',
+      fileIds: [],
+      workspaceId: 'default',
+      priority: 0,
+      skipCache: false,
+      enhanceWithKnowledge: true,
+      enableLearning: true,
+      requestId: '29538dc4-1c93-4225-b5dd-71689d0e9be1'
+    },
+    requestId: '0ae33ac1-b3da-492b-9331-68d1fa774ad0'
+  },
+  timestamp: '2025-09-20 19:04:44',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '9e85944b-2287-4dbd-b871-0197743d7ac2',
+  queryId: '0ae33ac1-b3da-492b-9331-68d1fa774ad0',
+  level: 'info',
+  message: 'Query result requested',
+  timestamp: '2025-09-20 19:04:44'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/queries/0ae33ac1-b3da-492b-9331-68d1fa774ad0',
+  statusCode: 404,
+  responseTime: 5,
+  userId: null,
+  timestamp: '2025-09-20 19:04:44',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/0ae33ac1-b3da-492b-9331-68d1fa774ad0',
+  statusCode: 200,
+  responseTime: 10,
+  userId: null,
+  timestamp: '2025-09-20 19:04:44',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  jobId: '23',
+  requestId: '0ae33ac1-b3da-492b-9331-68d1fa774ad0',
+  query: 'I want to learn programming, where should I start?',
+  level: 'info',
+  message: 'Processing query job',
+  timestamp: '2025-09-20 19:04:46'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  queryId: 'da43a85d-7223-4606-adf0-ec492268c027',
+  modelsCount: 1,
+  selectedModels: [ 'gemini-1.5-pro-002' ],
+  level: 'info',
+  message: 'Starting parallel model calls',
+  timestamp: '2025-09-20 19:04:46'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'b7a4b116-975b-4ab3-8e3c-840f4b13c597',
+  modelId: 'gemini-1.5-pro-002',
+  promptLength: 50,
+  level: 'info',
+  message: 'Calling model gemini-1.5-pro-002',
+  timestamp: '2025-09-20 19:04:46'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-pro-002',
+  promptLength: 50,
+  responseLength: 0,
+  responseTime: 86,
+  error: 'Request failed with status code 429',
+  timestamp: '2025-09-20 19:04:46',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'b7a4b116-975b-4ab3-8e3c-840f4b13c597',
+  level: 'warn',
+  message: 'Rate limit hit for gemini-1.5-pro-002, retry after 60s',
+  timestamp: '2025-09-20 19:04:46'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  queryId: 'da43a85d-7223-4606-adf0-ec492268c027',
+  totalTime: 89,
+  successful: 0,
+  failed: 1,
+  level: 'info',
+  message: 'Parallel model calls completed',
+  timestamp: '2025-09-20 19:04:46'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error All model calls failed',
+  stack: 'Error: All model calls failed\n' +
+    '    at MultiModelMerge.callModelsInParallel (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\core\\multiModelMerge.js:501:15)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async QueueManager.processQueryJob (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:148:28)\n' +
+    '    at async Queue.<anonymous> (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:87:14)',
+  component: 'multiModelMerge',
+  operation: 'callModelsInParallel',
+  queryId: 'da43a85d-7223-4606-adf0-ec492268c027',
+  timestamp: '2025-09-20 19:04:46',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error All model calls failed',
+  stack: 'Error: All model calls failed\n' +
+    '    at MultiModelMerge.callModelsInParallel (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\core\\multiModelMerge.js:501:15)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async QueueManager.processQueryJob (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:148:28)\n' +
+    '    at async Queue.<anonymous> (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:87:14)',
+  component: 'queueManager',
+  operation: 'processQueryJob',
+  jobId: '23',
+  timestamp: '2025-09-20 19:04:46',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error All model calls failed',
+  stack: 'Error: All model calls failed\n' +
+    '    at MultiModelMerge.callModelsInParallel (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\core\\multiModelMerge.js:501:15)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async QueueManager.processQueryJob (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:148:28)\n' +
+    '    at async Queue.<anonymous> (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:87:14)',
+  component: 'queueManager',
+  queue: 'queryProcessing',
+  jobId: '23',
+  jobType: 'processQuery',
+  attempts: 2,
+  data: {
+    query: 'I want to learn programming, where should I start?',
+    options: {
+      selectedModel: 'gemini-1.5-pro-002',
+      selectedModels: [ 'gemini-1.5-pro-002' ],
+      conversationId: 'conv_1758391483566_8kuhxy42n',
+      fileIds: [],
+      workspaceId: 'default',
+      priority: 0,
+      skipCache: false,
+      enhanceWithKnowledge: true,
+      enableLearning: true,
+      requestId: '29538dc4-1c93-4225-b5dd-71689d0e9be1'
+    },
+    requestId: '0ae33ac1-b3da-492b-9331-68d1fa774ad0'
+  },
+  timestamp: '2025-09-20 19:04:46',
+  level: 'error'
+}
+{
+  message: 'Successfully discovered 13 models from google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-20 19:04:49'
+}
+{
+  message: 'API key validated successfully with detected provider: google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-20 19:04:49'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  keyPrefix: 'AIzaSy...',
+  provider: 'google',
+  providerName: 'Google AI',
+  modelsDiscovered: 13,
+  ip: '127.0.0.1',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  requestId: '197918f8-7d76-4768-8536-8700a8f708a4',
+  level: 'info',
+  message: 'API key validated and models discovered',
+  timestamp: '2025-09-20 19:04:49'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/api/save-key',
+  statusCode: 200,
+  responseTime: 67,
+  userId: null,
+  timestamp: '2025-09-20 19:04:49',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  jobId: '23',
+  requestId: '0ae33ac1-b3da-492b-9331-68d1fa774ad0',
+  query: 'I want to learn programming, where should I start?',
+  level: 'info',
+  message: 'Processing query job',
+  timestamp: '2025-09-20 19:04:52'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  queryId: '661a7d06-2ba6-4825-b2dc-c267f99ff279',
+  modelsCount: 1,
+  selectedModels: [ 'gemini-1.5-pro-002' ],
+  level: 'info',
+  message: 'Starting parallel model calls',
+  timestamp: '2025-09-20 19:04:52'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '01f1a14c-5ffb-4cdb-b1b8-f29ec338efe4',
+  modelId: 'gemini-1.5-pro-002',
+  promptLength: 50,
+  level: 'info',
+  message: 'Calling model gemini-1.5-pro-002',
+  timestamp: '2025-09-20 19:04:52'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-pro-002',
+  promptLength: 50,
+  responseLength: 0,
+  responseTime: 85,
+  error: 'Request failed with status code 429',
+  timestamp: '2025-09-20 19:04:52',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '01f1a14c-5ffb-4cdb-b1b8-f29ec338efe4',
+  level: 'warn',
+  message: 'Rate limit hit for gemini-1.5-pro-002, retry after 60s',
+  timestamp: '2025-09-20 19:04:52'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  queryId: '661a7d06-2ba6-4825-b2dc-c267f99ff279',
+  totalTime: 89,
+  successful: 0,
+  failed: 1,
+  level: 'info',
+  message: 'Parallel model calls completed',
+  timestamp: '2025-09-20 19:04:52'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error All model calls failed',
+  stack: 'Error: All model calls failed\n' +
+    '    at MultiModelMerge.callModelsInParallel (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\core\\multiModelMerge.js:501:15)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async QueueManager.processQueryJob (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:148:28)\n' +
+    '    at async Queue.<anonymous> (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:87:14)',
+  component: 'multiModelMerge',
+  operation: 'callModelsInParallel',
+  queryId: '661a7d06-2ba6-4825-b2dc-c267f99ff279',
+  timestamp: '2025-09-20 19:04:52',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error All model calls failed',
+  stack: 'Error: All model calls failed\n' +
+    '    at MultiModelMerge.callModelsInParallel (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\core\\multiModelMerge.js:501:15)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async QueueManager.processQueryJob (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:148:28)\n' +
+    '    at async Queue.<anonymous> (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:87:14)',
+  component: 'queueManager',
+  operation: 'processQueryJob',
+  jobId: '23',
+  timestamp: '2025-09-20 19:04:52',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error All model calls failed',
+  stack: 'Error: All model calls failed\n' +
+    '    at MultiModelMerge.callModelsInParallel (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\core\\multiModelMerge.js:501:15)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async QueueManager.processQueryJob (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:148:28)\n' +
+    '    at async Queue.<anonymous> (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:87:14)',
+  component: 'queueManager',
+  queue: 'queryProcessing',
+  jobId: '23',
+  jobType: 'processQuery',
+  attempts: 3,
+  data: {
+    query: 'I want to learn programming, where should I start?',
+    options: {
+      selectedModel: 'gemini-1.5-pro-002',
+      selectedModels: [ 'gemini-1.5-pro-002' ],
+      conversationId: 'conv_1758391483566_8kuhxy42n',
+      fileIds: [],
+      workspaceId: 'default',
+      priority: 0,
+      skipCache: false,
+      enhanceWithKnowledge: true,
+      enableLearning: true,
+      requestId: '29538dc4-1c93-4225-b5dd-71689d0e9be1'
+    },
+    requestId: '0ae33ac1-b3da-492b-9331-68d1fa774ad0'
+  },
+  timestamp: '2025-09-20 19:04:52',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-1.5-flash',
+  models: [ 'gemini-1.5-flash' ],
+  messageLength: 36,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-20 19:04:56'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '3227b33b-719b-401c-b701-0c89b82a43c5',
+  query: 'Please answer clearly and concisely.',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-20 19:04:56'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [ 'gemini-1.5-flash' ],
+  taskId: '3227b33b-719b-401c-b701-0c89b82a43c5',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-20 19:04:56'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'ad857843-64cd-4a07-8193-397f142c18c0',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 36,
+  level: 'info',
+  message: 'Calling model gemini-1.5-flash',
+  timestamp: '2025-09-20 19:04:56'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 36,
+  responseLength: 26,
+  responseTime: 633,
+  error: null,
+  timestamp: '2025-09-20 19:04:57',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '3227b33b-719b-401c-b701-0c89b82a43c5',
+  processingTime: 636,
+  level: 'info',
+  message: 'Query processed successfully',
+  timestamp: '2025-09-20 19:04:57'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 639,
+  userId: null,
+  timestamp: '2025-09-20 19:04:57',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/3227b33b-719b-401c-b701-0c89b82a43c5',
+  statusCode: 200,
+  responseTime: 2,
+  userId: null,
+  timestamp: '2025-09-20 19:04:57',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-1.5-flash',
+  models: [ 'gemini-1.5-flash' ],
+  messageLength: 50,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-20 19:05:01'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: 'd868ab98-07b1-4b62-8f53-5f74aa1608b6',
+  query: 'I want to learn programming, where should I start?',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-20 19:05:01'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [ 'gemini-1.5-flash' ],
+  taskId: 'd868ab98-07b1-4b62-8f53-5f74aa1608b6',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-20 19:05:01'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '24414a90-1690-4f28-b258-4f0b1d9747c8',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 50,
+  level: 'info',
+  message: 'Calling model gemini-1.5-flash',
+  timestamp: '2025-09-20 19:05:01'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 50,
+  responseLength: 3791,
+  responseTime: 5978,
+  error: null,
+  timestamp: '2025-09-20 19:05:07',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: 'd868ab98-07b1-4b62-8f53-5f74aa1608b6',
+  processingTime: 5980,
+  level: 'info',
+  message: 'Query processed successfully',
+  timestamp: '2025-09-20 19:05:07'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 5983,
+  userId: null,
+  timestamp: '2025-09-20 19:05:07',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/d868ab98-07b1-4b62-8f53-5f74aa1608b6',
+  statusCode: 200,
+  responseTime: 1,
+  userId: null,
+  timestamp: '2025-09-20 19:05:07',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 2,
+  userId: null,
+  timestamp: '2025-09-20 19:21:00',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-2.5-pro',
+  models: [ 'gemini-2.5-pro' ],
+  messageLength: 36,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-20 19:27:33'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: 'c286c5a1-db3f-4c13-a3cf-7b692c7aae58',
+  query: 'Please answer clearly and concisely.',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-20 19:27:33'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [ 'gemini-2.5-pro' ],
+  taskId: 'c286c5a1-db3f-4c13-a3cf-7b692c7aae58',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-20 19:27:33'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '40ed0831-de8f-4b86-8dc7-f2d2cb35d960',
+  modelId: 'gemini-2.5-pro',
+  promptLength: 36,
+  level: 'info',
+  message: 'Calling model gemini-2.5-pro',
+  timestamp: '2025-09-20 19:27:33'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-2.5-pro',
+  promptLength: 36,
+  responseLength: 5,
+  responseTime: 9507,
+  error: null,
+  timestamp: '2025-09-20 19:27:42',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: 'c286c5a1-db3f-4c13-a3cf-7b692c7aae58',
+  processingTime: 9510,
+  level: 'info',
+  message: 'Query processed successfully',
+  timestamp: '2025-09-20 19:27:42'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 9513,
+  userId: null,
+  timestamp: '2025-09-20 19:27:42',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/c286c5a1-db3f-4c13-a3cf-7b692c7aae58',
+  statusCode: 200,
+  responseTime: 1,
+  userId: null,
+  timestamp: '2025-09-20 19:27:42',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-2.5-pro',
+  models: [ 'gemini-2.5-pro' ],
+  messageLength: 55,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-20 19:28:25'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: 'a0bb1380-9f5e-405d-8059-f2a57a75b27d',
+  query: 'give me the best sensitivity for free fire in iphone 13',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-20 19:28:25'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [ 'gemini-2.5-pro' ],
+  taskId: 'a0bb1380-9f5e-405d-8059-f2a57a75b27d',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-20 19:28:25'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'da044bf3-db7d-42e8-ba25-0b9f5190fc21',
+  modelId: 'gemini-2.5-pro',
+  promptLength: 55,
+  level: 'info',
+  message: 'Calling model gemini-2.5-pro',
+  timestamp: '2025-09-20 19:28:25'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-2.5-pro',
+  promptLength: 55,
+  responseLength: 5273,
+  responseTime: 27750,
+  error: null,
+  timestamp: '2025-09-20 19:28:52',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: 'a0bb1380-9f5e-405d-8059-f2a57a75b27d',
+  processingTime: 27753,
+  level: 'info',
+  message: 'Query processed successfully',
+  timestamp: '2025-09-20 19:28:52'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 27755,
+  userId: null,
+  timestamp: '2025-09-20 19:28:52',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/a0bb1380-9f5e-405d-8059-f2a57a75b27d',
+  statusCode: 200,
+  responseTime: 2,
+  userId: null,
+  timestamp: '2025-09-20 19:28:53',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  baseDir: 'C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\workspaces',
+  level: 'info',
+  message: 'Workspace base directory initialized',
+  timestamp: '2025-09-21 07:08:47'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:08:47'
+}
+{
+  message: 'Redis ready for operations',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:08:47'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:08:47'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:08:47'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:08:47'
+}
+{
+  message: 'Database connections initialized (Redis and MongoDB are optional)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:08:47'
+}
+{
+  message: 'MetaModel loaded from disk',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:08:47'
+}
+{
+  message: 'Loaded 0 training examples',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:08:47'
+}
+{
+  message: 'Model performance data loaded from cache',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:08:47'
+}
+{
+  message: 'Queue manager initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:08:47'
+}
+{
+  message: 'Server initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:08:47'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  port: 12000,
+  host: '0.0.0.0',
+  env: 'development',
+  pid: 5172,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-09-21 07:08:47'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 5,
+  userId: null,
+  timestamp: '2025-09-21 07:10:08',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  message: 'Successfully discovered 13 models from google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:10:24'
+}
+{
+  message: 'API key validated successfully with detected provider: google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:10:24'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  keyPrefix: 'AIzaSy...',
+  provider: 'google',
+  providerName: 'Google AI',
+  modelsDiscovered: 13,
+  ip: '127.0.0.1',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  requestId: 'fe01653c-b2c1-410d-98dd-893a307e2cc8',
+  level: 'info',
+  message: 'API key validated and models discovered',
+  timestamp: '2025-09-21 07:10:24'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/api/save-key',
+  statusCode: 200,
+  responseTime: 245,
+  userId: null,
+  timestamp: '2025-09-21 07:10:24',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-2.5-pro',
+  models: [ 'gemini-2.5-pro' ],
+  messageLength: 2,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-21 07:10:38'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '271a32e6-a311-4a02-ad8c-43dad56f610f',
+  query: 'hi',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-21 07:10:38'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [ 'gemini-2.5-pro' ],
+  taskId: '271a32e6-a311-4a02-ad8c-43dad56f610f',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-21 07:10:38'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '313699cc-c833-4215-8de3-c4ba40267ee5',
+  modelId: 'gemini-2.5-pro',
+  promptLength: 2,
+  level: 'info',
+  message: 'Calling model gemini-2.5-pro',
+  timestamp: '2025-09-21 07:10:38'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-2.5-pro',
+  promptLength: 2,
+  responseLength: 32,
+  responseTime: 7428,
+  error: null,
+  timestamp: '2025-09-21 07:10:46',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '271a32e6-a311-4a02-ad8c-43dad56f610f',
+  processingTime: 7430,
+  level: 'info',
+  message: 'Query processed successfully',
+  timestamp: '2025-09-21 07:10:46'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 7434,
+  userId: null,
+  timestamp: '2025-09-21 07:10:46',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/271a32e6-a311-4a02-ad8c-43dad56f610f',
+  statusCode: 200,
+  responseTime: 1,
+  userId: null,
+  timestamp: '2025-09-21 07:10:46',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  baseDir: 'C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\workspaces',
+  level: 'info',
+  message: 'Workspace base directory initialized',
+  timestamp: '2025-09-21 07:21:41'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:21:41'
+}
+{
+  message: 'Redis ready for operations',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:21:41'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:21:41'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:21:41'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:21:41'
+}
+{
+  message: 'Database connections initialized (Redis and MongoDB are optional)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:21:41'
+}
+{
+  message: 'MetaModel loaded from disk',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:21:41'
+}
+{
+  message: 'Loaded 0 training examples',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:21:41'
+}
+{
+  message: 'Model performance data loaded from cache',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:21:41'
+}
+{
+  message: 'Queue manager initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:21:41'
+}
+{
+  message: 'Server initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 07:21:41'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  port: 12000,
+  host: '0.0.0.0',
+  env: 'development',
+  pid: 11216,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-09-21 07:21:41'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  baseDir: 'C:\\Users\\Administrator\\Desktop\\Final project\\neuroXopenhandsXhaggingface---Cpy\\NeuroXopenhands\\neurochat\\neurochat\\workspaces',
+  level: 'info',
+  message: 'Workspace base directory initialized',
+  timestamp: '2025-09-21 11:16:33'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection error (suppressing further errors)',
+  timestamp: '2025-09-21 11:16:33'
+}
+{
+  message: 'Redis connection failed after 3 attempts, disabling Redis',
+  level: 'warn',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 11:16:33'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection failed',
+  timestamp: '2025-09-21 11:16:33'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: '',
+  level: 'warn',
+  message: 'Redis connection failed, continuing without Redis cache',
+  timestamp: '2025-09-21 11:16:33'
+}
+{
+  message: 'MongoDB disconnected',
+  level: 'warn',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 11:16:38'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at _handleConnectionErrors (C:\\Users\\Administrator\\Desktop\\Final project\\neuroXopenhandsXhaggingface---Cpy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:816:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\Administrator\\Desktop\\Final project\\neuroXopenhandsXhaggingface---Cpy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:791:11)\n' +
+    '    at async DatabaseManager.connectMongoDB (C:\\Users\\Administrator\\Desktop\\Final project\\neuroXopenhandsXhaggingface---Cpy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:91:30)\n' +
+    '    at async DatabaseManager.initialize (C:\\Users\\Administrator\\Desktop\\Final project\\neuroXopenhandsXhaggingface---Cpy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:120:9)\n' +
+    '    at async Server.initialize (C:\\Users\\Administrator\\Desktop\\Final project\\neuroXopenhandsXhaggingface---Cpy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:34:7)\n' +
+    '    at async Server.start (C:\\Users\\Administrator\\Desktop\\Final project\\neuroXopenhandsXhaggingface---Cpy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:739:7)',
+  component: 'mongodb',
+  operation: 'connect',
+  timestamp: '2025-09-21 11:16:38',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  error: 'connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  level: 'warn',
+  message: 'MongoDB connection failed, continuing without MongoDB',
+  timestamp: '2025-09-21 11:16:38'
+}
+{
+  message: 'Database connections initialized (Redis and MongoDB are optional)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 11:16:38'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Administrator\\Desktop\\Final project\\neuroXopenhandsXhaggingface---Cpy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongodb\\lib\\sdam\\topology.js:278:38)\n' +
+    '    at listOnTimeout (node:internal/timers:594:17)\n' +
+    '    at process.processTimers (node:internal/timers:529:7)',
+  component: 'mongodb',
+  timestamp: '2025-09-21 11:16:38',
+  level: 'error'
+}
+{
+  message: 'MetaModel loaded from disk',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 11:16:38'
+}
+{
+  message: 'Loaded 0 training examples',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 11:16:38'
+}
+{
+  message: 'Queue manager initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 11:16:38'
+}
+{
+  message: 'Server initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 11:16:38'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  port: 12000,
+  host: '0.0.0.0',
+  env: 'development',
+  pid: 15732,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-09-21 11:16:38'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 12,
+  userId: null,
+  timestamp: '2025-09-21 11:19:14',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  message: 'Successfully discovered 13 models from google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 11:19:30'
+}
+{
+  message: 'API key validated successfully with detected provider: google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 11:19:30'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  keyPrefix: 'AIzaSy...',
+  provider: 'google',
+  providerName: 'Google AI',
+  modelsDiscovered: 13,
+  ip: '127.0.0.1',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  requestId: '252868c3-10bd-4042-83c7-c5228f68f424',
+  level: 'info',
+  message: 'API key validated and models discovered',
+  timestamp: '2025-09-21 11:19:30'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/api/save-key',
+  statusCode: 200,
+  responseTime: 522,
+  userId: null,
+  timestamp: '2025-09-21 11:19:30',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-1.5-flash',
+  models: [ 'gemini-1.5-flash' ],
+  messageLength: 2,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-21 11:19:42'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: 'b73be3f3-e998-48ed-b170-66fb11aca57c',
+  query: 'hi',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-21 11:19:42'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [ 'gemini-1.5-flash' ],
+  taskId: 'b73be3f3-e998-48ed-b170-66fb11aca57c',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-21 11:19:42'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'e4336fda-fe9b-4f89-9a1d-e46fef4b6a28',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 2,
+  level: 'info',
+  message: 'Calling model gemini-1.5-flash',
+  timestamp: '2025-09-21 11:19:42'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 2,
+  responseLength: 36,
+  responseTime: 565,
+  error: null,
+  timestamp: '2025-09-21 11:19:42',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: 'b73be3f3-e998-48ed-b170-66fb11aca57c',
+  processingTime: 567,
+  level: 'info',
+  message: 'Query processed successfully',
+  timestamp: '2025-09-21 11:19:42'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 570,
+  userId: null,
+  timestamp: '2025-09-21 11:19:42',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/b73be3f3-e998-48ed-b170-66fb11aca57c',
+  statusCode: 200,
+  responseTime: 2,
+  userId: null,
+  timestamp: '2025-09-21 11:19:43',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 2,
+  userId: null,
+  timestamp: '2025-09-21 11:27:06',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 2,
+  userId: null,
+  timestamp: '2025-09-21 11:28:09',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  baseDir: 'C:\\Users\\Administrator\\Desktop\\Final project\\neuroXopenhandsXhaggingface---Cpy\\NeuroXopenhands\\neurochat\\neurochat\\workspaces',
+  level: 'info',
+  message: 'Workspace base directory initialized',
+  timestamp: '2025-09-21 13:25:17'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 13:25:17'
+}
+{
+  message: 'Redis ready for operations',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 13:25:17'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 13:25:17'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 13:25:17'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 13:25:17'
+}
+{
+  message: 'Database connections initialized (Redis and MongoDB are optional)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 13:25:17'
+}
+{
+  message: 'MetaModel loaded from disk',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 13:25:17'
+}
+{
+  message: 'Loaded 0 training examples',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 13:25:17'
+}
+{
+  message: 'Model performance data loaded from cache',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 13:25:17'
+}
+{
+  message: 'Queue manager initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 13:25:17'
+}
+{
+  message: 'Server initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 13:25:17'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  port: 12000,
+  host: '0.0.0.0',
+  env: 'development',
+  pid: 12272,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-09-21 13:25:17'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 5,
+  userId: null,
+  timestamp: '2025-09-21 13:27:58',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 1,
+  userId: null,
+  timestamp: '2025-09-21 13:30:35',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  baseDir: 'C:\\Users\\Administrator\\Desktop\\Final project\\neuroXopenhandsXhaggingface---Cpy\\NeuroXopenhands\\neurochat\\neurochat\\workspaces',
+  level: 'info',
+  message: 'Workspace base directory initialized',
+  timestamp: '2025-09-21 18:15:37'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:15:37'
+}
+{
+  message: 'Redis ready for operations',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:15:37'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:15:37'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:15:37'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:15:37'
+}
+{
+  message: 'Database connections initialized (Redis and MongoDB are optional)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:15:37'
+}
+{
+  message: 'MetaModel loaded from disk',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:15:37'
+}
+{
+  message: 'Loaded 0 training examples',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:15:37'
+}
+{
+  message: 'Model performance data loaded from cache',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:15:37'
+}
+{
+  message: 'Queue manager initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:15:37'
+}
+{
+  message: 'Server initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:15:37'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  port: 12000,
+  host: '0.0.0.0',
+  env: 'development',
+  pid: 3104,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-09-21 18:15:37'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 5,
+  userId: null,
+  timestamp: '2025-09-21 18:17:11',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  message: 'Successfully discovered 13 models from google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:29:38'
+}
+{
+  message: 'API key validated successfully with detected provider: google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:29:38'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  keyPrefix: 'AIzaSy...',
+  provider: 'google',
+  providerName: 'Google AI',
+  modelsDiscovered: 13,
+  ip: '127.0.0.1',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  requestId: '27858557-816a-43ef-b534-3d12d24c8c78',
+  level: 'info',
+  message: 'API key validated and models discovered',
+  timestamp: '2025-09-21 18:29:38'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/api/save-key',
+  statusCode: 200,
+  responseTime: 460,
+  userId: null,
+  timestamp: '2025-09-21 18:29:38',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-1.5-pro-002',
+  models: [
+    'gemini-1.5-pro-002',
+    'gemini-1.5-pro',
+    'gemini-1.5-flash',
+    'gemini-1.5-flash-002',
+    'gemini-2.5-pro'
+  ],
+  messageLength: 39,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-21 18:29:49'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: 'cf3f87e3-7629-4460-8c7d-2607dc9cb02d',
+  query: 'Write me a short story about the future',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-21 18:29:49'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [
+    'gemini-1.5-pro-002',
+    'gemini-1.5-pro',
+    'gemini-1.5-flash',
+    'gemini-1.5-flash-002',
+    'gemini-2.5-pro'
+  ],
+  taskId: 'cf3f87e3-7629-4460-8c7d-2607dc9cb02d',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-21 18:29:49'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  queryId: 'dfb1619a-d092-4473-ba4e-a3031f8dabc7',
+  modelsCount: 5,
+  selectedModels: [
+    'gemini-1.5-pro-002',
+    'gemini-1.5-pro',
+    'gemini-1.5-flash',
+    'gemini-1.5-flash-002',
+    'gemini-2.5-pro'
+  ],
+  level: 'info',
+  message: 'Starting parallel model calls',
+  timestamp: '2025-09-21 18:29:49'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '70441684-4de6-4d6b-9bb1-2a3e4cfa5537',
+  modelId: 'gemini-1.5-pro-002',
+  promptLength: 39,
+  level: 'info',
+  message: 'Calling model gemini-1.5-pro-002',
+  timestamp: '2025-09-21 18:29:49'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'f3e6b1f6-a981-4b2f-b024-a4eabe3d9b89',
+  modelId: 'gemini-1.5-pro',
+  promptLength: 39,
+  level: 'info',
+  message: 'Calling model gemini-1.5-pro',
+  timestamp: '2025-09-21 18:29:49'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '89f199aa-11cd-4b15-a248-a8a2c97b1dbd',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 39,
+  level: 'info',
+  message: 'Calling model gemini-1.5-flash',
+  timestamp: '2025-09-21 18:29:49'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'f0504b97-d152-4873-9847-9733006292a0',
+  modelId: 'gemini-1.5-flash-002',
+  promptLength: 39,
+  level: 'info',
+  message: 'Calling model gemini-1.5-flash-002',
+  timestamp: '2025-09-21 18:29:49'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'b975fb37-81bc-4cdd-9eb7-f6025c3a8efc',
+  modelId: 'gemini-2.5-pro',
+  promptLength: 39,
+  level: 'info',
+  message: 'Calling model gemini-2.5-pro',
+  timestamp: '2025-09-21 18:29:49'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-pro-002',
+  promptLength: 39,
+  responseLength: 0,
+  responseTime: 776,
+  error: 'Request failed with status code 429',
+  timestamp: '2025-09-21 18:29:50',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '70441684-4de6-4d6b-9bb1-2a3e4cfa5537',
+  level: 'warn',
+  message: 'Rate limit hit for gemini-1.5-pro-002, retry after 60s',
+  timestamp: '2025-09-21 18:29:50'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-pro',
+  promptLength: 39,
+  responseLength: 0,
+  responseTime: 979,
+  error: 'Request failed with status code 429',
+  timestamp: '2025-09-21 18:29:50',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'f3e6b1f6-a981-4b2f-b024-a4eabe3d9b89',
+  level: 'warn',
+  message: 'Rate limit hit for gemini-1.5-pro, retry after 60s',
+  timestamp: '2025-09-21 18:29:50'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-flash-002',
+  promptLength: 39,
+  responseLength: 2556,
+  responseTime: 4855,
+  error: null,
+  timestamp: '2025-09-21 18:29:54',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 39,
+  responseLength: 2556,
+  responseTime: 5293,
+  error: null,
+  timestamp: '2025-09-21 18:29:54',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-2.5-pro',
+  promptLength: 39,
+  responseLength: 0,
+  responseTime: 30007,
+  error: 'timeout of 30000ms exceeded',
+  timestamp: '2025-09-21 18:30:19',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  message: 'Retrying gemini-2.5-pro in 1000ms (attempt 1/3)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:30:19'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'c2766638-7e41-49b5-a12f-4eedb5bad13c',
+  modelId: 'gemini-2.5-pro',
+  promptLength: 39,
+  level: 'info',
+  message: 'Calling model gemini-2.5-pro',
+  timestamp: '2025-09-21 18:30:20'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-2.5-pro',
+  promptLength: 39,
+  responseLength: 0,
+  responseTime: 30009,
+  error: 'timeout of 30000ms exceeded',
+  timestamp: '2025-09-21 18:30:50',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  message: 'Retrying gemini-2.5-pro in 2000ms (attempt 2/3)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:30:50'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '63976085-7446-4b27-8d7f-6fcd1aaa1514',
+  modelId: 'gemini-2.5-pro',
+  promptLength: 39,
+  level: 'info',
+  message: 'Calling model gemini-2.5-pro',
+  timestamp: '2025-09-21 18:30:52'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-2.5-pro',
+  promptLength: 39,
+  responseLength: 4449,
+  responseTime: 26753,
+  error: null,
+  timestamp: '2025-09-21 18:31:19',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  queryId: 'dfb1619a-d092-4473-ba4e-a3031f8dabc7',
+  totalTime: 89809,
+  successful: 3,
+  failed: 2,
+  level: 'info',
+  message: 'Parallel model calls completed',
+  timestamp: '2025-09-21 18:31:19'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: 'cf3f87e3-7629-4460-8c7d-2607dc9cb02d',
+  processingTime: 89863,
+  level: 'info',
+  message: 'Query processed successfully',
+  timestamp: '2025-09-21 18:31:19'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 89867,
+  userId: null,
+  timestamp: '2025-09-21 18:31:19',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/cf3f87e3-7629-4460-8c7d-2607dc9cb02d',
+  statusCode: 200,
+  responseTime: 1,
+  userId: null,
+  timestamp: '2025-09-21 18:31:20',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-1.5-pro-002',
+  models: [
+    'gemini-1.5-pro-002',
+    'gemini-1.5-pro',
+    'gemini-1.5-flash',
+    'gemini-1.5-flash-002',
+    'gemini-2.5-pro'
+  ],
+  messageLength: 6,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-21 18:32:37'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '600eb05e-89eb-42fd-8b52-2373ec0b1c3d',
+  query: 'ok thx',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-21 18:32:37'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [
+    'gemini-1.5-pro-002',
+    'gemini-1.5-pro',
+    'gemini-1.5-flash',
+    'gemini-1.5-flash-002',
+    'gemini-2.5-pro'
+  ],
+  taskId: '600eb05e-89eb-42fd-8b52-2373ec0b1c3d',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-21 18:32:37'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  queryId: 'ef2e51e0-3b15-40e4-ac95-502fe802f273',
+  modelsCount: 5,
+  selectedModels: [
+    'gemini-1.5-pro-002',
+    'gemini-1.5-pro',
+    'gemini-1.5-flash',
+    'gemini-1.5-flash-002',
+    'gemini-2.5-pro'
+  ],
+  level: 'info',
+  message: 'Starting parallel model calls',
+  timestamp: '2025-09-21 18:32:37'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'fc77e018-5676-4a3a-8391-62b5c2989214',
+  modelId: 'gemini-1.5-pro-002',
+  promptLength: 6,
+  level: 'info',
+  message: 'Calling model gemini-1.5-pro-002',
+  timestamp: '2025-09-21 18:32:37'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '8f56a5df-d357-4af6-96b7-acd3559d1451',
+  modelId: 'gemini-1.5-pro',
+  promptLength: 6,
+  level: 'info',
+  message: 'Calling model gemini-1.5-pro',
+  timestamp: '2025-09-21 18:32:37'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '70907a50-2f9d-4558-bab9-568b96ae8c67',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 6,
+  level: 'info',
+  message: 'Calling model gemini-1.5-flash',
+  timestamp: '2025-09-21 18:32:37'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '0aa658c5-5d88-4226-aecc-e455b8a27ac5',
+  modelId: 'gemini-1.5-flash-002',
+  promptLength: 6,
+  level: 'info',
+  message: 'Calling model gemini-1.5-flash-002',
+  timestamp: '2025-09-21 18:32:37'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'a43acfc3-0174-49aa-a672-88cc6f14805e',
+  modelId: 'gemini-2.5-pro',
+  promptLength: 6,
+  level: 'info',
+  message: 'Calling model gemini-2.5-pro',
+  timestamp: '2025-09-21 18:32:37'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-pro',
+  promptLength: 6,
+  responseLength: 0,
+  responseTime: 250,
+  error: 'Request failed with status code 429',
+  timestamp: '2025-09-21 18:32:37',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '8f56a5df-d357-4af6-96b7-acd3559d1451',
+  level: 'warn',
+  message: 'Rate limit hit for gemini-1.5-pro, retry after 60s',
+  timestamp: '2025-09-21 18:32:37'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-pro-002',
+  promptLength: 6,
+  responseLength: 0,
+  responseTime: 267,
+  error: 'Request failed with status code 429',
+  timestamp: '2025-09-21 18:32:37',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'fc77e018-5676-4a3a-8391-62b5c2989214',
+  level: 'warn',
+  message: 'Rate limit hit for gemini-1.5-pro-002, retry after 60s',
+  timestamp: '2025-09-21 18:32:37'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 6,
+  responseLength: 60,
+  responseTime: 628,
+  error: null,
+  timestamp: '2025-09-21 18:32:37',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-flash-002',
+  promptLength: 6,
+  responseLength: 60,
+  responseTime: 771,
+  error: null,
+  timestamp: '2025-09-21 18:32:38',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-2.5-pro',
+  promptLength: 6,
+  responseLength: 59,
+  responseTime: 12887,
+  error: null,
+  timestamp: '2025-09-21 18:32:50',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  queryId: 'ef2e51e0-3b15-40e4-ac95-502fe802f273',
+  totalTime: 12896,
+  successful: 3,
+  failed: 2,
+  level: 'info',
+  message: 'Parallel model calls completed',
+  timestamp: '2025-09-21 18:32:50'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '600eb05e-89eb-42fd-8b52-2373ec0b1c3d',
+  processingTime: 12899,
+  level: 'info',
+  message: 'Query processed successfully',
+  timestamp: '2025-09-21 18:32:50'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 12901,
+  userId: null,
+  timestamp: '2025-09-21 18:32:50',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/600eb05e-89eb-42fd-8b52-2373ec0b1c3d',
+  statusCode: 200,
+  responseTime: 0,
+  userId: null,
+  timestamp: '2025-09-21 18:32:50',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 3,
+  userId: null,
+  timestamp: '2025-09-21 18:47:18',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  message: 'Successfully discovered 50 models from openrouter',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:47:26'
+}
+{
+  message: 'API key validated successfully with provider: openrouter',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:47:26'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  keyPrefix: "'best ...",
+  provider: 'openrouter',
+  providerName: 'OpenRouter',
+  modelsDiscovered: 50,
+  ip: '127.0.0.1',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  requestId: 'f509f343-0050-40ea-a618-83be553f27a9',
+  level: 'info',
+  message: 'API key validated and models discovered',
+  timestamp: '2025-09-21 18:47:26'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/api/save-key',
+  statusCode: 200,
+  responseTime: 1569,
+  userId: null,
+  timestamp: '2025-09-21 18:47:26',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  message: 'Successfully discovered 13 models from google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:47:46'
+}
+{
+  message: 'API key validated successfully with detected provider: google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-21 18:47:46'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  keyPrefix: 'AIzaSy...',
+  provider: 'google',
+  providerName: 'Google AI',
+  modelsDiscovered: 13,
+  ip: '127.0.0.1',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  requestId: '991d1cba-eadf-4276-8d17-cb8234b4f3e2',
+  level: 'info',
+  message: 'API key validated and models discovered',
+  timestamp: '2025-09-21 18:47:46'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/api/save-key',
+  statusCode: 200,
+  responseTime: 291,
+  userId: null,
+  timestamp: '2025-09-21 18:47:46',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-1.5-pro-002',
+  models: [ 'gemini-1.5-pro-002', 'gemini-1.5-flash', 'gemini-2.5-pro' ],
+  messageLength: 50,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-21 18:48:06'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '2f457ccf-7031-4b54-a2dc-ee20098f8e0f',
+  query: 'I want to learn programming, where should I start?',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-21 18:48:06'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [ 'gemini-1.5-pro-002', 'gemini-1.5-flash', 'gemini-2.5-pro' ],
+  taskId: '2f457ccf-7031-4b54-a2dc-ee20098f8e0f',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-21 18:48:06'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  queryId: '965c146e-7729-41a9-9b56-e233f76fa66e',
+  modelsCount: 3,
+  selectedModels: [ 'gemini-1.5-pro-002', 'gemini-1.5-flash', 'gemini-2.5-pro' ],
+  level: 'info',
+  message: 'Starting parallel model calls',
+  timestamp: '2025-09-21 18:48:06'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '9d3af8f7-9971-47f0-ae9b-226acc3ea359',
+  modelId: 'gemini-1.5-pro-002',
+  promptLength: 50,
+  level: 'info',
+  message: 'Calling model gemini-1.5-pro-002',
+  timestamp: '2025-09-21 18:48:06'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'c23a5949-8e82-49e8-b78b-15b8ae5e9a7f',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 50,
+  level: 'info',
+  message: 'Calling model gemini-1.5-flash',
+  timestamp: '2025-09-21 18:48:06'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '1f95634d-0700-4e5f-85d2-7b271dbe4ca2',
+  modelId: 'gemini-2.5-pro',
+  promptLength: 50,
+  level: 'info',
+  message: 'Calling model gemini-2.5-pro',
+  timestamp: '2025-09-21 18:48:06'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-pro-002',
+  promptLength: 50,
+  responseLength: 0,
+  responseTime: 245,
+  error: 'Request failed with status code 429',
+  timestamp: '2025-09-21 18:48:06',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: '9d3af8f7-9971-47f0-ae9b-226acc3ea359',
+  level: 'warn',
+  message: 'Rate limit hit for gemini-1.5-pro-002, retry after 60s',
+  timestamp: '2025-09-21 18:48:06'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 50,
+  responseLength: 4412,
+  responseTime: 6779,
+  error: null,
+  timestamp: '2025-09-21 18:48:13',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-2.5-pro',
+  promptLength: 50,
+  responseLength: 6707,
+  responseTime: 29059,
+  error: null,
+  timestamp: '2025-09-21 18:48:35',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  queryId: '965c146e-7729-41a9-9b56-e233f76fa66e',
+  totalTime: 29067,
+  successful: 2,
+  failed: 1,
+  level: 'info',
+  message: 'Parallel model calls completed',
+  timestamp: '2025-09-21 18:48:35'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '2f457ccf-7031-4b54-a2dc-ee20098f8e0f',
+  processingTime: 29122,
+  level: 'info',
+  message: 'Query processed successfully',
+  timestamp: '2025-09-21 18:48:35'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 29124,
+  userId: null,
+  timestamp: '2025-09-21 18:48:35',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/2f457ccf-7031-4b54-a2dc-ee20098f8e0f',
+  statusCode: 200,
+  responseTime: 1,
+  userId: null,
+  timestamp: '2025-09-21 18:48:35',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 2,
+  userId: null,
+  timestamp: '2025-09-21 18:54:27',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  baseDir: 'C:\\Users\\Administrator\\Desktop\\Final project\\neuroXopenhandsXhaggingface---Cpy\\NeuroXopenhands\\neurochat\\neurochat\\workspaces',
+  level: 'info',
+  message: 'Workspace base directory initialized',
+  timestamp: '2025-09-22 13:25:43'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-22 13:25:43'
+}
+{
+  message: 'Redis ready for operations',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-22 13:25:43'
+}
+{
+  message: 'Redis connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-22 13:25:43'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-22 13:25:43'
+}
+{
+  message: 'MongoDB connected successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-22 13:25:43'
+}
+{
+  message: 'Database connections initialized (Redis and MongoDB are optional)',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-22 13:25:43'
+}
+{
+  message: 'MetaModel loaded from disk',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-22 13:25:43'
+}
+{
+  message: 'Loaded 0 training examples',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-22 13:25:43'
+}
+{
+  message: 'Model performance data loaded from cache',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-22 13:25:43'
+}
+{
+  message: 'Queue manager initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-22 13:25:43'
+}
+{
+  message: 'Server initialized successfully',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-22 13:25:43'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  port: 12000,
+  host: '0.0.0.0',
+  env: 'development',
+  pid: 7068,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-09-22 13:25:43'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 5,
+  userId: null,
+  timestamp: '2025-09-22 13:31:44',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/api/v1/models/config',
+  statusCode: 200,
+  responseTime: 3,
+  userId: null,
+  timestamp: '2025-09-22 13:34:25',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  message: 'Successfully discovered 13 models from google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-22 13:34:39'
+}
+{
+  message: 'API key validated successfully with detected provider: google',
+  level: 'info',
+  service: 'enhanced-ai-pipeline',
+  timestamp: '2025-09-22 13:34:39'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  keyPrefix: 'AIzaSy...',
+  provider: 'google',
+  providerName: 'Google AI',
+  modelsDiscovered: 13,
+  ip: '127.0.0.1',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  requestId: '4625004f-2aa0-402e-82ed-89a850d17e41',
+  level: 'info',
+  message: 'API key validated and models discovered',
+  timestamp: '2025-09-22 13:34:39'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/api/save-key',
+  statusCode: 200,
+  responseTime: 381,
+  userId: null,
+  timestamp: '2025-09-22 13:34:39',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-1.5-flash',
+  models: [ 'gemini-1.5-flash' ],
+  messageLength: 50,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-22 13:34:54'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '1a282345-986e-4029-8ec1-5a2561097ea7',
+  query: 'I want to learn programming, where should I start?',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-22 13:34:54'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [ 'gemini-1.5-flash' ],
+  taskId: '1a282345-986e-4029-8ec1-5a2561097ea7',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-22 13:34:54'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'd24092c2-e3e2-4fdc-a6ed-5137045f553d',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 50,
+  level: 'info',
+  message: 'Calling model gemini-1.5-flash',
+  timestamp: '2025-09-22 13:34:54'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 50,
+  responseLength: 4482,
+  responseTime: 7310,
+  error: null,
+  timestamp: '2025-09-22 13:35:01',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '1a282345-986e-4029-8ec1-5a2561097ea7',
+  processingTime: 7313,
+  level: 'info',
+  message: 'Query processed successfully',
+  timestamp: '2025-09-22 13:35:01'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 7319,
+  userId: null,
+  timestamp: '2025-09-22 13:35:01',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/1a282345-986e-4029-8ec1-5a2561097ea7',
+  statusCode: 200,
+  responseTime: 2,
+  userId: null,
+  timestamp: '2025-09-22 13:35:02',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  model: 'gemini-1.5-flash',
+  models: [ 'gemini-1.5-flash' ],
+  messageLength: 2,
+  level: 'info',
+  message: 'Processing chat message directly',
+  timestamp: '2025-09-22 13:35:16'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: 'c525d2b5-fe3f-4bdc-bb1e-b342496cca8f',
+  query: 'hi',
+  level: 'info',
+  message: 'Direct processing query',
+  timestamp: '2025-09-22 13:35:16'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  models: [ 'gemini-1.5-flash' ],
+  taskId: 'c525d2b5-fe3f-4bdc-bb1e-b342496cca8f',
+  level: 'info',
+  message: 'Processing with models',
+  timestamp: '2025-09-22 13:35:16'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  requestId: 'ce6e78ce-6e39-4580-a23d-456559f0a00d',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 2,
+  level: 'info',
+  message: 'Calling model gemini-1.5-flash',
+  timestamp: '2025-09-22 13:35:16'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'model_call',
+  modelId: 'gemini-1.5-flash',
+  promptLength: 2,
+  responseLength: 36,
+  responseTime: 677,
+  error: null,
+  timestamp: '2025-09-22 13:35:17',
+  level: 'info',
+  message: 'Model Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: 'c525d2b5-fe3f-4bdc-bb1e-b342496cca8f',
+  processingTime: 681,
+  level: 'info',
+  message: 'Query processed successfully',
+  timestamp: '2025-09-22 13:35:17'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'POST',
+  url: '/chat',
+  statusCode: 200,
+  responseTime: 686,
+  userId: null,
+  timestamp: '2025-09-22 13:35:17',
+  level: 'info',
+  message: 'API Call'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'api_call',
+  method: 'GET',
+  url: '/result/c525d2b5-fe3f-4bdc-bb1e-b342496cca8f',
+  statusCode: 200,
+  responseTime: 2,
+  userId: null,
+  timestamp: '2025-09-22 13:35:17',
+  level: 'info',
+  message: 'API Call'
+}

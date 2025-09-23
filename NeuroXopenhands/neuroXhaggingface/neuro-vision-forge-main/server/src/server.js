@@ -12,12 +12,30 @@ const PORT = process.env.PORT || 5174;
 const cache = new NodeCache({ stdTTL: 3600 });
 
 // Middleware
-app.use(helmet());
-app.use(compression());
-app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:3000'],
-  credentials: true
+// Relax helmet for dev to avoid blocking cross-origin requests/content
+app.use(helmet({
+  crossOriginResourcePolicy: false,
+  contentSecurityPolicy: false,
 }));
+app.use(compression());
+// CORS: allow local dev, file:// (null origin), and any localhost ports
+app.use(cors({
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps, curl, or file://)
+    if (!origin || origin === 'null') {
+      return callback(null, true);
+    }
+    // Allow all localhost origins and typical dev hosts
+    if (/^http:\/\/localhost(:\d+)?$/.test(origin) || /^http:\/\/127\.0\.0\.1(:\d+)?$/.test(origin)) {
+      return callback(null, true);
+    }
+    // Fallback: explicitly allow
+    return callback(null, true);
+  },
+  credentials: true,
+}));
+// Explicitly handle preflight requests
+app.options('*', cors());
 app.use(express.json());
 
 // In-memory storage for user collections (in production, use a database)
@@ -63,24 +81,59 @@ app.get('/api/hf/models', async (req, res) => {
       return res.json(cachedData);
     }
 
-    // Fetch from Hugging Face API
-    const url = `${HF_API_BASE}?limit=${limit}&skip=${offset}&sort=downloads&direction=-1&filter=text-generation`;
+    // Build candidate URLs (try broader queries first)
+    const candidates = [
+      `${HF_API_BASE}?limit=${limit}&skip=${offset}&sort=downloads&direction=-1&full=true`,
+      `${HF_API_BASE}?limit=${limit}&skip=${offset}&sort=downloads&direction=-1`,
+      `${HF_API_BASE}?limit=${limit}&skip=${offset}&pipeline_tag=text-generation&sort=downloads&direction=-1`,
+    ];
+
+    // Add fetch timeout via AbortController
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
     
-    console.log(`Fetching models from: ${url}`);
-    
-    const response = await fetch(url);
-    
-    if (!response.ok) {
-      throw new Error(`HF API responded with ${response.status}: ${response.statusText}`);
+    const baseHeaders = {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0 Safari/537.36',
+      'Accept': 'application/json',
+      'Accept-Language': 'en-US,en;q=0.9'
+    };
+    const headers = process.env.HF_TOKEN
+      ? { ...baseHeaders, Authorization: `Bearer ${process.env.HF_TOKEN}` }
+      : baseHeaders;
+
+    let transformedModels = [];
+    let lastError = null;
+    for (const url of candidates) {
+      try {
+        console.log(`Fetching models from: ${url}`);
+        let response = await fetch(url, { headers, signal: controller.signal });
+        if (response.status === 429) {
+          await new Promise(r => setTimeout(r, 1200));
+          response = await fetch(url, { headers, signal: controller.signal });
+        }
+        if (!response.ok) {
+          lastError = new Error(`HF API responded with ${response.status}: ${response.statusText}`);
+          console.warn(`[HF] Non-OK response ${response.status} for ${url}`);
+          continue;
+        }
+        const hfModels = await response.json();
+        if (!Array.isArray(hfModels)) {
+          lastError = new Error('Invalid response format from Hugging Face API');
+          console.warn(`[HF] Invalid format for ${url}`);
+          continue;
+        }
+        transformedModels = hfModels.map(transformHFModel);
+        if (transformedModels.length > 0) break;
+      } catch (err) {
+        lastError = err;
+        console.warn(`[HF] Fetch attempt failed for ${url}:`, err?.message || err);
+      }
     }
-    
-    const hfModels = await response.json();
-    
-    if (!Array.isArray(hfModels)) {
-      throw new Error('Invalid response format from Hugging Face API');
+    clearTimeout(timeout);
+
+    if (!transformedModels.length) {
+      throw lastError || new Error('No models received from Hugging Face');
     }
-    
-    const transformedModels = hfModels.map(transformHFModel);
     
     const result = {
       models: transformedModels,
@@ -175,6 +228,106 @@ app.delete('/api/collection/:userId?/:modelId', (req, res) => {
       message: 'Model not found in collection',
       collection,
       count: collection.length
+    });
+  }
+});
+
+// Serve the models list HTML page
+app.get('/api/models-list', (req, res) => {
+  res.sendFile('models-list.html', { root: '../public' });
+});
+
+// Get models summary with link to full list
+app.get('/api/hf/models-summary', async (req, res) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 20;
+    
+    // Create cache key
+    const cacheKey = `models-summary-${page}-${limit}`;
+    const cachedData = cache.get(cacheKey);
+    
+    if (cachedData) {
+      return res.json(cachedData);
+    }
+
+    // Build candidate URLs (try broader queries first)
+    const candidates = [
+      `${HF_API_BASE}?limit=${limit}&skip=${(page-1)*limit}&sort=downloads&direction=-1&full=true`,
+      `${HF_API_BASE}?limit=${limit}&skip=${(page-1)*limit}&sort=downloads&direction=-1`,
+      `${HF_API_BASE}?limit=${limit}&skip=${(page-1)*limit}&pipeline_tag=text-generation&sort=downloads&direction=-1`,
+    ];
+
+    // Add fetch timeout via AbortController
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+    
+    const baseHeaders = {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0 Safari/537.36',
+      'Accept': 'application/json',
+      'Accept-Language': 'en-US,en;q=0.9'
+    };
+    const headers = process.env.HF_TOKEN
+      ? { ...baseHeaders, Authorization: `Bearer ${process.env.HF_TOKEN}` }
+      : baseHeaders;
+
+    let transformedModels = [];
+    let lastError = null;
+    for (const url of candidates) {
+      try {
+        console.log(`Fetching models from: ${url}`);
+        let response = await fetch(url, { headers, signal: controller.signal });
+        if (response.status === 429) {
+          await new Promise(r => setTimeout(r, 1200));
+          response = await fetch(url, { headers, signal: controller.signal });
+        }
+        if (!response.ok) {
+          lastError = new Error(`HF API responded with ${response.status}: ${response.statusText}`);
+          console.warn(`[HF] Non-OK response ${response.status} for ${url}`);
+          continue;
+        }
+        const hfModels = await response.json();
+        if (!Array.isArray(hfModels)) {
+          lastError = new Error('Invalid response format from Hugging Face API');
+          console.warn(`[HF] Invalid format for ${url}`);
+          continue;
+        }
+        transformedModels = hfModels.map(transformHFModel);
+        if (transformedModels.length > 0) break;
+      } catch (err) {
+        lastError = err;
+        console.warn(`[HF] Fetch attempt failed for ${url}:`, err?.message || err);
+      }
+    }
+    clearTimeout(timeout);
+
+    if (!transformedModels.length) {
+      throw lastError || new Error('No models received from Hugging Face');
+    }
+    
+    const result = {
+      models: transformedModels,
+      pagination: {
+        page,
+        limit,
+        hasNext: transformedModels.length === limit,
+        hasPrev: page > 1
+      },
+      fullModelListUrl: `${req.protocol}://${req.get('host')}/api/models-list`,
+      message: `Showing ${transformedModels.length} models. For complete model list with ratings and prices, visit: ${req.protocol}://${req.get('host')}/api/models-list`
+    };
+    
+    // Cache the result
+    cache.set(cacheKey, result);
+    
+    res.json(result);
+  } catch (error) {
+    console.error('Error fetching models summary:', error);
+    res.status(500).json({ 
+      error: 'Failed to fetch models',
+      message: error.message,
+      fullModelListUrl: `${req.protocol}://${req.get('host')}/api/models-list`,
+      fallback: true
     });
   }
 });

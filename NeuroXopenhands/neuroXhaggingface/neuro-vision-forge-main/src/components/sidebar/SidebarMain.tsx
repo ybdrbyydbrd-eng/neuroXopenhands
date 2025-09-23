@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { Brain, FolderOpen, Sparkles, Code } from "lucide-react";
-import neurochatLogo from "@/assets/neurochat-logo.png";
 
 const SidebarMain = () => {
   const menuItems = [
@@ -16,12 +15,7 @@ const SidebarMain = () => {
     >
       {/* Logo */}
       <div className="p-6 border-b border-sidebar-border">
-        <div className="flex items-center space-x-3">
-          <img 
-            src={neurochatLogo} 
-            alt="NeuroChat Fusion" 
-            className="w-8 h-8"
-          />
+        <div className="flex items-center">
           <span className="text-lg font-semibold text-sidebar-foreground">
             NeuroChat
           </span>
@@ -31,25 +25,34 @@ const SidebarMain = () => {
       {/* Navigation */}
       <nav className="flex-1 p-4 space-y-2">
         {menuItems.map((item) => (
-          <NavLink
-            key={item.title}
-            to={item.url}
-            end={item.isDefault}
-            className={({ isActive }) =>
-              `flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
-                isActive
-                  ? 'bg-sidebar-accent text-sidebar-primary glow-effect'
-                  : 'text-sidebar-foreground hover:bg-sidebar-accent/50 hover:text-sidebar-primary'
-              } ${
-                item.isProminent 
-                  ? 'border border-neuro-accent-1 shadow-glow' 
-                  : ''
-              }`
-            }
-          >
-            <item.icon className="w-5 h-5" />
-            <span>{item.title}</span>
-          </NavLink>
+          item.title === "Start Building" ? (
+            <button
+              key={item.title}
+              onClick={() => {
+                window.location.href = 'http://localhost:8080/';
+              }}
+              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left text-sm font-medium transition-all duration-200 border border-neuro-accent-1 shadow-glow text-sidebar-foreground hover:bg-sidebar-accent/50 hover:text-sidebar-primary`}
+            >
+              <item.icon className="w-5 h-5" />
+              <span>{item.title}</span>
+            </button>
+          ) : (
+            <NavLink
+              key={item.title}
+              to={item.url}
+              end={item.isDefault}
+              className={({ isActive }) =>
+                `flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  isActive
+                    ? 'bg-sidebar-accent text-sidebar-primary glow-effect'
+                    : 'text-sidebar-foreground hover:bg-sidebar-accent/50 hover:text-sidebar-primary'
+                }`
+              }
+            >
+              <item.icon className="w-5 h-5" />
+              <span>{item.title}</span>
+            </NavLink>
+          )
         ))}
       </nav>
 

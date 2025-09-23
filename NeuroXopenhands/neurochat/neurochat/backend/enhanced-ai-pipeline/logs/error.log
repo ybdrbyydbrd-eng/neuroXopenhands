@@ -463,3 +463,340 @@
   timestamp: '2025-09-18 18:47:38',
   level: 'error'
 }
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at _handleConnectionErrors (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:816:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:791:11)\n' +
+    '    at async DatabaseManager.connectMongoDB (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:91:30)\n' +
+    '    at async DatabaseManager.initialize (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:120:9)\n' +
+    '    at async Server.initialize (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:34:7)\n' +
+    '    at async Server.start (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:739:7)',
+  component: 'mongodb',
+  operation: 'connect',
+  timestamp: '2025-09-19 07:42:14',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongodb\\lib\\sdam\\topology.js:278:38)\n' +
+    '    at listOnTimeout (node:internal/timers:594:17)\n' +
+    '    at process.processTimers (node:internal/timers:529:7)',
+  component: 'mongodb',
+  timestamp: '2025-09-19 07:42:14',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at _handleConnectionErrors (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:816:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:791:11)\n' +
+    '    at async DatabaseManager.connectMongoDB (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:91:30)\n' +
+    '    at async DatabaseManager.initialize (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:120:9)\n' +
+    '    at async Server.initialize (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:34:7)\n' +
+    '    at async Server.start (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:739:7)',
+  component: 'mongodb',
+  operation: 'connect',
+  timestamp: '2025-09-19 07:48:19',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongodb\\lib\\sdam\\topology.js:278:38)\n' +
+    '    at listOnTimeout (node:internal/timers:594:17)\n' +
+    '    at process.processTimers (node:internal/timers:529:7)',
+  component: 'mongodb',
+  timestamp: '2025-09-19 07:48:19',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at _handleConnectionErrors (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:816:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:791:11)\n' +
+    '    at async DatabaseManager.connectMongoDB (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:91:30)\n' +
+    '    at async DatabaseManager.initialize (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:120:9)\n' +
+    '    at async Server.initialize (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:34:7)\n' +
+    '    at async Server.start (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:739:7)',
+  component: 'mongodb',
+  operation: 'connect',
+  timestamp: '2025-09-19 08:14:41',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongodb\\lib\\sdam\\topology.js:278:38)\n' +
+    '    at listOnTimeout (node:internal/timers:594:17)\n' +
+    '    at process.processTimers (node:internal/timers:529:7)',
+  component: 'mongodb',
+  timestamp: '2025-09-19 08:14:41',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at _handleConnectionErrors (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:816:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:791:11)\n' +
+    '    at async DatabaseManager.connectMongoDB (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:91:30)\n' +
+    '    at async DatabaseManager.initialize (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:120:9)\n' +
+    '    at async Server.initialize (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:34:7)\n' +
+    '    at async Server.start (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:739:7)',
+  component: 'mongodb',
+  operation: 'connect',
+  timestamp: '2025-09-19 08:44:08',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongodb\\lib\\sdam\\topology.js:278:38)\n' +
+    '    at listOnTimeout (node:internal/timers:594:17)\n' +
+    '    at process.processTimers (node:internal/timers:529:7)',
+  component: 'mongodb',
+  timestamp: '2025-09-19 08:44:08',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  taskId: '22bf70cd-7ccb-487a-8508-6e55c092d9a8',
+  error: 'RATE_LIMIT',
+  level: 'error',
+  message: 'Direct processing failed',
+  timestamp: '2025-09-20 19:04:44'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error All model calls failed',
+  stack: 'Error: All model calls failed\n' +
+    '    at MultiModelMerge.callModelsInParallel (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\core\\multiModelMerge.js:501:15)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async QueueManager.processQueryJob (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:148:28)\n' +
+    '    at async Queue.<anonymous> (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:87:14)',
+  component: 'multiModelMerge',
+  operation: 'callModelsInParallel',
+  queryId: '060507d6-1484-4d18-badd-be7e04151386',
+  timestamp: '2025-09-20 19:04:44',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error All model calls failed',
+  stack: 'Error: All model calls failed\n' +
+    '    at MultiModelMerge.callModelsInParallel (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\core\\multiModelMerge.js:501:15)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async QueueManager.processQueryJob (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:148:28)\n' +
+    '    at async Queue.<anonymous> (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:87:14)',
+  component: 'queueManager',
+  operation: 'processQueryJob',
+  jobId: '23',
+  timestamp: '2025-09-20 19:04:44',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error All model calls failed',
+  stack: 'Error: All model calls failed\n' +
+    '    at MultiModelMerge.callModelsInParallel (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\core\\multiModelMerge.js:501:15)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async QueueManager.processQueryJob (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:148:28)\n' +
+    '    at async Queue.<anonymous> (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:87:14)',
+  component: 'queueManager',
+  queue: 'queryProcessing',
+  jobId: '23',
+  jobType: 'processQuery',
+  attempts: 1,
+  data: {
+    query: 'I want to learn programming, where should I start?',
+    options: {
+      selectedModel: 'gemini-1.5-pro-002',
+      selectedModels: [ 'gemini-1.5-pro-002' ],
+      conversationId: 'conv_1758391483566_8kuhxy42n',
+      fileIds: [],
+      workspaceId: 'default',
+      priority: 0,
+      skipCache: false,
+      enhanceWithKnowledge: true,
+      enableLearning: true,
+      requestId: '29538dc4-1c93-4225-b5dd-71689d0e9be1'
+    },
+    requestId: '0ae33ac1-b3da-492b-9331-68d1fa774ad0'
+  },
+  timestamp: '2025-09-20 19:04:44',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error All model calls failed',
+  stack: 'Error: All model calls failed\n' +
+    '    at MultiModelMerge.callModelsInParallel (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\core\\multiModelMerge.js:501:15)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async QueueManager.processQueryJob (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:148:28)\n' +
+    '    at async Queue.<anonymous> (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:87:14)',
+  component: 'multiModelMerge',
+  operation: 'callModelsInParallel',
+  queryId: 'da43a85d-7223-4606-adf0-ec492268c027',
+  timestamp: '2025-09-20 19:04:46',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error All model calls failed',
+  stack: 'Error: All model calls failed\n' +
+    '    at MultiModelMerge.callModelsInParallel (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\core\\multiModelMerge.js:501:15)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async QueueManager.processQueryJob (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:148:28)\n' +
+    '    at async Queue.<anonymous> (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:87:14)',
+  component: 'queueManager',
+  operation: 'processQueryJob',
+  jobId: '23',
+  timestamp: '2025-09-20 19:04:46',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error All model calls failed',
+  stack: 'Error: All model calls failed\n' +
+    '    at MultiModelMerge.callModelsInParallel (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\core\\multiModelMerge.js:501:15)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async QueueManager.processQueryJob (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:148:28)\n' +
+    '    at async Queue.<anonymous> (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:87:14)',
+  component: 'queueManager',
+  queue: 'queryProcessing',
+  jobId: '23',
+  jobType: 'processQuery',
+  attempts: 2,
+  data: {
+    query: 'I want to learn programming, where should I start?',
+    options: {
+      selectedModel: 'gemini-1.5-pro-002',
+      selectedModels: [ 'gemini-1.5-pro-002' ],
+      conversationId: 'conv_1758391483566_8kuhxy42n',
+      fileIds: [],
+      workspaceId: 'default',
+      priority: 0,
+      skipCache: false,
+      enhanceWithKnowledge: true,
+      enableLearning: true,
+      requestId: '29538dc4-1c93-4225-b5dd-71689d0e9be1'
+    },
+    requestId: '0ae33ac1-b3da-492b-9331-68d1fa774ad0'
+  },
+  timestamp: '2025-09-20 19:04:46',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error All model calls failed',
+  stack: 'Error: All model calls failed\n' +
+    '    at MultiModelMerge.callModelsInParallel (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\core\\multiModelMerge.js:501:15)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async QueueManager.processQueryJob (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:148:28)\n' +
+    '    at async Queue.<anonymous> (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:87:14)',
+  component: 'multiModelMerge',
+  operation: 'callModelsInParallel',
+  queryId: '661a7d06-2ba6-4825-b2dc-c267f99ff279',
+  timestamp: '2025-09-20 19:04:52',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error All model calls failed',
+  stack: 'Error: All model calls failed\n' +
+    '    at MultiModelMerge.callModelsInParallel (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\core\\multiModelMerge.js:501:15)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async QueueManager.processQueryJob (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:148:28)\n' +
+    '    at async Queue.<anonymous> (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:87:14)',
+  component: 'queueManager',
+  operation: 'processQueryJob',
+  jobId: '23',
+  timestamp: '2025-09-20 19:04:52',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error All model calls failed',
+  stack: 'Error: All model calls failed\n' +
+    '    at MultiModelMerge.callModelsInParallel (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\core\\multiModelMerge.js:501:15)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async QueueManager.processQueryJob (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:148:28)\n' +
+    '    at async Queue.<anonymous> (C:\\Users\\Administrator\\Desktop\\neuroXopenhandsXhaggingface---Copy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\queueManager.js:87:14)',
+  component: 'queueManager',
+  queue: 'queryProcessing',
+  jobId: '23',
+  jobType: 'processQuery',
+  attempts: 3,
+  data: {
+    query: 'I want to learn programming, where should I start?',
+    options: {
+      selectedModel: 'gemini-1.5-pro-002',
+      selectedModels: [ 'gemini-1.5-pro-002' ],
+      conversationId: 'conv_1758391483566_8kuhxy42n',
+      fileIds: [],
+      workspaceId: 'default',
+      priority: 0,
+      skipCache: false,
+      enhanceWithKnowledge: true,
+      enableLearning: true,
+      requestId: '29538dc4-1c93-4225-b5dd-71689d0e9be1'
+    },
+    requestId: '0ae33ac1-b3da-492b-9331-68d1fa774ad0'
+  },
+  timestamp: '2025-09-20 19:04:52',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at _handleConnectionErrors (C:\\Users\\Administrator\\Desktop\\Final project\\neuroXopenhandsXhaggingface---Cpy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:816:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\Administrator\\Desktop\\Final project\\neuroXopenhandsXhaggingface---Cpy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongoose\\lib\\connection.js:791:11)\n' +
+    '    at async DatabaseManager.connectMongoDB (C:\\Users\\Administrator\\Desktop\\Final project\\neuroXopenhandsXhaggingface---Cpy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:91:30)\n' +
+    '    at async DatabaseManager.initialize (C:\\Users\\Administrator\\Desktop\\Final project\\neuroXopenhandsXhaggingface---Cpy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\utils\\database.js:120:9)\n' +
+    '    at async Server.initialize (C:\\Users\\Administrator\\Desktop\\Final project\\neuroXopenhandsXhaggingface---Cpy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:34:7)\n' +
+    '    at async Server.start (C:\\Users\\Administrator\\Desktop\\Final project\\neuroXopenhandsXhaggingface---Cpy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\src\\api\\server.js:739:7)',
+  component: 'mongodb',
+  operation: 'connect',
+  timestamp: '2025-09-21 11:16:38',
+  level: 'error'
+}
+{
+  service: 'enhanced-ai-pipeline',
+  type: 'error',
+  message: 'Application Error connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017',
+  stack: 'MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n' +
+    '    at Timeout._onTimeout (C:\\Users\\Administrator\\Desktop\\Final project\\neuroXopenhandsXhaggingface---Cpy\\NeuroXopenhands\\neurochat\\neurochat\\backend\\enhanced-ai-pipeline\\node_modules\\mongodb\\lib\\sdam\\topology.js:278:38)\n' +
+    '    at listOnTimeout (node:internal/timers:594:17)\n' +
+    '    at process.processTimers (node:internal/timers:529:7)',
+  component: 'mongodb',
+  timestamp: '2025-09-21 11:16:38',
+  level: 'error'
+}

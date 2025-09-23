@@ -1,6 +1,16 @@
+import { useContext } from "react";
 import ModelsGrid from "@/components/models/ModelsGrid";
+import { HFModel } from "@/services/api";
+import { ModelSelectionContext } from "@/components/layout/AppLayout";
 
 const Models = () => {
+  const { selectModel } = useContext(ModelSelectionContext);
+
+  const handleModelSelect = (model: HFModel) => {
+    console.log('Model selected:', model);
+    selectModel(model);
+  };
+
   return (
     <div className="space-y-6">
       <div className="text-center space-y-2">
@@ -10,7 +20,7 @@ const Models = () => {
         </p>
       </div>
       
-      <ModelsGrid />
+      <ModelsGrid onModelSelect={handleModelSelect} />
     </div>
   );
 };

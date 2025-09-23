@@ -9,9 +9,10 @@ import { apiService, HFModel, ModelsResponse } from "@/services/api";
 interface ModelsGridProps {
   onModelsChange?: (models: HFModel[]) => void;
   onCollectionChange?: (collection: HFModel[]) => void;
+  onModelSelect?: (model: HFModel) => void;
 }
 
-const ModelsGrid = ({ onModelsChange, onCollectionChange }: ModelsGridProps) => {
+const ModelsGrid = ({ onModelsChange, onCollectionChange, onModelSelect }: ModelsGridProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [models, setModels] = useState<HFModel[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -25,6 +26,7 @@ const ModelsGrid = ({ onModelsChange, onCollectionChange }: ModelsGridProps) => 
   });
   const [collection, setCollection] = useState<HFModel[]>([]);
   const [fallbackMode, setFallbackMode] = useState(false);
+  const [fullModelListUrl, setFullModelListUrl] = useState<string>('');
 
   // Load models from API
   const loadModels = async (page: number) => {
@@ -36,6 +38,7 @@ const ModelsGrid = ({ onModelsChange, onCollectionChange }: ModelsGridProps) => 
       setModels(response.models);
       setPagination(response.pagination);
       setFallbackMode(response.fallback || false);
+      setFullModelListUrl(response.fullModelListUrl || '');
       
       if (response.fallback) {
         setError(`Using fallback data: ${response.error}`);
@@ -89,13 +92,19 @@ const ModelsGrid = ({ onModelsChange, onCollectionChange }: ModelsGridProps) => 
         setCollection(response.collection);
         onCollectionChange?.(response.collection);
       }
+      
+      // Dispatch event to notify other components
+      window.dispatchEvent(new CustomEvent('collectionUpdated'));
     } catch (error) {
       console.error('Failed to update collection:', error);
     }
   };
 
   const handlePreview = (modelId: string) => {
-    console.log("Preview model:", modelId);
+    const model = models.find(m => m.id === modelId);
+    if (model && onModelSelect) {
+      onModelSelect(model);
+    }
   };
 
   const handleNextPage = async () => {
@@ -129,12 +138,32 @@ const ModelsGrid = ({ onModelsChange, onCollectionChange }: ModelsGridProps) => 
     <div className="space-y-6">
       {/* Error Alert */}
       {error && (
-        <Alert className={`border-l-4 ${fallbackMode ? 'border-yellow-500 bg-yellow-50' : 'border-red-500 bg-red-50'}`}>
+        <Alert className="border-l-4 border-red-500 bg-red-50">
           <AlertTriangle className="h-4 w-4" />
           <AlertDescription>
-            {fallbackMode ? 'Using fallback data: ' : 'Error: '}{error}
+            Failed to fetch models. Please try again.
           </AlertDescription>
         </Alert>
+      )}
+
+      {/* Full Model List Link */}
+      {fullModelListUrl && (
+        <div className="bg-gradient-to-r from-neuro-accent-1/10 to-neuro-accent-2/10 border border-neuro-accent-1/20 rounded-lg p-4 mb-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="text-lg font-semibold text-neuro-accent-1 mb-1">Complete Model Marketplace</h3>
+              <p className="text-sm text-muted-foreground">
+                View all available models with detailed ratings, prices, and specifications
+              </p>
+            </div>
+            <Button 
+              onClick={() => window.open(fullModelListUrl, '_blank')}
+              className="bg-gradient-to-r from-neuro-accent-1 to-neuro-accent-2 text-background hover:shadow-glow transition-all duration-300"
+            >
+              View Full List
+            </Button>
+          </div>
+        </div>
       )}
 
       {/* Header with Search and Filter */}
@@ -143,10 +172,10 @@ const ModelsGrid = ({ onModelsChange, onCollectionChange }: ModelsGridProps) => 
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <Input
-              placeholder="Search models"
+              placeholder="Search..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 bg-input border-border focus:border-neuro-accent-1 focus:ring-neuro-accent-1"
+              className="pl-10 h-9 text-sm bg-background border border-border rounded-md shadow-sm focus:border-neuro-accent-1 focus:ring-neuro-accent-1"
             />
           </div>
         </div>
@@ -173,6 +202,7 @@ const ModelsGrid = ({ onModelsChange, onCollectionChange }: ModelsGridProps) => 
               }}
               onAddToCollection={handleAddToCollection}
               onPreview={handlePreview}
+              onModelSelect={onModelSelect}
             />
           ))
         )}

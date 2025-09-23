@@ -1891,20 +1891,8 @@ function applySelectedModels() {
         elements.modelBtn.classList.remove('open');
         elements.modelDropdown.classList.remove('open');
         
-        // Start immediately with the current text or a default starter so only selected models run
-        const existing = elements.messageInput.value.trim();
-        if (!existing) {
-            elements.messageInput.value = count > 1 
-                ? 'Collaborate and provide a concise, merged answer.' 
-                : 'Please answer clearly and concisely.';
-            updateCharCounter();
-        }
-        
-        if (isAgentMode) {
-            sendAgentMessage();
-        } else {
-            sendMessage();
-        }
+        // Only update the model selection, do not send any message automatically
+        // Removed automatic message sending - user must manually send messages
     }
 }
 

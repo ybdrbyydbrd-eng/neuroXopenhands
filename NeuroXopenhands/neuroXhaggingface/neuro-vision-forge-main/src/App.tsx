@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AppLayout from "./components/layout/AppLayout";
 import Models from "./pages/Models";
-import ModelDetails from "./pages/ModelDetails";
 import MyCollection from "./pages/MyCollection";
 import StartBuilding from "./pages/StartBuilding";
 import NotFound from "./pages/NotFound";
@@ -21,7 +20,6 @@ const App = () => (
         <Routes>
           <Route path="/" element={<AppLayout />}>
             <Route index element={<Models />} />
-            <Route path="model/:id" element={<ModelDetails />} />
             <Route path="collection" element={<MyCollection />} />
             <Route path="build" element={<StartBuilding />} />
           </Route>

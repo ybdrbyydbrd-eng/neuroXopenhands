@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Star, Clock, Plus, Download, Heart } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -9,10 +8,10 @@ interface ModelCardProps {
   model: HFModel;
   onAddToCollection?: (modelId: string) => void;
   onPreview?: (modelId: string) => void;
+  onModelSelect?: (model: HFModel) => void;
 }
 
-const ModelCard = ({ model, onAddToCollection, onPreview }: ModelCardProps) => {
-  const navigate = useNavigate();
+const ModelCard = ({ model, onAddToCollection, onPreview, onModelSelect }: ModelCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isAdded, setIsAdded] = useState(model.isInCollection || false);
 
@@ -30,7 +29,9 @@ const ModelCard = ({ model, onAddToCollection, onPreview }: ModelCardProps) => {
   };
 
   const handleCardClick = () => {
-    navigate(`/model/${model.id}`);
+    if (onModelSelect) {
+      onModelSelect(model);
+    }
   };
 
   return (
@@ -51,39 +52,7 @@ const ModelCard = ({ model, onAddToCollection, onPreview }: ModelCardProps) => {
           </div>
 
           {/* Description */}
-          <p className="text-sm text-muted-foreground">{model.description}</p>
-
-          {/* Tags */}
-          <div className="flex flex-wrap gap-1">
-            {model.tags.map((tag, index) => (
-              <Badge 
-                key={index} 
-                variant="secondary" 
-                className="text-xs bg-neuro-accent-1/10 text-neuro-accent-1 border-neuro-accent-1/20"
-              >
-                {tag}
-              </Badge>
-            ))}
-          </div>
-
-          {/* Meta info */}
-          <div className="flex items-center space-x-4 text-xs text-muted-foreground">
-            <div className="flex items-center space-x-1">
-              <span>{model.pipeline_tag.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</span>
-            </div>
-            <div className="flex items-center space-x-1">
-              <span>•</span>
-              <span>{new Date(model.updatedAt).toLocaleDateString()} ago</span>
-            </div>
-            <div className="flex items-center space-x-1">
-              <Download className="w-3 h-3" />
-              <span>{model.downloads?.toLocaleString() || model.reviewCount}</span>
-            </div>
-            <div className="flex items-center space-x-1">
-              <Heart className="w-3 h-3" />
-              <span>{model.likes?.toLocaleString() || Math.floor(model.reviewCount / 10)}</span>
-            </div>
-          </div>
+          {model.description && <p className="text-sm text-muted-foreground">{model.description}</p>}
         </div>
 
         {/* Right side - Stats and actions */}
@@ -91,7 +60,7 @@ const ModelCard = ({ model, onAddToCollection, onPreview }: ModelCardProps) => {
           {/* Rating */}
           <div className="flex items-center space-x-1">
             <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-            <span className="text-sm font-medium">{model.rating}</span>
+            <span className="text-sm font-medium">{model.rating.toFixed(1)}</span>
           </div>
 
           {/* Latency */}
@@ -102,7 +71,7 @@ const ModelCard = ({ model, onAddToCollection, onPreview }: ModelCardProps) => {
 
           {/* Price */}
           <div className="text-sm font-semibold text-neuro-success">
-            ${model.pricePerToken}/1k
+            ${model.pricePerToken.toFixed(2)}/1k
           </div>
 
           {/* Add Button */}
