@@ -1,4 +1,4 @@
-# دليل تشغيل منصة NeuroChat على نظام Windows
+# دليل تشغيل منصة NeuroDevFusion على نظام Windows
 
 ## المتطلبات الأساسية
 
@@ -25,15 +25,15 @@
 ### 1. استنساخ المشروع
 افتح Command Prompt أو PowerShell وقم بتنفيذ:
 ```cmd
-git clone https://github.com/kdvdkshs-source/8.git neurochat
-cd neurochat\new-main
+git clone https://github.com/kdvdkshs-source/8.git neurodevfusion
+cd neurodevfusion\new-main
 ```
 
 ### 2. تثبيت وتشغيل Backend
 
 #### أ. فتح نافذة Command Prompt جديدة للـ Backend:
 ```cmd
-cd neurochat\new-main\neurochat\backend\enhanced-ai-pipeline
+cd neurodevfusion\new-main\neurodevfusion\backend\enhanced-ai-pipeline
 ```
 
 #### ب. تثبيت التبعيات:
@@ -52,18 +52,18 @@ npm start
 
 #### أ. فتح نافذة Command Prompt ثانية للـ Frontend:
 ```cmd
-cd neurochat\new-main\neurochat\frontend
+cd neurodevfusion\new-main\neurodevfusion\frontend
 ```
 
 #### ب. تحديث إعدادات API (اختياري - للبيئة المحلية):
 - افتح ملف `index.html` في محرر نصوص
 - ابحث عن السطر:
   ```html
-  <meta name="neurochat-api-base" content="https://12000-ix43o1szubw1o10kbzdbt-6532622b.e2b.dev">
+  <meta name="neurodevfusion-api-base" content="https://12000-ix43o1szubw1o10kbzdbt-6532622b.e2b.dev">
   ```
 - غيّره إلى:
   ```html
-  <meta name="neurochat-api-base" content="http://localhost:12000">
+  <meta name="neurodevfusion-api-base" content="http://localhost:12000">
   ```
 - احفظ الملف
 
@@ -89,14 +89,14 @@ npm install -g pm2
 
 ### تشغيل Backend باستخدام PM2:
 ```cmd
-cd neurochat\new-main\neurochat\backend\enhanced-ai-pipeline
+cd neurodevfusion\new-main\neurodevfusion\backend\enhanced-ai-pipeline
 pm2 start ecosystem.config.js
 ```
 
 ### تشغيل Frontend باستخدام PM2:
 ```cmd
-cd neurochat\new-main\neurochat\frontend
-pm2 start server.js --name "neurochat-frontend"
+cd neurodevfusion\new-main\neurodevfusion\frontend
+pm2 start server.js --name "neurodevfusion-frontend"
 ```
 
 ### أوامر PM2 المفيدة:
@@ -169,9 +169,9 @@ pm2 startup
 
 للحصول على آخر التحديثات:
 ```cmd
-cd neurochat
+cd neurodevfusion
 git pull origin main
-cd new-main\neurochat\backend\enhanced-ai-pipeline
+cd new-main\neurodevfusion\backend\enhanced-ai-pipeline
 npm install
 cd ..\..\frontend
 # أعد تشغيل الخدمات

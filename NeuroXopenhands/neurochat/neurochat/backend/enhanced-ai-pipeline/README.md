@@ -1,4 +1,4 @@
-# NeuroChat Backend - How to Run
+# NeuroDevFusion Backend - How to Run
 
 ## Prerequisites
 

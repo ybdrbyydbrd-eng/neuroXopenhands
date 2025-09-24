@@ -1,6 +1,6 @@
 module.exports = {
   apps: [{
-    name: 'neurochat-frontend',
+    name: 'neurodevfusion-frontend',
     script: 'server.js',
     instances: 1,
     exec_mode: 'fork',

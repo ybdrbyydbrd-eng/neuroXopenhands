@@ -1,7 +1,7 @@
 {
-  "name": "neurochat-frontend",
+  "name": "neurodevfusion-frontend",
   "version": "1.0.0",
-  "description": "NeuroChat Frontend - Advanced AI Platform UI",
+  "description": "NeuroDevFusion Frontend - Advanced AI Platform UI",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

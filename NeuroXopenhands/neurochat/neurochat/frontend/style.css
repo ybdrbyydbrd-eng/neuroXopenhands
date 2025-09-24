@@ -1345,7 +1345,7 @@ body.dark-theme .back-to-home-btn:hover {
     margin-top: 2px;
 }
 
-/* Agent Mode Panels - NeuroChat Agent Integration */
+/* Agent Mode Panels - NeuroDevFusion Agent Integration */
 .agent-mode-panels {
     position: fixed;
     top: 64px;
@@ -1366,7 +1366,7 @@ body.dark-theme .back-to-home-btn:hover {
     transform: translateY(0);
 }
 
-/* NeuroChat Agent Container */
+/* NeuroDevFusion Agent Container */
 .openhands-container {
     width: 100%;
     height: 100%;
@@ -1378,7 +1378,7 @@ body.dark-theme .back-to-home-btn:hover {
     border: 1px solid var(--light-border);
 }
 
-/* NeuroChat Agent Status Screen */
+/* NeuroDevFusion Agent Status Screen */
 .openhands-status {
     width: 100%;
     height: 100%;
@@ -1504,7 +1504,7 @@ body.dark-theme .back-to-home-btn:hover {
     background: #059669;
 }
 
-/* NeuroChat Agent iframe styles */
+/* NeuroDevFusion Agent iframe styles */
 #openhandsIframe {
     width: 100%;
     height: 100%;

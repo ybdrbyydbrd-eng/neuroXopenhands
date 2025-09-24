@@ -14,7 +14,7 @@ let consoleOutput = [];
 let currentWorkspaceId = null; // Store current workspace ID
 
 // API base resolution priority: window -> meta -> localhost -> window.location.origin
-let __API_BASE = (window.NEUROCHAT_API_BASE || (document.querySelector('meta[name="neurochat-api-base"]')?.content) || window.location.origin).trim();
+let __API_BASE = (window.NEURODEVFUSION_API_BASE || (document.querySelector('meta[name="neurodevfusion-api-base"]')?.content) || window.location.origin).trim();
 async function apiFetch(path, options = {}) {
     const candidates = [
         __API_BASE,
@@ -105,7 +105,7 @@ const elements = {
     consoleModal: document.getElementById('consoleModal'),
     closeConsole: document.getElementById('closeConsole'),
     consoleModalContent: document.getElementById('consoleModalContent'),
-    // NeuroChat Agent integration elements
+    // NeuroDevFusion Agent integration elements
     openhandsContainer: document.getElementById('openhandsContainer'),
     openhandsStatus: document.getElementById('openhandsStatus'),
     openhandsIframe: document.getElementById('openhandsIframe'),
@@ -186,7 +186,7 @@ function setupEventListeners() {
         elements.closeConsole.addEventListener('click', closeConsoleModal);
     }
     
-    // NeuroChat Agent integration controls
+    // NeuroDevFusion Agent integration controls
     if (elements.retryOpenHands) {
         elements.retryOpenHands.addEventListener('click', initializeOpenHands);
     }
@@ -220,7 +220,7 @@ function setupEventListeners() {
     // Settings options
     setupSettingsOptions();
     
-    // Agent Mode is now handled by NeuroChat Agent iframe
+    // Agent Mode is now handled by NeuroDevFusion Agent iframe
 }
 
 function setupWelcomeSuggestions() {
@@ -393,7 +393,7 @@ function adjustTextareaHeight() {
 function handleKeyDown(event) {
     if (event.key === 'Enter' && !event.shiftKey) {
         event.preventDefault();
-        // In Agent Mode, don't handle messages since NeuroChat Agent handles input
+        // In Agent Mode, don't handle messages since NeuroDevFusion Agent handles input
         if (!isAgentMode) {
             sendMessage();
         }
@@ -777,14 +777,14 @@ function activateAgentMode() {
     elements.welcomeState.classList.add('hidden');
     elements.chatWindow.classList.remove('active');
     
-    // Initialize NeuroChat Agent iframe
+    // Initialize NeuroDevFusion Agent iframe
     initializeOpenHands();
 }
 
-// NeuroChat Agent Integration Functions
+// NeuroDevFusion Agent Integration Functions
 async function initializeOpenHands() {
     if (!elements.openhandsContainer || !elements.openhandsStatus || !elements.openhandsIframe) {
-        console.error('NeuroChat Agent elements not found');
+        console.error('NeuroDevFusion Agent elements not found');
         return;
     }
     
@@ -794,20 +794,20 @@ async function initializeOpenHands() {
     elements.openhandsIframe.style.display = 'none';
     
     // Update status message
-    updateOpenHandsStatus('Connecting to NeuroChat Agent...', 'Starting NeuroChat Agent on localhost:3000');
+    updateOpenHandsStatus('Connecting to NeuroDevFusion Agent...', 'Starting NeuroDevFusion Agent on localhost:3000');
     
     try {
-        // Check if NeuroChat Agent is already running
+        // Check if NeuroDevFusion Agent is already running
         const isRunning = await checkOpenHandsStatus();
         
         if (isRunning) {
             await loadOpenHandsIframe();
         } else {
-            showOpenHandsError('NeuroChat Agent is not running on localhost:3000');
+            showOpenHandsError('NeuroDevFusion Agent is not running on localhost:3000');
         }
     } catch (error) {
-        console.error('Error initializing NeuroChat Agent:', error);
-        showOpenHandsError('Failed to connect to NeuroChat Agent');
+        console.error('Error initializing NeuroDevFusion Agent:', error);
+        showOpenHandsError('Failed to connect to NeuroDevFusion Agent');
     }
 }
 
@@ -823,13 +823,13 @@ async function checkOpenHandsStatus() {
         // If no error is thrown, we assume the service is running
         return true;
     } catch (error) {
-        console.log('NeuroChat Agent not accessible:', error.message);
+        console.log('NeuroDevFusion Agent not accessible:', error.message);
         return false;
     }
 }
 
 async function loadOpenHandsIframe() {
-    updateOpenHandsStatus('Loading NeuroChat Agent...', 'Please wait while NeuroChat Agent loads');
+    updateOpenHandsStatus('Loading NeuroDevFusion Agent...', 'Please wait while NeuroDevFusion Agent loads');
     
     return new Promise((resolve, reject) => {
         // Set iframe source
@@ -837,26 +837,26 @@ async function loadOpenHandsIframe() {
         
         // Handle iframe load
         elements.openhandsIframe.onload = () => {
-            console.log('NeuroChat Agent iframe loaded successfully');
+            console.log('NeuroDevFusion Agent iframe loaded successfully');
             elements.openhandsContainer.classList.add('loaded');
             elements.openhandsStatus.style.display = 'none';
             elements.openhandsIframe.style.display = 'block';
-            showToast('NeuroChat Agent loaded successfully', 'success');
+            showToast('NeuroDevFusion Agent loaded successfully', 'success');
             resolve();
         };
         
         // Handle iframe error
         elements.openhandsIframe.onerror = (error) => {
-            console.error('Failed to load NeuroChat Agent iframe:', error);
-            showOpenHandsError('Failed to load NeuroChat Agent interface');
+            console.error('Failed to load NeuroDevFusion Agent iframe:', error);
+            showOpenHandsError('Failed to load NeuroDevFusion Agent interface');
             reject(error);
         };
         
         // Timeout after 30 seconds
         setTimeout(() => {
             if (!elements.openhandsContainer.classList.contains('loaded')) {
-                console.warn('NeuroChat Agent iframe load timeout');
-                showOpenHandsError('NeuroChat Agent loading timed out');
+                console.warn('NeuroDevFusion Agent iframe load timeout');
+                showOpenHandsError('NeuroDevFusion Agent loading timed out');
                 reject(new Error('Timeout'));
             }
         }, 30000);
@@ -877,20 +877,20 @@ function showOpenHandsError(message) {
 }
 
 async function checkDockerStatus() {
-    updateOpenHandsStatus('Checking Docker Status...', 'Verifying NeuroChat Agent Docker container');
+    updateOpenHandsStatus('Checking Docker Status...', 'Verifying NeuroDevFusion Agent Docker container');
     
     try {
-        // Try to check if Docker is running and NeuroChat Agent container exists
+        // Try to check if Docker is running and NeuroDevFusion Agent container exists
         // Note: This is a basic check - in a real implementation, you might want to
         // call a backend endpoint that can actually check Docker status
         const isRunning = await checkOpenHandsStatus();
         
         if (isRunning) {
-            showToast('NeuroChat Agent is running on localhost:3000', 'success');
+            showToast('NeuroDevFusion Agent is running on localhost:3000', 'success');
             await loadOpenHandsIframe();
         } else {
-            showOpenHandsError('NeuroChat Agent Docker container is not running. Please start it using the command above.');
-            showToast('NeuroChat Agent is not running. Please start the Docker container.', 'warning');
+            showOpenHandsError('NeuroDevFusion Agent Docker container is not running. Please start it using the command above.');
+            showToast('NeuroDevFusion Agent is not running. Please start the Docker container.', 'warning');
         }
     } catch (error) {
         console.error('Error checking Docker status:', error);
@@ -1434,11 +1434,11 @@ function saveConversation() {
     conversation.messages = messages;
     
     // Save to localStorage
-    localStorage.setItem('neurochat_conversations', JSON.stringify(conversations));
+    localStorage.setItem('neurodevfusion_conversations', JSON.stringify(conversations));
 }
 
 function loadConversations() {
-    const saved = localStorage.getItem('neurochat_conversations');
+    const saved = localStorage.getItem('neurodevfusion_conversations');
     if (saved) {
         conversations = JSON.parse(saved);
         renderConversations();
@@ -1514,11 +1514,11 @@ function shareConversation() {
         return `${type}: ${msg.textContent}`;
     }).join('\n\n');
     
-    const shareText = `NeuroChat Conversation\n\n${messages}`;
+    const shareText = `NeuroDevFusion Conversation\n\n${messages}`;
     
     if (navigator.share) {
         navigator.share({
-            title: 'NeuroChat Conversation',
+            title: 'NeuroDevFusion Conversation',
             text: shareText
         });
     } else {
@@ -1654,8 +1654,8 @@ function setTheme(theme) {
         applyAutoTheme();
     }
     
-    localStorage.setItem('neurochat_theme', theme);
-    showToast(`Theme changed to ${theme}`, 'success');
+    localStorage.setItem('neurodevfusion_theme', theme);
+    // Theme changed silently without showing notification
 }
 
 function applyAutoTheme() {
@@ -1674,7 +1674,7 @@ function applyAutoTheme() {
 }
 
 function checkAutoTheme() {
-    const savedTheme = localStorage.getItem('neurochat_theme');
+    const savedTheme = localStorage.getItem('neurodevfusion_theme');
     if (savedTheme === 'auto') {
         applyAutoTheme();
     }
@@ -1684,7 +1684,7 @@ function checkAutoTheme() {
 setInterval(checkAutoTheme, 60000);
 
 function loadSettings() {
-    const savedTheme = localStorage.getItem('neurochat_theme') || 'light';
+    const savedTheme = localStorage.getItem('neurodevfusion_theme') || 'light';
     setTheme(savedTheme);
     
     // Also update the sidebar theme buttons if they exist

@@ -1,4 +1,4 @@
-# NeuroChat - Advanced Multi-Model AI Platform
+# NeuroDevFusion - Advanced Multi-Model AI Platform
 
 منصة ذكاء اصطناعي متقدمة تدمج عدة نماذج AI لتوفير استجابات محسّنة من خلال الاختيار الذكي للنماذج والتعاون بينها.
 
@@ -14,7 +14,7 @@
 ## هيكل المشروع
 
 ```
-neurochat/
+neurodevfusion/
 ├── frontend/              # واجهة المستخدم
 │   ├── index.html        # الصفحة الرئيسية
 │   ├── script.js         # منطق التطبيق
@@ -38,7 +38,7 @@ neurochat/
 ### 1. Backend API Server
 
 ```bash
-cd neurochat/backend/enhanced-ai-pipeline
+cd neurodevfusion/backend/enhanced-ai-pipeline
 npm install
 npm start
 ```
@@ -48,7 +48,7 @@ npm start
 ### 2. Frontend Web UI
 
 ```bash
-cd neurochat/frontend
+cd neurodevfusion/frontend
 npm start
 ```
 
